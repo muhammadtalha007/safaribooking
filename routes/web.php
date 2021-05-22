@@ -19,6 +19,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', "DashboardController@showWelcomePage");
+Route::get('view-tour-icon/{id}', "DashboardController@showTourIconOnLandingPage");
+
 //Route::post('register-user', "AuthController@signup");
 //Route::post('login-user', "AuthController@login");
 //Route::post('findprotectedwork', "AuthController@findprotectedwork");

@@ -37,6 +37,18 @@ use services\email_services\SendEmailService;
 
 class DashboardController extends Controller
 {
+    public function showWelcomePage()
+    {
+        $tours = \App\Tours::limit(3)->get();
+        foreach ($tours as $item)
+        {
+            $item->features = TourFeatures::where('tour_id', $item->id)->get();
+            $item->routes = Routes::where('tour_id', $item->id)->get();
+            $item->user = User::where('id', $item->user_id)->first();
+        }
+        return view('welcome')->with(['tours' => $tours]);
+    }
+
     public function tours()
     {
         $userId = Session::get('userId');
@@ -474,6 +486,16 @@ class DashboardController extends Controller
     }
 
     public function showTourImage($tourId)
+    {
+        $file = Tours::where('id', $tourId)->first();
+        $file = base_path('/data') . '/user-files' . '/' . $file->picture;
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        return readfile($file);
+    }
+
+    public function showTourIconOnLandingPage($tourId)
     {
         $file = Tours::where('id', $tourId)->first();
         $file = base_path('/data') . '/user-files' . '/' . $file->picture;

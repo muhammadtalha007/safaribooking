@@ -1,604 +1,1027 @@
 @extends('layouts.landing-app')
 <!--====== BANNER PART START ======-->
 @section('content')
+    <main class="main">
 
-    <link href="{{url('')}}/assets/css/works.css" rel="stylesheet">
-    <style>
-        .respmargintopbtn{
-            margin-top: -360px!important;
-        }
-        .resppaddding1{
-            padding: 50px;
-        }
-        .logomargin1{
-            margin-top: 90px
-        }
-        .logomargin2{
-            margin-left: 10px
-        }
-        .logosizeresp1{
-            height: 80px;width: 100px;
-        }
-        .logosizeresp2{
-            height: 80px;width: 80px;
-        }
-        .resppaddingiconsmain{
-            padding: 30px;
-        }
-        .servicemargin{
-            height: 380px;
-        }
-        @media screen and (max-width: 600px) {
-            .respmargintopbtn{
-                margin-top: -150px!important;
-            }
-            .resptopbtn1{
-                margin-left: -20px;
-            }
-            .resppaddding1{
-                padding: 0px;
-            }
-            .logomargin1{
-                margin-top: 150px
-            }
-            .logosizeresp1{
-                width: 80px;
-                height: 60px;
-            }
-            .respfontsizelogotext{
-                font-size: 14px;
-            }
-            .logosizeresp2{
-                height: 65px;width: 70px;
-            }
-            .logomargin2{
-                margin-left: 0px
-            }
-            .resppaddingiconsmain{
-                padding: 17px;
-            }
-            .servicemargin{
-                height: 470px;
-            }
-            .btnbottommarginleft{
-                margin-left: -64px;
-            }
-            .btnbottommarginlef2t{
-                margin-left: -50px;
-            }
-        }
-    </style>
-    <section  style="padding-top: 200px;background-image: url('/assets/images/backgroundimage.png')">
-{{--        <div class="banner__bg"></div>--}}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 style="text-align: center;color: #6b9ce8">COPYRIGHT PROTECTION SERVICE</h2>
-                    <div style="margin: 0 auto;max-width: 200px">
-                        <div style="border-bottom: 5px solid #6b9ce8;width: 200px" >
-
+{{--        <div class="messagebox messagebox--orange messagebox--bar">--}}
+{{--            <a href="coronavirus.html" class="nowrap">--}}
+{{--                <i class="sbi sbi--info-blue"></i>--}}
+{{--                Coronavirus (COVID-19) Support--}}
+{{--            </a>--}}
+{{--        </div>--}}
+        <div class="container container--main container--home container--tourpref   ">
+            <div class="opener">
+                <h1 class="serif">Search African Safaris</h1>
+                <h2 class="serif">Offered by <B>{{\App\User::all()->count()}}</B> Tour Operators</h2>
+                <form class="row tourpreferences  skip-first-count  " autocomplete="off" method="GET"
+                      action="https://www.safaribookings.com/tours">
+                    <div class="col col-t-3-5 tourpreferences__block tourpreferences__destination">
+                        <i class="sbi sbi--map-pin row-icon"></i>
+                        <div class="tourpreferences__destination__row">
+                            <div class="tourpreferences__destination__row__inner">
+                                <label for="destination">Destination</label>
+                                <input id="destination" type="text" value="" name="destination"
+                                       data-types="destinations" data-shadow="false" spellcheck="false" value=""
+                                       data-title="Start typing or select below" autocomplete="off" data-limit="8">
+                                <div class="placeholder">Where To</div>
+                            </div>
+                            <div class="detail detail__destination"></div>
+                            <span class="clear-btn"></span>
+                            <span class="open-sign open-sign--search"><i
+                                    class="sbi sbi--search-grey mirrored"></i></span>
+                        </div>
+                        <div class="tourpreferences__destination__add  hide hide-t  "><a href="#"><span class="txt2"><i>+</i> Add country, park or highlight</span></a>
                         </div>
                     </div>
-{{--                    <div style="margin: 0 auto;max-width: 230px">--}}
-{{--                        <hr class="new5">--}}
-
-{{--                    </div>--}}
-                    <h5 style="color: #6b9ce8;text-align: center;margin-top: 20px">Save Your Work Such As Books, Training Manuals, Music, Songs, Lyrics, Artwork, Portfolio</h5>
-                    <div style="margin: 0 auto;max-width: 1000px">
-                        <p style="text-align: center">
-                            CopyrightCover is a swift and secure copyright protection service based in the UK. Equipped with a dedicated group of legal
-                            experts and IT technicians, we ensure that our clients are fully protected from all modern threats and risk factors across the board.
-                        </p>
-                    </div>
-
-                    <div>
-{{--                        <a  href="#myModal" data-toggle="modal"  id="play-video" class="video-play-button" title="Play Video">--}}
-{{--                            <span></span>--}}
-{{--                        </a>--}}
-                        <img src="{{url('')}}/assets/images/banner.png" style="margin-top: -20px">
-                        <div class="respmargintopbtn"
-                            style="margin: 0 auto;max-width: 100px;margin-top: 10px;text-align: center;;padding-left: 10px">
-                            <a href="#myModal" data-toggle="modal" id="play-video" class="video-play-button"
-                               title="Play Video">
-                                <span></span>
-                            </a>
+                    <div class="col col-t-2-5 tourpreferences__block tourpreferences__date  ">
+                        <span class="clear-btn clear-btn--date" style="display:none"></span>
+                        <span class="open-sign open-sign--arrow">&rsaquo;</span>
+                        <i class="sbi sbi--calendar row-icon"></i>
+                        <span class="lbl lbl-startdate">Start Date</span>
+                        <div class="detail detail__date">
+                            <div class="inner calendar" data-lbl="lbl-startdate" data-clear="clear-btn--date"
+                                 data-hiddenname="date">
+                                <label>Start Date :</label><input name="date" type="date" min="2021-05-20"
+                                                                  max="2024-12-31" value=""/>
+                                <label for="flexdate" class="checkbox-lbl"><input type="checkbox" id="flexdate"
+                                                                                  name="flex" value="1" checked> My
+                                    dates are somewhat flexible</label>
+                            </div>
+                            <div class="detail__title">
+                                Start Date
+                                <button type="button" class="detail__close" aria-label="close 'Start Date' panel"><i
+                                        class="sbi sbi--cross"></i></button>
+                            </div>
+                        </div>
+                        <div class="tourpreferences__date__extraflex">
+                            <label for="flexdateextra" class="checkbox-lbl"><input type="checkbox"
+                                                                                   class="checkbox--blue"
+                                                                                   id="flexdateextra" checked> <span
+                                    class="txt2">My dates are somewhat flexible</span></label>
                         </div>
                     </div>
-                    <div style="margin: 0 auto;max-width: 200px;margin-top: 300px;margin-bottom: 100px">
-                        <a class="main-btn resptopbtn1" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
-                    </div>
+                    <div class="col col-t-3 tourpreferences__block tourpreferences__persons  filled  ">
+                        <span class="clear-btn clear-btn--persons" style="display:block"></span>
+                        <span class="open-sign open-sign--arrow">&rsaquo;</span>
+                        <i class="sbi sbi--travelers row-icon"></i>
+                        <span class="lbl lbl-persons filled">
+                        <span>2 Adults</span>
+                    </span>
+                        <div class="detail detail__persons">
+                            <div class="inner" data-clear="clear-btn--persons">
+                                <div class="row">
+                                    <div class="no-gutter">
+                                        <label for="adults">Adults <span
+                                                class="hide show-ti txt--small">(18+ years)</span><span
+                                                class="hide-t txt--small">(18+)</span>:</label><input name="adults"
+                                                                                                      id="adults"
+                                                                                                      type="number"
+                                                                                                      min="1" max="99"
+                                                                                                      value="2"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="no-gutter">
+                                        <label for="children">Children <span class="hide show-ti txt--small">(0-17 years)</span><span
+                                                class="hide-t txt--small">(0-17)</span>:</label><input name="children"
+                                                                                                       id="children"
+                                                                                                       type="number"
+                                                                                                       min="0" max="10"
+                                                                                                       value="0"/>
+                                    </div>
+                                </div>
 
-{{--                    <div class="banner-content">--}}
-{{--                        <h1 class="title">COPYRIGHT--}}
-{{--                            <span>PROTECTION</span> SERVICE</h1>--}}
-{{--                        <p>Save you work such as Books, Training Manuals, Music, Songs, Lyrics And Artwork,Logos, Designs, Graphic Designs</p>--}}
-{{--                        <ul>--}}
-{{--                            <li><a class="main-btn" href="{{url('register')}}">REGISTER YOUR WORK</a></li>--}}
-{{--                            <li><a class="play video-popup" href="https://www.youtube.com/watch?v=_Hp_dI0DzY4">--}}
-{{--                                    <div class="play-btn"><img src="{{url('')}}/assets/images/play.svg" alt=""></div>--}}
-{{--                                    Watch video--}}
-{{--                                </a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div> <!-- banner content -->--}}
-{{--                </div>--}}
-            </div> <!-- row -->
+                                <div class="children-ages" data-state="invisible">
+                                    <div class="row">
+                                        <div class="no-gutter">
+                                            <strong class="txt--grey txt--small">Age at the end of the tour</strong>
+                                        </div>
+                                    </div>
+                                    <div class="row datarow">
+                                        <div class="no-gutter">
+                                            <label class="right-aligned" for="age-child-1">Child 1:</label>
+                                            <div class="select--holder">
+                                                <select name="age-child-1" id="age-child-1">
+                                                    <option value="">- Age -</option>
+                                                    <option value="17">17 years</option>
+                                                    <option value="16">16 years</option>
+                                                    <option value="15">15 years</option>
+                                                    <option value="14">14 years</option>
+                                                    <option value="13">13 years</option>
+                                                    <option value="12">12 years</option>
+                                                    <option value="11">11 years</option>
+                                                    <option value="10">10 years</option>
+                                                    <option value="9">9 years</option>
+                                                    <option value="8">8 years</option>
+                                                    <option value="7">7 years</option>
+                                                    <option value="6">6 years</option>
+                                                    <option value="5">5 years</option>
+                                                    <option value="4">4 years</option>
+                                                    <option value="3">3 years</option>
+                                                    <option value="2">2 years</option>
+                                                    <option value="1">1 year</option>
+                                                    <option value="0">0 years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" class="show btn btn--white btn--autowidth homepersons-ok"
+                                       value="Done"/>
+                            </div>
+                            <div class="detail__title">
+                                Travelers
+                                <button type="button" class="detail__close" aria-label="Close 'Travelers' panel"><i
+                                        class="sbi sbi--cross"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-t-3  ">
+                        <a href="javascript:void(0);" class="btn btn--blue search btn--next">Show Tours</a>
+                    </div>
+                </form>
+
+            </div>
+            <div class="img-holder">
+{{--                <picture>--}}
+                    <!--[if IE 9]>
+{{--                    <video style="display: none;"><![endif]-->--}}
+{{--                    <source data-srcset="https://cloudfront.safaribookings.com/assets/home-3-1920x768.jpg"--}}
+{{--                            media="(min-width: 1441px)" class="lazyload">--}}
+{{--                    <source data-srcset="https://cloudfront.safaribookings.com/assets/home-3-1440x576.jpg"--}}
+{{--                            media="(min-width: 1281px)" class="lazyload">--}}
+{{--                    <source data-srcset="https://cloudfront.safaribookings.com/assets/home-3-1280x512.jpg"--}}
+{{--                            media="(min-width: 1025px)" class="lazyload">--}}
+{{--                    <source data-srcset="https://cloudfront.safaribookings.com/assets/home-3-1024x410.jpg"--}}
+{{--                            media="(min-width: 970px)" class="lazyload">--}}
+{{--                    <source data-srcset="https://cloudfront.safaribookings.com/assets/home-3-969x581.jpg"--}}
+{{--                            media="(min-width: 769px)" class="lazyload">--}}
+{{--                    <source--}}
+{{--                        data-srcset="https://cloudfront.safaribookings.com/assets/home-3-768x461-2x.jpg 2x, https://cloudfront.safaribookings.com/assets/home-3-768x461.jpg 1x"--}}
+{{--                        media="(min-width: 744px)" class="lazyload">--}}
+{{--                    <source--}}
+{{--                        data-srcset="https://cloudfront.safaribookings.com/assets/home-mobile-3-743x1200-2x.jpg 2x, https://cloudfront.safaribookings.com/assets/home-mobile-3-743x1200.jpg 1x"--}}
+{{--                        media="(min-width: 415px)" class="lazyload">--}}
+{{--                    <!--[if IE 9]></video><![endif]-->--}}
+                    <img data-src="https://cloudfront.safaribookings.com/assets/home-mobile-3-414x1200.jpg"
+                         data-srcset="https://cloudfront.safaribookings.com/assets/home-mobile-3-414x1200-2x.jpg 2x"
+                         class="lazyload img__3" alt=""/>
+                </picture>-->
+
+    <img src="https://cloudfront.safaribookings.com/assets/home-3-1920x768.jpg"
+         data-srcset="https://cloudfront.safaribookings.com/assets/home-mobile-3-414x1200-2x.jpg 2x"
+         class="lazyload img__3" alt=""/>
+{{--                <noscript>--}}
+{{--                    <picture>--}}
+{{--                        <!--[if IE 9]>--}}
+{{--                        <video style="display: none;"><![endif]-->--}}
+{{--                        <source srcset="https://cloudfront.safaribookings.com/assets/home-3-1920x768.jpg"--}}
+{{--                                media="(min-width: 1441px)">--}}
+{{--                        <source srcset="https://cloudfront.safaribookings.com/assets/home-3-1440x576.jpg"--}}
+{{--                                media="(min-width: 1281px)">--}}
+{{--                        <source srcset="https://cloudfront.safaribookings.com/assets/home-3-1280x512.jpg"--}}
+{{--                                media="(min-width: 1025px)">--}}
+{{--                        <source srcset="https://cloudfront.safaribookings.com/assets/home-3-1024x410.jpg"--}}
+{{--                                media="(min-width: 970px)">--}}
+{{--                        <source srcset="https://cloudfront.safaribookings.com/assets/home-3-969x581.jpg"--}}
+{{--                                media="(min-width: 769px)">--}}
+{{--                        <source--}}
+{{--                            srcset="https://cloudfront.safaribookings.com/assets/home-3-768x461-2x.jpg 2x, https://cloudfront.safaribookings.com/assets/home-3-768x461.jpg 1x"--}}
+{{--                            media="(min-width: 744px)">--}}
+{{--                        <source--}}
+{{--                            srcset="https://cloudfront.safaribookings.com/assets/home-mobile-3-743x1200-2x.jpg 2x, https://cloudfront.safaribookings.com/assets/home-mobile-3-743x1200.jpg 1x"--}}
+{{--                            media="(min-width: 415px)">--}}
+{{--                        <!--[if IE 9]></video><![endif]-->--}}
+{{--                        <img src="../cloudfront.safaribookings.com/assets/home-mobile-3-414x1200.jpg"--}}
+{{--                             srcset="https://cloudfront.safaribookings.com/assets/home-mobile-3-414x1200-2x.jpg 2x"--}}
+{{--                             class="img__3" alt=""/>--}}
+{{--                    </picture>--}}
+{{--                </noscript>--}}
+            </div>
         </div>
-{{--        <div class="banner-shaps-item">--}}
-{{--            <div class="banner-shape">--}}
-{{--                <img src="{{url('')}}/assets/images/banner-shape.svg" alt="">--}}
-{{--            </div>--}}
-{{--            <div class="banner-thumb animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="300ms">--}}
-{{--                <img src="{{url('')}}/assets/images/banner-thumb-1.png" alt="thumb">--}}
-{{--            </div>--}}
-{{--            <div class="banner-thumb-2 animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="350ms">--}}
-{{--                <img src="{{url('')}}/assets/images/banner-thumb-2.png" alt="thumb">--}}
+
+
+{{--        <div class="container container--main container--home-numbers">--}}
+{{--            <div class="inner">--}}
+{{--                <div>--}}
+{{--                    <i class="sbi sbi--usp-red"></i>--}}
+{{--                    <a href="tours.html" title="The Largest Marketplace for African Safaris"><strong>The--}}
+{{--                            Largest</strong> Marketplace for <span class="hide show-wi">African&nbsp;</span>Safaris</a>--}}
+{{--                </div>--}}
+{{--                <div>--}}
+{{--                    <i class="sbi sbi--usp-red"></i>--}}
+{{--                    <a href="best-price-guarantee.html" title="Best Price Guarantee"><strong>Best Price</strong>--}}
+{{--                        Guarantee</a>--}}
+{{--                </div>--}}
+{{--                <div>--}}
+{{--                    <i class="sbi sbi--usp-red"></i>--}}
+{{--                    <a href="reviews.html" title="59,601 Reviews"><strong>59,601</strong> Reviews</a>--}}
+{{--                </div>--}}
+{{--                <div class="hide show-di">--}}
+{{--                    <i class="sbi sbi--usp-red"></i>--}}
+{{--                    <a href="countries-parks.html" title="196 Parks &amp; Reserves"><strong>196</strong> Parks &amp;--}}
+{{--                        Reserves</a>--}}
+{{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-    </section>
+{{--        <div class="container container--main container--home-featured featuredbar hide show-t">--}}
+{{--            <div class="inner">--}}
+{{--                <b>As Featured In</b>--}}
+{{--                <div class="logos">--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-times.png" class="lazyload"--}}
+{{--                        alt="SafariBookings featured in The Times London"--}}
+{{--                        title="SafariBookings featured in The Times London" width="80" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-lat.png" class="lazyload"--}}
+{{--                        alt="SafariBookings featured in Los Angeles Times"--}}
+{{--                        title="SafariBookings featured in Los Angeles Times" width="63" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-tam.png" class="lazyload"--}}
+{{--                        alt="SafariBookings featured in Travel Africa Magazine"--}}
+{{--                        title="SafariBookings featured in Travel Africa Magazine" width="121" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-times-sa.png"--}}
+{{--                        class="lazyload" alt="SafariBookings featured in The Times Johannesburg"--}}
+{{--                        title="SafariBookings featured in The Times Johannesburg" width="108" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-cnn.png" class="lazyload"--}}
+{{--                        alt="SafariBookings featured in CNN Travel" title="SafariBookings featured in CNN Travel"--}}
+{{--                        width="56" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-australian.png"--}}
+{{--                        class="lazyload" alt="SafariBookings featured in The Australian"--}}
+{{--                        title="SafariBookings featured in The Australian" width="112" height="50"/>--}}
+{{--                    <img--}}
+{{--                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                        data-src="https://cfstatic.safaribookings.com/img/featured/featured-chicago.png"--}}
+{{--                        class="lazyload" alt="SafariBookings featured in Chicago Tribune"--}}
+{{--                        title="SafariBookings featured in Chicago Tribune" width="78" height="50"/>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-    <!--====== BANNER PART ENDS ======-->
-
-    <!--====== SERVICES PART START ======-->
-
-{{--    <img src="{{url('')}}/assets/images/side.png" style="width: 250px;height: 200px">--}}
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4" style="padding: 30px">
-                <img src="{{url('')}}/assets/images/banner2.png">
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
-                <h3>
-                    SERVICES
-                </h3>
-                <div style="border-bottom: 3px solid #6b9ce8;width: 80px" >
-
+        <div class="container container--main container--home-toprated" style="margin-top: 70px">
+            <div class="row">
+                <div class="col col-12">
+                    <h2 class="container--home__heading">Top Rated Safari Countries</h2>
                 </div>
-                <br>
-                <p style="font-size: 14px;color: black">
-                    We offer fast, reliable protection of all types of content, including but not limited to: logos, text, media,
-                    website material, designs, and artwork. The sooner you register a copyright, the better. Public
-                    domains and social media services such as Facebook, Instagram, Pinterest, Youtube, Spotify, and
-                    Etsy are incredibly dangerous for unregistered work. Digital media such as photos, videos, designs,
-                    and logos are particularly vulnerable in these spaces and can be compromised incredibly easily -- not
-                    only to theft and free distribution, but to sale for profit by hostile actors and pirates.
-                </p>
-                <p style="font-size: 14px;color: black">
-                    As long as your work is unprotected, anyone who comes across it is free to copyright it themselves,
-                    at which point you would need to engage in litigation or a costly legal battle for a chance to the rights
-                    to your own work. In addition to risking ownership disputes, rampant content circulation can easily
-                    destroy profit margins. Copyright registration is an immediate concern for absolutely anyone who
-                    produces content or products of any kind.
-                </p>
-                <p style="font-size: 14px;color: black">
-                    CopyrightCover safeguards your content and products by the book under the Copyright, Designs and
-                    Patents Act 1988. All our copyright registrations include unique, individual reference numbers to
-                    identify them, and our clients have access to our instant certification service -- this marks the time
-                    and date of the registration, so the owner and origin will never be reasonably disputable.
-                </p>
             </div>
+
+            <div class="row">
+                <div class="shadowed-box shadowed-box--hover">
+                    <div class="container--home-toprated__mobnav hide hide-t container--home-toprated__navigation">
+                        <div class="container--home-toprated__mobnav__buttons">
+                            <a href="javascript:void(0)"
+                               class="btn btn--trans btn--next container--home-toprated__mobnext"
+                               title="Next country"><span>Next</span><span> Country</span></a>
+                            <a href="javascript:void(0)"
+                               class="btn btn--trans btn--prev container--home-toprated__mobprev hide"
+                               title="Previous country"></a>
+                        </div>
+                    </div>
+                    <div class="col col-0 col-t-3-5 col-d-3 container--home-toprated__list">
+                        <ul>
+                            <li class="active">
+                                <span class="txt--grey">#1</span> <b>Tanzania</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#2</span> <b>Botswana</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#3</span> <b>Zambia</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#4</span> <b>Kenya</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#5</span> <b>South Africa</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#6</span> <b>Namibia</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#7</span> <b>Uganda</b>
+                            </li>
+                            <li>
+                                <span class="txt--grey">#8</span> <b>Zimbabwe</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col col-12 col-t-8-5 col-d-9 container--home-toprated__content" data-ajaxfill="/"
+                         data-show=".container--home-toprated__navigation">
+                        <div class="loading hide-t"></div>
+                        <div class="loading loading--white hide show-ti"></div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-    </div>
 
-    <div class="container">
-        <div style="margin: 0 auto;max-width: 1000px">
-            <div class="row" style="height: 400px">
-                <div class="col-4 resppaddding1" style="background: #9ec9ff;" >
-                    <div style="margin: 0 auto;max-width: 100px;">
-                        <div>
-                            <img class="logomargin1 logosizeresp1" src="{{url('')}}/icons/logo.png" style=";margin-left: 10px;">
-                        </div>
-                    </div>
-                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">LOGOS</h5>
-
+        <div class="container container--main container--home-trendingtours">
+            <div class="row">
+                <div class="col col-12">
+                    <h2 class="container--home-trendingtours__title container--home__heading">Popular Safari Tours</h2>
                 </div>
-                <div style="background: blue" class="col-8">
-                    <div class="row">
-                        <div style="background: #6597e6;padding: 40px" class="col-12">
-                            <div style="margin: 0 auto;width: 100px;">
-                                <div>
-                                    <img src="{{url('')}}/icons/education.png" style="height: 80px;width: 80px">
-                                </div>
-                            </div>
-                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">EDUCATION & TRAINING</h5>
+            </div>
 
-                        </div>
-                        <div style="background: #76a5f0;padding: 30px" class="col-6">
-                            <div style="margin: 0 auto;width: 100px;">
-                                <div>
-                                    <img class="logosizeresp2 logomargin2" src="{{url('')}}/icons/artwork.png">
-                                </div>
-                            </div>
-                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">ARTWORK</h5>
+            <div class="list--tours row">
+                <ul class="row">
+                    <li class="col   col-12 col-t-6 col-d-4   ">
+                        <a class="list__item    " href="tours/t17948.html" target="_blank" data-id="17948"
+                           title="5-Day Living Among Lions - Mid-Range">
+                            <div class="list__item--image__full">
 
-                        </div>
-                        <div style="background: #9dbff2;padding: 30px" class="col-6">
-                            <div style="margin: 0 auto;width: 100px;">
-                                <div>
-                                    <img  class="logosizeresp2" src="{{url('')}}/icons/music.png">
-                                </div>
-                            </div>
-                            <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">MUSIC</h5>
+                                <picture class="list__picture">
+                                    <!--[if IE 9]>
+                                    <video style="display: none;"><![endif]-->
+                                    <source
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Katavi_National_Park_021.jpg"
+                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">
+                                    <!--[if IE 9]></video><![endif]-->
+                                    <img
+                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg 1x"
+                                        class="lazyload" alt="5-Day Living Among Lions - Mid-Range"/>
+                                    <noscript>
+                                        <source
+                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Katavi_National_Park_021.jpg"
+                                            media="(min-width: 501px) and (max-width: 743px)">
+                                        <img
+                                            src="../cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg"
+                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x"/>
+                                    </noscript>
+                                </picture>
 
-                        </div>
-                    </div>
-                </div>
+                                <div class="holder-tourtitle">
+                                    <h2 class="serif tourtitle">5-Day Living Among Lions - Mid-Range</h2>
+                                </div>
+
+                            </div>
+                            <div class="list__item--data  matchheight ">
+
+                                <p class="price">
+                                    <b>$1,970</b>
+                                    to <b>$2,170</b> pp (USD)
+                                </p>
+
+
+                                <p class="desc">
+                                    <b>Tanzania:</b>
+                                    Private tour<span></span>
+                                    <nobr>Mid-range</nobr>
+                                    <span></span>Lodge & Tented Camp
+                                </p>
+
+                                <p class="visit"><b>You Visit:</b> Arusha <span>(Start)</span>, Lake Manyara NP,
+                                    Serengeti NP, Ngorongoro Crater, <span
+                                        class="nowrap">Arusha <span>(End)</span></span></p>
+                            </div>
+
+                            <div class="operator-snippet__data">
+                                <div class="opdata__image">
+                                    <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_1478192437.gif"
+                                        class="lazyload" alt="Unlimited Expeditions - The Soul of Tanzania"
+                                        title="Unlimited Expeditions - The Soul of Tanzania"/>
+                                </div>
+                                <p>
+                                    <b>
+                                        Unlimited Expeditions - The Soul of Tanzania
+
+                                    </b>
+                                </p>
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span
+                                        class="nowrap">229 Reviews</span></p>
+                            </div>
+
+
+                            <span class="favorite-save  " data-id="17948" data-type="tour"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt="Not in favorites"/>
+                                    </span>
+
+                        </a>
+                    </li>
+                    <li class="col   col-12 col-t-6 col-d-4   ">
+                        <a class="list__item    " href="tours/t12596.html" target="_blank" data-id="12596"
+                           title="4-Day Pearl of Africa Trip Including Gorilla Trekking">
+                            <div class="list__item--image__full">
+
+                                <picture class="list__picture">
+                                    <!--[if IE 9]>
+                                    <video style="display: none;"><![endif]-->
+                                    <source
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"
+                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">
+                                    <!--[if IE 9]></video><![endif]-->
+                                    <img
+                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg 1x"
+                                        class="lazyload" alt="4-Day Pearl of Africa Trip Including Gorilla Trekking"/>
+                                    <noscript>
+                                        <source
+                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"
+                                            media="(min-width: 501px) and (max-width: 743px)">
+                                        <img
+                                            src="../cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg"
+                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x"/>
+                                    </noscript>
+                                </picture>
+
+                                <div class="holder-tourtitle">
+                                    <h2 class="serif tourtitle">4-Day Pearl of Africa Trip Including Gorilla
+                                        Trekking</h2>
+                                </div>
+
+                            </div>
+                            <div class="list__item--data  matchheight ">
+
+                                <p class="price">
+                                    <b>$1,487</b>
+                                    pp (USD)
+                                </p>
+
+
+                                <p class="desc">
+                                    <b>Uganda:</b>
+                                    Private tour<span></span>Budget<span></span>Tented Camp & Resort
+                                </p>
+
+                                <p class="visit"><b>You Visit:</b> Entebbe <span>(Start)</span>, Lake Mburo NP, Bwindi
+                                    NP <span class="grey">(Gorillas)</span>, Lake Bunyonyi, <span class="nowrap">Entebbe Airport <span>(End)</span></span>
+                                </p>
+                            </div>
+
+                            <div class="operator-snippet__data">
+                                <div class="opdata__image">
+                                    <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo1_1499683350.gif"
+                                        class="lazyload" alt="Home To Africa Tours and Travel"
+                                        title="Home To Africa Tours and Travel"/>
+                                </div>
+                                <p>
+                                    <b>
+                                        Home To Africa Tours and Travel
+
+                                    </b>
+                                </p>
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span
+                                        class="nowrap">154 Reviews</span></p>
+                            </div>
+
+
+                            <span class="favorite-save  " data-id="12596" data-type="tour"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt="Not in favorites"/>
+                                    </span>
+
+                        </a>
+                    </li>
+                    <li class="col   col-12 col-t-6 col-d-4   ">
+                        <a class="list__item    " href="tours/t20511.html" target="_blank" data-id="20511"
+                           title="8-Day Migration Serengeti (Jun to Jul) Mid -Range">
+                            <div class="list__item--image__full">
+
+                                <picture class="list__picture">
+                                    <!--[if IE 9]>
+                                    <video style="display: none;"><![endif]-->
+                                    <source
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"
+                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">
+                                    <!--[if IE 9]></video><![endif]-->
+                                    <img
+                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg 1x"
+                                        class="lazyload" alt="8-Day Migration Serengeti (Jun to Jul) Mid -Range"/>
+                                    <noscript>
+                                        <source
+                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"
+                                            media="(min-width: 501px) and (max-width: 743px)">
+                                        <img
+                                            src="../cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg"
+                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x"/>
+                                    </noscript>
+                                </picture>
+
+                                <div class="holder-tourtitle">
+                                    <h2 class="serif tourtitle">8-Day Migration Serengeti (Jun to Jul) Mid -Range</h2>
+                                </div>
+
+                            </div>
+                            <div class="list__item--data  matchheight ">
+
+                                <p class="price">
+                                    <b>$2,920</b>
+                                    pp (USD)
+                                </p>
+
+
+                                <p class="desc">
+                                    <b>Tanzania:</b>
+                                    Private tour<span></span>
+                                    <nobr>Mid-range</nobr>
+                                    <span></span>Lodge & Tented Camp
+                                </p>
+
+                                <p class="visit"><b>You Visit:</b> Arusha <span>(Start)</span>, Lake Manyara NP,
+                                    Serengeti NP, Ngorongoro Highlands, Ngorongoro Crater, Tarangire NP, <span
+                                        class="nowrap">Arusha <span>(End)</span></span></p>
+                            </div>
+
+                            <div class="operator-snippet__data">
+                                <div class="opdata__image">
+                                    <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"
+                                        class="lazyload" alt="Lion King Adventures" title="Lion King Adventures"/>
+                                </div>
+                                <p>
+                                    <b>
+                                        Lion King Adventures
+
+                                    </b>
+                                </p>
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span
+                                        class="nowrap">333 Reviews</span></p>
+                            </div>
+
+
+                            <span class="favorite-save  " data-id="20511" data-type="tour"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt="Not in favorites"/>
+                                    </span>
+
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="row">
-                <div style="background: #6597e6;" class="col-4 resppaddingiconsmain">
-                    <div style="margin: 0 auto;width: 100px;">
-                        <div>
-                            <img src="{{url('')}}/icons/drama.png"class="logosizeresp2">
-                        </div>
+                <div class="col col-12">
+
+                    <div class="button-holder">
+                        <a class="btn btn--next btn--white btn--autowidth-t" href="tours.html"
+                           title="All 7,986 Safari Tours">All 7,986 Safari Tours</a>
                     </div>
-                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">DRAMATIC WORKS</h5>
-                </div>
-                <div style="background: #9ec9ff;" class="col-4 resppaddingiconsmain">
-                    <div style="margin: 0 auto;width: 100px;">
-                        <div>
-                            <img src="{{url('')}}/icons/book.png" class="logosizeresp2">
-                        </div>
-                    </div>
-                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">LITERATURE</h5>
-                </div>
-                <div style="background: #6597e6;" class="col-4 resppaddingiconsmain">
-                    <div style="margin: 0 auto;width: 100px;">
-                        <div>
-                            <img src="{{url('')}}/icons/software.png" class="logosizeresp2">
-                        </div>
-                    </div>
-                    <h5 class="respfontsizelogotext" style="color: white;text-align: center;margin-top: 20px">SOFTWARE</h5>
+
                 </div>
             </div>
         </div>
 
-    </div>
 
-    <div style="background: #f3f3f3;padding: 40px">
-        <h3 style="text-align: center;margin-top: 30px">WHY US</h3>
-        <div style="margin: 0 auto;max-width: 50px">
-            <div style="border-bottom: 3px solid #6b9ce8;width: 50px" >
-
-            </div>
-        </div>
-        <div class="container" style="margin-top: 60px;margin-bottom: 80px">
+        <div class="container container--main container--home-topratedoperators topratedoperators" role="main">
             <div class="row">
-                <div class="col-md-6">
-                   <p>
-                       CopyrightCover is composed of highly qualified experts from across the
-                       legal and DRM industries. With hundreds of happy customers and over
-                       25 years of combined team experience defending digital, conceptual,
-                       and intellectual property.
-                   </p>
+                <div class="col col-12">
+                    <h2 class="container--home-topratedoperators__title container--home__heading">Top Rated Tour
+                        Operators</h2>
                 </div>
-                <div class="col-md-6">
-                    <p>
-                        We have the expertise and experience to quickly resolve all types of
-                        infringement issues, but we also have the comprehension and
-                        capability necessary to prevent them from arising in the first place.
-                    </p>
+            </div>
+
+            <div class="row">
+                <div class="col col-12 col-t-4 col-d-3  ">
+                    <a href="p4494.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
+                       data-id="4494">
+
+                        <div class="topratedoperators__snippet__rank"><span>#1</span></div>
+
+                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
+                            <div class="operator_name">
+                                <h2>
+                                    Sino Africa Safari
+                                </h2>
+
+                            </div>
+                        </div>
+
+                        <div class="topratedoperators__snippet__head hide show-t col col-12">
+                            <picture>
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
+                                    class="operator-photo lazyload" title="Sino Africa Safari"
+                                    alt="Sino Africa Safari Photo"/>
+                                <noscript>
+                                    <img
+                                        src="../cloudfront.safaribookings.com/operators/photos/0a8a9799-%e7%bc%96%e8%be%91_%e5%89%af%e6%9c%ac_4494_5e4ecbaf30995.jpg"
+                                        title="Sino Africa Safari" alt="Sino Africa Safari Photo">
+                                </noscript>
+                            </picture>
+                            <div class="operator_name">
+                                <h2>
+                                    Sino Africa Safari
+                                </h2>
+                                <div class="rank show hide-t">
+                                    <i class="sbi sbi--medal medal"></i>
+                                    #1 of all tour operators
+                                </div>
+                            </div>
+                            <span class="favorite-save  " data-id="4494" data-type="operator"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt=""/>
+                                    </span>
+                        </div>
+
+                        <div class="topratedoperators__snippet__body col col-12">
+                            <div class="operator_logo">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
+                                    class="operator-logo lazyload" title="Sino Africa Safari"
+                                    alt="Sino Africa Safari Logo"/>
+                            </div>
+                            <div class="reviews txt--small">
+                                <div class="stars      " title="4.9 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <br class="hide show-t"/>
+                                443 Reviews
+                                <div class="txt--xgrey show hide-t">
+                                    <i class="sbi sbi--medal medal"></i>
+                                    <b>#1</b> of all tour operators
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col col-12 col-t-4 col-d-3  ">
+                    <a href="p209.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
+                       data-id="209">
+
+                        <div class="topratedoperators__snippet__rank"><span>#2</span></div>
+
+                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
+                            <div class="operator_name">
+                                <h2>
+                                    Pembury Tours
+                                </h2>
+
+                            </div>
+                        </div>
+
+                        <div class="topratedoperators__snippet__head hide show-t col col-12">
+                            <picture>
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"
+                                    class="operator-photo lazyload" title="Pembury Tours" alt="Pembury Tours Photo"/>
+                                <noscript>
+                                    <img
+                                        src="../cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"
+                                        title="Pembury Tours" alt="Pembury Tours Photo">
+                                </noscript>
+                            </picture>
+                            <div class="operator_name">
+                                <h2>
+                                    Pembury Tours
+                                </h2>
+                                <div class="rank show hide-t">
+                                    <i class="sbi sbi--medal-silver medal"></i>
+                                    #2 of all tour operators
+                                </div>
+                            </div>
+                            <span class="favorite-save  " data-id="209" data-type="operator"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt=""/>
+                                    </span>
+                        </div>
+
+                        <div class="topratedoperators__snippet__body col col-12">
+                            <div class="operator_logo">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"
+                                    class="operator-logo lazyload" title="Pembury Tours" alt="Pembury Tours Logo"/>
+                            </div>
+                            <div class="reviews txt--small">
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <br class="hide show-t"/>
+                                347 Reviews
+                                <div class="txt--xgrey show hide-t">
+                                    <i class="sbi sbi--medal-silver medal"></i>
+                                    <b>#2</b> of all tour operators
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col col-12 col-t-4 col-d-3  ">
+                    <a href="p2673.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
+                       data-id="2673">
+
+                        <div class="topratedoperators__snippet__rank"><span>#3</span></div>
+
+                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
+                            <div class="operator_name">
+                                <h2>
+                                    Lion King Adventures
+                                </h2>
+
+                            </div>
+                        </div>
+
+                        <div class="topratedoperators__snippet__head hide show-t col col-12">
+                            <picture>
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"
+                                    class="operator-photo lazyload" title="Lion King Adventures"
+                                    alt="Lion King Adventures Photo"/>
+                                <noscript>
+                                    <img
+                                        src="../cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"
+                                        title="Lion King Adventures" alt="Lion King Adventures Photo">
+                                </noscript>
+                            </picture>
+                            <div class="operator_name">
+                                <h2>
+                                    Lion King Adventures
+                                </h2>
+                                <div class="rank show hide-t">
+                                    <i class="sbi sbi--medal-bronze medal"></i>
+                                    #3 of all tour operators
+                                </div>
+                            </div>
+                            <span class="favorite-save  " data-id="2673" data-type="operator"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt=""/>
+                                    </span>
+                        </div>
+
+                        <div class="topratedoperators__snippet__body col col-12">
+                            <div class="operator_logo">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"
+                                    class="operator-logo lazyload" title="Lion King Adventures"
+                                    alt="Lion King Adventures Logo"/>
+                            </div>
+                            <div class="reviews txt--small">
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <br class="hide show-t"/>
+                                333 Reviews
+                                <div class="txt--xgrey show hide-t">
+                                    <i class="sbi sbi--medal-bronze medal"></i>
+                                    <b>#3</b> of all tour operators
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col col-12 col-t-4 col-d-3  hide show-d  ">
+                    <a href="p58.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
+                       data-id="58">
+
+                        <div class="topratedoperators__snippet__rank"><span>#4</span></div>
+
+                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
+                            <div class="operator_name">
+                                <h2>
+                                    Matoke Tours
+                                </h2>
+
+                            </div>
+                        </div>
+
+                        <div class="topratedoperators__snippet__head hide show-t col col-12">
+                            <picture>
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"
+                                    class="operator-photo lazyload" title="Matoke Tours" alt="Matoke Tours Photo"/>
+                                <noscript>
+                                    <img src="../cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"
+                                         title="Matoke Tours" alt="Matoke Tours Photo">
+                                </noscript>
+                            </picture>
+                            <div class="operator_name">
+                                <h2>
+                                    Matoke Tours
+                                </h2>
+                                <div class="rank show hide-t">
+                                    #4 of all tour operators
+                                </div>
+                            </div>
+                            <span class="favorite-save  " data-id="58" data-type="operator"
+                                  title="Add to your favorites list">
+                                        <img class="svg svg--shadowed"
+                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
+                                             alt=""/>
+                                    </span>
+                        </div>
+
+                        <div class="topratedoperators__snippet__body col col-12">
+                            <div class="operator_logo">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"
+                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"
+                                    class="operator-logo lazyload" title="Matoke Tours" alt="Matoke Tours Logo"/>
+                            </div>
+                            <div class="reviews txt--small">
+                                <div class="stars      " title="5 / 5">
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                    <i class="sbi sbi--star"></i>
+                                </div>
+                                <br class="hide show-t"/>
+                                316 Reviews
+                                <div class="txt--xgrey show hide-t">
+                                    <b>#4</b> of all tour operators
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-12">
+                    <div class="button-holder">
+                        <a class="btn btn--next btn--white btn--autowidth-t" href="top-rated-operators.html"
+                           title="All Top Rated Operators">All Top Rated Operators</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container container--main container--home-blog">
+            <div class="row">
+                <div class="col col-12 blockheader">
+                    <h2 class="container--home__heading">Latest Blog Posts</h2>
+                </div>
+            </div>
+
+            <div class="row list--posts">
+                <div class="col col-12 col-t-6 col-d-4  ">
+                    <a href="blog/coronavirus-outbreak.html" class="shadowed-box shadowed-box--hover post"
+                       title="The Impact of the Coronavirus Pandemic on the Safari Industry (May Update)">
+                        <picture>
+                            <!--[if IE 9]>
+                            <video style="display: none;"><![endif]-->
+                            <source
+                                data-srcset="https://www.safaribookings.com/blog/wp-content/uploads/2020/04/00-impact-coronavirus-pandemic-on-the-safari-industry-BW-600px-2-723x362.jpg"
+                                media="(min-width: 476px) and (max-width: 743px)" class="lazyload">
+                            <!--[if IE 9]></video><![endif]-->
+                            <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                data-src="https://www.safaribookings.com/blog/wp-content/uploads/2020/04/00-impact-coronavirus-pandemic-on-the-safari-industry-BW-600px-2-455x228.jpg"
+                                alt="The Impact of the Coronavirus Pandemic on the Safari Industry (May Update)"
+                                class="lazyload"/>
+                            <noscript>
+                                <source
+                                    srcset="https://www.safaribookings.com/blog/wp-content/uploads/2020/04/00-impact-coronavirus-pandemic-on-the-safari-industry-BW-600px-2-723x362.jpg"
+                                    media="(min-width: 476px) and (max-width: 743px)">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    src="blog/wp-content/uploads/2020/04/00-impact-coronavirus-pandemic-on-the-safari-industry-BW-600px-2-455x228.jpg"
+                                    alt="The Impact of the Coronavirus Pandemic on the Safari Industry (May Update)"/>
+                            </noscript>
+                        </picture>
+                        <h4 class="serif">The Impact of the Coronavirus Pandemic on the Safari Industry (May
+                            Update)</h4>
+                    </a>
+                </div>
+                <div class="col col-12 col-t-6 col-d-4  ">
+                    <a href="blog/top-10-best-kruger-park-safari-lodges-camps.html"
+                       class="shadowed-box shadowed-box--hover post"
+                       title="Top 10 Best Kruger Park Safari Lodges &amp; Camps">
+                        <picture>
+                            <!--[if IE 9]>
+                            <video style="display: none;"><![endif]-->
+                            <source
+                                data-srcset="https://www.safaribookings.com/blog/wp-content/uploads/2021/05/00-top-10-best-kruger-park-safari-lodges-and-camps-BW-header1200px-723x362.jpg"
+                                media="(min-width: 476px) and (max-width: 743px)" class="lazyload">
+                            <!--[if IE 9]></video><![endif]-->
+                            <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                data-src="https://www.safaribookings.com/blog/wp-content/uploads/2021/05/00-top-10-best-kruger-park-safari-lodges-and-camps-BW-header1200px-455x228.jpg"
+                                alt="Top 10 Best Kruger Park Safari Lodges &amp; Camps" class="lazyload"/>
+                            <noscript>
+                                <source
+                                    srcset="https://www.safaribookings.com/blog/wp-content/uploads/2021/05/00-top-10-best-kruger-park-safari-lodges-and-camps-BW-header1200px-723x362.jpg"
+                                    media="(min-width: 476px) and (max-width: 743px)">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    src="blog/wp-content/uploads/2021/05/00-top-10-best-kruger-park-safari-lodges-and-camps-BW-header1200px-455x228.jpg"
+                                    alt="Top 10 Best Kruger Park Safari Lodges &amp; Camps"/>
+                            </noscript>
+                        </picture>
+                        <h4 class="serif">Top 10 Best Kruger Park Safari Lodges &amp; Camps</h4>
+                    </a>
+                </div>
+                <div class="col col-12 col-t-6 col-d-4  hide show-d  ">
+                    <a href="blog/where-to-see-giraffes-in-africa-10-best-places-to-go.html"
+                       class="shadowed-box shadowed-box--hover post"
+                       title="Where to See Giraffes in Africa – 10 Best Places to Go">
+                        <picture>
+                            <!--[if IE 9]>
+                            <video style="display: none;"><![endif]-->
+                            <source
+                                data-srcset="https://www.safaribookings.com/blog/wp-content/uploads/2021/04/00-where-to-see-giraffes-in-africa-BW-header1200px-723x362.jpg"
+                                media="(min-width: 476px) and (max-width: 743px)" class="lazyload">
+                            <!--[if IE 9]></video><![endif]-->
+                            <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                data-src="https://www.safaribookings.com/blog/wp-content/uploads/2021/04/00-where-to-see-giraffes-in-africa-BW-header1200px-455x228.jpg"
+                                alt="Where to See Giraffes in Africa – 10 Best Places to Go" class="lazyload"/>
+                            <noscript>
+                                <source
+                                    srcset="https://www.safaribookings.com/blog/wp-content/uploads/2021/04/00-where-to-see-giraffes-in-africa-BW-header1200px-723x362.jpg"
+                                    media="(min-width: 476px) and (max-width: 743px)">
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+                                    src="blog/wp-content/uploads/2021/04/00-where-to-see-giraffes-in-africa-BW-header1200px-455x228.jpg"
+                                    alt="Where to See Giraffes in Africa – 10 Best Places to Go"/>
+                            </noscript>
+                        </picture>
+                        <h4 class="serif">Where to See Giraffes in Africa – 10 Best Places to Go</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-12">
+                    <div class="button-holder">
+                        <a class="btn btn--next btn--white btn--autowidth-t" href="blog.html" title="All Blog Posts">All
+                            Blog Posts</a>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container" style="max-width: 1100px;margin-top: -80px">
-        <div class="row">
-            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
-                <div style="margin: 0 auto;max-width: 120px">
-                    <img src="{{url('')}}/icons/tick.png" style="height: 120px;width: 120px">
-                </div>
-                <h5 style="text-align: center;margin-top: 20px">
-                    Don’t Wait To Protect Yourself
-                </h5>
-                <p>
-                    Let CopyrightCover be your shield.
-                </p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
-                <div style="margin: 0 auto;max-width: 120px">
-                    <img src="{{url('')}}/icons/order.png" style="height: 120px;width: 120px">
-                </div>
-                <h5 style="text-align: center;margin-top: 20px">
-                    Legal Disputes Are Inconvenient,
-                    Difficult, And Costly.
-                </h5>
-                <p>
-                    Copyrighting your work is fast,
-                    easy, and affordable.
-                </p>
-            </div>
-            <div class="col-md-1"></div>
 
-            <div class="col-md-3" style=";margin-top:10px;padding: 20px;background: white;box-shadow: 10px 10px 10px lightgrey;border-radius: 5px">
-                <div style="margin: 0 auto;max-width: 120px">
-                    <img src="{{url('')}}/icons/email.png" style="height: 120px;width: 120px">
-                </div>
-                <h5 style="text-align: center;margin-top: 20px">
-                    Call Or Email Us Today For
-                    Information Or A No-obligation
-                    Consultation To Learn
-                    What We Can Do For You.
-                </h5>
-            </div>
-            <div class="col-md-1"></div>
-
-        </div>
-    </div>
-
-    <div class="container" style="margin-top: 150px">
-        <h3 style="text-align: center;margin-top: 30px">ADVANTAGES WE OFFER</h3>
-        <div style="margin: 0 auto;max-width: 100px">
-            <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <section class="sevices-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8">
-                    <div class="section-title text-center">
-{{--                        <span>WHAT CAN BE PROTECTED BY COPYRIGHT?</span>--}}
-{{--                        <h3 class="title"><span>Get Best</span> Advertiser <span>In Your Side Pocket</span></h3>--}}
-                    </div> <!-- SECTION TITLE -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center" style="margin-top: 80px">
-                <div class="col-lg-4 col-md-6 col-sm-9" style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/lock.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">Confidential Data Storage Vault</h6>
-                            <p style="text-align: center;padding: 10px">All your work can be stored in our
-                                Secure Vault and downloaded at any
-                                time.</p>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/laptop.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">Protecting Yourself From
-                                Content Thieves</h6>
-                            <p style="text-align: center;padding: 10px">
-                                Our vault is not only secure, it’s
-                                confidential, marked, and timestamped,
-                                insulating it against hostile actors.
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/case.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">
-                                Professional Takedown Services
-                            </h6>
-                            <p style="text-align: center;padding: 10px">
-                                We provide the fastest takedown service
-                                available in the UK to rapidly eliminate any
-                                and all content infringements, halting
-                                unauthorized distribution and spread as
-                                rapidly as possible.
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="row justify-content-center" style="margin-top: 70px">
-                <div class="col-lg-4 col-md-6 col-sm-9"   style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/star.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">
-                                Instant Digital Certificates
-                            </h6>
-                            <p style="text-align: center;padding: 10px">
-                                Free, internationally accepted digital
-                                copyright certificates
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style=";border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/c.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">
-                                Free Use Of Our Copyright Logo
-                                Available For Use
-                            </h6>
-                            <p style="text-align: center;padding: 10px">
-                                Warn off potential infringements with
-                                our copyright protection logo.
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-9"  style="margin-top: 10px">
-                    <div class="sevices-item servicemargin" style="border: 3px solid #9dbff2">
-                        <div style="margin-top: -45px">
-                            <div style="margin: 0 auto;max-width: 100px;background: #9dbff2;padding: 20px;border-radius: 10px;">
-                                <img src="{{url('')}}/icons/shield.png" style="width: 80px;height: 50px">
-                            </div>
-                        </div>
-                        <div style="margin-top: 50px">
-                            <h6 style="color: #9dbff2;text-align: center;padding: 10px">
-                                Copyright Protection Active
-                                In Under 5 Minutes.
-                            </h6>
-                            <p style="text-align: center;padding: 10px">
-                                Our nearly instant copyright certificates
-                                mean your content will never be at risk of
-                                dispute.
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div style="padding: 80px">
-        <div style="margin: 0 auto;max-width: 1000px">
-            <h3 style="text-align: center;margin-top: 30px;">OUR SIMPLE PROCESS</h3>
-            <div style="margin: 0 auto;max-width: 100px">
-                <div style="border-bottom: 3px solid #6b9ce8;width: 100px" >
-
-                </div>
-            </div>
-            <div class="row" style="margin-top: 100px">
-                <div class="col-lg-3 col-md-12">
-                    <div class="work-process">
-                        <div class="box-loader"> <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="step-num-box">
-                            <div class="step-icon"><span><i class="fa fa-user"></i></span>
-                            </div>
-                            <div class="step-num">01</div>
-                        </div>
-                        <div class="step-desc">
-                            <h5>Fill in your details</h5>
-{{--                            <p class="mb-0">Enter your keyword, any optional sub keywords, your article length, and any other requirements into the Article Forge system.</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 md-mt-5">
-                    <div class="work-process">
-                        <div class="box-loader"> <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="step-num-box">
-                            <div class="step-icon"><span><i class="fa fa-upload"></i></span>
-                            </div>
-                            <div class="step-num">02</div>
-                        </div>
-                        <div class="step-desc">
-                            <h5 >Upload your work</h5>
-{{--                            <p class="mb-0">During those 60 seconds, Article Forge will intelligently write you a high quality, completely unique article.</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 md-mt-5">
-                    <div class="work-process">
-                        <div class="step-num-box">
-                            <div class="step-icon"><span><i class="fa fa-credit-card"></i></span>
-                            </div>
-                            <div class="step-num">03</div>
-                        </div>
-                        <div class="step-desc">
-                            <h5>Pay subscription fee</h5>
-{{--                            <p class="mb-0">You have your article and are ready to use it wherever and however you want!</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12 md-mt-5">
-                    <div class="work-process">
-                        <div class="step-num-box">
-                            <div class="step-icon"><span><i class="fa fa-star"></i></span>
-                            </div>
-                            <div class="step-num">04</div>
-                        </div>
-                        <div class="step-desc">
-                            <h5 >Copyright Starts</h5>
-{{--                            <p class="mb-0">You have your article and are ready to use it wherever and however you want!</p>--}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="margin: 0 auto;max-width: 200px;margin-top: 100px;margin-bottom: 100px">
-                <a class="main-btn btnbottommarginleft" style="background: #9dbff2;color: white" href="{{url('register')}}">COPYRIGHT YOUR WORK NOW</a>
-            </div>
-        </div>
-
-    </div>
-    <div style="background: #9dbff2;padding: 80px">
-        <div style="margin: 0 auto;max-width: 800px">
-            <h5 style="text-align: center;color: white">
-                With £19.99 per year Copyright your work today and receive 5 free certificate tokens,
-                with 30 day money back guarantee included.
-            </h5>
-            <div style="margin: 0 auto;max-width: 200px;margin-top: 50px;margin-bottom: 100px">
-                <a class="main-btn btnbottommarginlef2t" style="background: white;color: #9dbff2" href="{{url('register')}}">COPYRIGHT YOUR WORK</a>
-            </div>
-        </div>
-
-    </div>
-
-{{--    <div id="video-overlay" class="video-overlay">--}}
-{{--        <a class="video-overlay-close">&times;</a>--}}
-{{--    </div>--}}
-
-
-{{--    <script>--}}
-{{--        $('#play-video').on('click', function(e){--}}
-{{--            e.preventDefault();--}}
-{{--            $('#video-overlay').addClass('open');--}}
-{{--            $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');--}}
-{{--        });--}}
-
-{{--        $('.video-overlay, .video-overlay-close').on('click', function(e){--}}
-{{--            e.preventDefault();--}}
-{{--            close_video();--}}
-{{--        });--}}
-
-{{--        $(document).keyup(function(e){--}}
-{{--            if(e.keyCode === 27) { close_video(); }--}}
-{{--        });--}}
-
-{{--        function close_video() {--}}
-{{--            $('.video-overlay.open').removeClass('open').find('iframe').remove();--}}
-{{--        };--}}
-{{--    </script>--}}
+    </main>
 @endsection

@@ -26,6 +26,41 @@ use services\email_services\SendEmailService;
 
 class AuthController extends Controller
 {
+
+    public function operators(){
+        $users = User::all();
+        foreach ($users as $user){
+            $user->offices = CompanyOffice::where('user_id',$user->id)->get();
+            $user->destinations = CompanyDestinations::where('user_id',$user->id)->get();
+        }
+        return view('operators')->with(['users' => $users]);
+    }
+
+    public function viewUserFile($id){
+        $file = User::where('id', $id)->first();
+        $file = base_path('/data') . '/user-files' . '/' . $file->profile_pic;
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        return readfile($file);
+    }
+
+    public function viewUserCompanyFile($id){
+        $file = User::where('id', $id)->first();
+        $file = base_path('/data') . '/user-files' . '/' . $file->company_logo;
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        return readfile($file);
+    }
+
+    public function viewOperatorProfile($id){
+        $user = User::where('id', $id)->first();
+        $user->offices = CompanyOffice::where('user_id', $user->id)->get();
+        $user->destinations = CompanyDestinations::where('user_id', $user->id)->get();
+        return view('operators-profile')->with(['user' => $user]);
+    }
+
     public function signup(Request $request)
     {
         try {

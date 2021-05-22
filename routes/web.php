@@ -27,7 +27,10 @@ Route::get('/', function () {
 //Route::get('show-image/{fileId}', "DashboardController@showImage");
 //Route::get('about', "AuthController@about");
 //Route::get('user-agreement', "AuthController@userAgreement");
-//Route::get('privacy-policy', "AuthController@privacyPolicy");
+Route::get('operators', "AuthController@operators");
+Route::get('view-user-file/{id}', "AuthController@viewUserFile");
+Route::get('view-user-company-file/{id}', "AuthController@viewUserCompanyFile");
+Route::get('operator-profile/{id}', "AuthController@viewOperatorProfile");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();

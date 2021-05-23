@@ -5022,146 +5022,146 @@
 @yield('content')
 <!--====== FOOTER PART START ======-->
 
-    <footer class="expertbar hide-p">
-        <div class="container">
-            <div class="row">
-                <div class="col col-12 col-d-10 expertbar__top">
-                    <h2><strong>SafariBookings Experts</strong></h2><i class="expertbar__subtext">Our <a
-                            href="experts.html" title="Our 24 award-winning experts">24 award-winning experts</a> contribute
-                        to our detailed travel guides, and have written more than 1,000 expert reviews.</i>
-                    <span class="expertbar__banner">
-                            <picture>
-                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif"
-                                     class="expertbar__banner-mark mark"
-                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"
-                                     alt="SafariBookings" title="SafariBookings">
-                            </picture>
-                        </span>
-                </div>
-            </div>
-            <div class="row expertbar__experts">
-                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4 " data-expertid="14">
-                    <div class="expert  matchheight  ">
-                        <div class="expert__photo">
-                            <div>
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Stephen_Cunliffe.jpg"
-                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Stephen_Cunliffe.jpg 2x"
-                                     class="expert-photo expert__photo-image placeholder lazyload"
-                                     alt="Stephen Cunliffe">
-                            </div>
-                            <span></span>
-                            <i>Expert</i>
-                        </div>
-                        <h3><a href="experts/stephen-cunliffe.html" title="Bio &amp; Reviews of Stephen Cunliffe">Stephen
-                                Cunliffe</a></h3>
-                        <div class="country-with-flag  " title="South Africa">
-                            <svg class="country-with-flag__flag" data-role="svg-sprite">
-                                <title>South Africa</title>
-                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>
-                            </svg>
-                            <span class="txt--grey">
-                            ZA
-                    </span>
-                        </div>
-                        <div class="expert__reviews">
-                            <i class="sbi sbi--star"></i>
-                            <span class="txt--grey">87 Reviews</span>
-                        </div>
-                        <p>Stephen is a travel writer and avid conservationist whose work appears in prestigious
-                            magazines such as Africa Geographic and Travel Africa.</p>
-                        &rsaquo;
-                        <a href="experts/stephen-cunliffe.html" class="hide show-ti"
-                           title="Full Bio &amp; Reviews of Stephen Cunliffe">
-                            Full Bio &amp; Reviews
-                        </a>
-                        <a href="experts.html" class="hide-t" title="All 24 Experts">
-                            <b>All 24 Experts</b>
-                        </a>
-                    </div>
-                </div>
-                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-t " data-expertid="25">
-                    <div class="expert  matchheight  ">
-                        <div class="expert__photo">
-                            <div>
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Heather_Richardson.jpg"
-                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Heather_Richardson.jpg 2x"
-                                     class="expert-photo expert__photo-image placeholder lazyload"
-                                     alt="Heather Richardson">
-                            </div>
-                            <span></span>
-                            <i>Expert</i>
-                        </div>
-                        <h3><a href="experts/heather-richardson.html" title="Bio &amp; Reviews of Heather Richardson">Heather
-                                Richardson</a></h3>
-                        <div class="country-with-flag  " title="South Africa">
-                            <svg class="country-with-flag__flag" data-role="svg-sprite">
-                                <title>South Africa</title>
-                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>
-                            </svg>
-                            <span class="txt--grey">
-                            ZA
-                    </span>
-                        </div>
-                        <div class="expert__reviews">
-                            <i class="sbi sbi--star"></i>
-                            <span class="txt--grey">11 Reviews</span>
-                        </div>
-                        <p>Heather is a British travel / conservation journalist, and has written for publications and
-                            broadcasters such as the BBC, Departures, the Telegraph and the Sunday Times.</p>
-                        &rsaquo;
-                        <a href="experts/heather-richardson.html" class="hide show-ti"
-                           title="Full Bio &amp; Reviews of Heather Richardson">
-                            Full Bio &amp; Reviews
-                        </a>
-                        <a href="experts.html" class="hide-t" title="All 24 Experts">
-                            <b>All 24 Experts</b>
-                        </a>
-                    </div>
-                </div>
-                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-d " data-expertid="9">
-                    <div class="expert  matchheight  ">
-                        <div class="expert__photo">
-                            <div>
-                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Melissa_Shales.jpg"
-                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Melissa_Shales.jpg 2x"
-                                     class="expert-photo expert__photo-image placeholder lazyload" alt="Melissa Shales">
-                            </div>
-                            <span></span>
-                            <i>Expert</i>
-                        </div>
-                        <h3><a href="experts/melissa-shales.html" title="Bio &amp; Reviews of Melissa Shales">Melissa
-                                Shales</a></h3>
-                        <div class="country-with-flag  " title="United Kingdom">
-                            <svg class="country-with-flag__flag" data-role="svg-sprite">
-                                <title>United Kingdom</title>
-                                <use xlink:href="img/flags/flags-countries-reviewers.svg#gb"></use>
-                            </svg>
-                            <span class="txt--grey">
-                            UK
-                    </span>
-                        </div>
-                        <div class="expert__reviews">
-                            <i class="sbi sbi--star"></i>
-                            <span class="txt--grey">42 Reviews</span>
-                        </div>
-                        <p>Melissa is an award winning travel writer for Fodors, Frommers and Insight, including guides
-                            to Tanzania, Kenya, Zimbabwe and South Africa.</p>
-                        &rsaquo;
-                        <a href="experts/melissa-shales.html" class="hide show-ti"
-                           title="Full Bio &amp; Reviews of Melissa Shales">
-                            Full Bio &amp; Reviews
-                        </a>
-                        <a href="experts.html" class="hide-t" title="All 24 Experts">
-                            <b>All 24 Experts</b>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+{{--    <footer class="expertbar hide-p">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col col-12 col-d-10 expertbar__top">--}}
+{{--                    <h2><strong>SafariBookings Experts</strong></h2><i class="expertbar__subtext">Our <a--}}
+{{--                            href="experts.html" title="Our 24 award-winning experts">24 award-winning experts</a> contribute--}}
+{{--                        to our detailed travel guides, and have written more than 1,000 expert reviews.</i>--}}
+{{--                    <span class="expertbar__banner">--}}
+{{--                            <picture>--}}
+{{--                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif"--}}
+{{--                                     class="expertbar__banner-mark mark"--}}
+{{--                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"--}}
+{{--                                     alt="SafariBookings" title="SafariBookings">--}}
+{{--                            </picture>--}}
+{{--                        </span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row expertbar__experts">--}}
+{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4 " data-expertid="14">--}}
+{{--                    <div class="expert  matchheight  ">--}}
+{{--                        <div class="expert__photo">--}}
+{{--                            <div>--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
+{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Stephen_Cunliffe.jpg"--}}
+{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Stephen_Cunliffe.jpg 2x"--}}
+{{--                                     class="expert-photo expert__photo-image placeholder lazyload"--}}
+{{--                                     alt="Stephen Cunliffe">--}}
+{{--                            </div>--}}
+{{--                            <span></span>--}}
+{{--                            <i>Expert</i>--}}
+{{--                        </div>--}}
+{{--                        <h3><a href="experts/stephen-cunliffe.html" title="Bio &amp; Reviews of Stephen Cunliffe">Stephen--}}
+{{--                                Cunliffe</a></h3>--}}
+{{--                        <div class="country-with-flag  " title="South Africa">--}}
+{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
+{{--                                <title>South Africa</title>--}}
+{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>--}}
+{{--                            </svg>--}}
+{{--                            <span class="txt--grey">--}}
+{{--                            ZA--}}
+{{--                    </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="expert__reviews">--}}
+{{--                            <i class="sbi sbi--star"></i>--}}
+{{--                            <span class="txt--grey">87 Reviews</span>--}}
+{{--                        </div>--}}
+{{--                        <p>Stephen is a travel writer and avid conservationist whose work appears in prestigious--}}
+{{--                            magazines such as Africa Geographic and Travel Africa.</p>--}}
+{{--                        &rsaquo;--}}
+{{--                        <a href="experts/stephen-cunliffe.html" class="hide show-ti"--}}
+{{--                           title="Full Bio &amp; Reviews of Stephen Cunliffe">--}}
+{{--                            Full Bio &amp; Reviews--}}
+{{--                        </a>--}}
+{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
+{{--                            <b>All 24 Experts</b>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-t " data-expertid="25">--}}
+{{--                    <div class="expert  matchheight  ">--}}
+{{--                        <div class="expert__photo">--}}
+{{--                            <div>--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
+{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Heather_Richardson.jpg"--}}
+{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Heather_Richardson.jpg 2x"--}}
+{{--                                     class="expert-photo expert__photo-image placeholder lazyload"--}}
+{{--                                     alt="Heather Richardson">--}}
+{{--                            </div>--}}
+{{--                            <span></span>--}}
+{{--                            <i>Expert</i>--}}
+{{--                        </div>--}}
+{{--                        <h3><a href="experts/heather-richardson.html" title="Bio &amp; Reviews of Heather Richardson">Heather--}}
+{{--                                Richardson</a></h3>--}}
+{{--                        <div class="country-with-flag  " title="South Africa">--}}
+{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
+{{--                                <title>South Africa</title>--}}
+{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>--}}
+{{--                            </svg>--}}
+{{--                            <span class="txt--grey">--}}
+{{--                            ZA--}}
+{{--                    </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="expert__reviews">--}}
+{{--                            <i class="sbi sbi--star"></i>--}}
+{{--                            <span class="txt--grey">11 Reviews</span>--}}
+{{--                        </div>--}}
+{{--                        <p>Heather is a British travel / conservation journalist, and has written for publications and--}}
+{{--                            broadcasters such as the BBC, Departures, the Telegraph and the Sunday Times.</p>--}}
+{{--                        &rsaquo;--}}
+{{--                        <a href="experts/heather-richardson.html" class="hide show-ti"--}}
+{{--                           title="Full Bio &amp; Reviews of Heather Richardson">--}}
+{{--                            Full Bio &amp; Reviews--}}
+{{--                        </a>--}}
+{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
+{{--                            <b>All 24 Experts</b>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-d " data-expertid="9">--}}
+{{--                    <div class="expert  matchheight  ">--}}
+{{--                        <div class="expert__photo">--}}
+{{--                            <div>--}}
+{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
+{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Melissa_Shales.jpg"--}}
+{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Melissa_Shales.jpg 2x"--}}
+{{--                                     class="expert-photo expert__photo-image placeholder lazyload" alt="Melissa Shales">--}}
+{{--                            </div>--}}
+{{--                            <span></span>--}}
+{{--                            <i>Expert</i>--}}
+{{--                        </div>--}}
+{{--                        <h3><a href="experts/melissa-shales.html" title="Bio &amp; Reviews of Melissa Shales">Melissa--}}
+{{--                                Shales</a></h3>--}}
+{{--                        <div class="country-with-flag  " title="United Kingdom">--}}
+{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
+{{--                                <title>United Kingdom</title>--}}
+{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#gb"></use>--}}
+{{--                            </svg>--}}
+{{--                            <span class="txt--grey">--}}
+{{--                            UK--}}
+{{--                    </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="expert__reviews">--}}
+{{--                            <i class="sbi sbi--star"></i>--}}
+{{--                            <span class="txt--grey">42 Reviews</span>--}}
+{{--                        </div>--}}
+{{--                        <p>Melissa is an award winning travel writer for Fodors, Frommers and Insight, including guides--}}
+{{--                            to Tanzania, Kenya, Zimbabwe and South Africa.</p>--}}
+{{--                        &rsaquo;--}}
+{{--                        <a href="experts/melissa-shales.html" class="hide show-ti"--}}
+{{--                           title="Full Bio &amp; Reviews of Melissa Shales">--}}
+{{--                            Full Bio &amp; Reviews--}}
+{{--                        </a>--}}
+{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
+{{--                            <b>All 24 Experts</b>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </footer>--}}
 
     <footer>
 
@@ -5486,52 +5486,52 @@
             </div>
         </div>
 
-        <div class="container container--main container--home-featured featuredbar hide show-t">
-            <div class="inner">
-                <b>As Featured In</b>
-                <div class="logos">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-footer.gif"
-                         class="lazyload" alt="SafariBookings featured in The Times London"
-                         title="SafariBookings featured in The Times London" width="80" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-lat.png"
-                         class="lazyload" alt="SafariBookings featured in Los Angeles Times"
-                         title="SafariBookings featured in Los Angeles Times" width="63" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-tam.png"
-                         class="lazyload" alt="SafariBookings featured in Travel Africa Magazine"
-                         title="SafariBookings featured in Travel Africa Magazine" width="121" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-sa.png"
-                         class="lazyload" alt="SafariBookings featured in The Times Johannesburg"
-                         title="SafariBookings featured in The Times Johannesburg" width="108" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-cnn-footer.gif"
-                         class="lazyload" alt="SafariBookings featured in CNN Travel"
-                         title="SafariBookings featured in CNN Travel" width="56" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-australian.png"
-                         class="lazyload" alt="SafariBookings featured in The Australian"
-                         title="SafariBookings featured in The Australian" width="112" height="50"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
-                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-chicago.png"
-                         class="lazyload" alt="SafariBookings featured in Chicago Tribune"
-                         title="SafariBookings featured in Chicago Tribune" width="78" height="50"/>
-                </div>
-            </div>
-        </div>
+{{--        <div class="container container--main container--home-featured featuredbar hide show-t">--}}
+{{--            <div class="inner">--}}
+{{--                <b>As Featured In</b>--}}
+{{--                <div class="logos">--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-footer.gif"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in The Times London"--}}
+{{--                         title="SafariBookings featured in The Times London" width="80" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-lat.png"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in Los Angeles Times"--}}
+{{--                         title="SafariBookings featured in Los Angeles Times" width="63" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-tam.png"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in Travel Africa Magazine"--}}
+{{--                         title="SafariBookings featured in Travel Africa Magazine" width="121" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-sa.png"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in The Times Johannesburg"--}}
+{{--                         title="SafariBookings featured in The Times Johannesburg" width="108" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-cnn-footer.gif"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in CNN Travel"--}}
+{{--                         title="SafariBookings featured in CNN Travel" width="56" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-australian.png"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in The Australian"--}}
+{{--                         title="SafariBookings featured in The Australian" width="112" height="50"/>--}}
+{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-chicago.png"--}}
+{{--                         class="lazyload" alt="SafariBookings featured in Chicago Tribune"--}}
+{{--                         title="SafariBookings featured in Chicago Tribune" width="78" height="50"/>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <div class="copyright  ">
             <div class="container">
                 <div class="row">
                     <div class="col col-12">
                         <p itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-                            <picture>
-                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif" class="mark"
-                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"
-                                     alt="SafariBookings" title="SafariBookings">
-                            </picture>
+{{--                            <picture>--}}
+{{--                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif" class="mark"--}}
+{{--                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"--}}
+{{--                                     alt="SafariBookings" title="SafariBookings">--}}
+{{--                            </picture>--}}
                             Copyright &copy; 2021 <span itemprop="name">SafariBookings</span>. All Rights Reserved.
                         </p>
                     </div>

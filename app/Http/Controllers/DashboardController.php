@@ -46,7 +46,9 @@ class DashboardController extends Controller
             $item->routes = Routes::where('tour_id', $item->id)->get();
             $item->user = User::where('id', $item->user_id)->first();
         }
-        return view('welcome')->with(['tours' => $tours]);
+        $operators = \App\User::limit(4)->get();
+
+        return view('welcome')->with(['tours' => $tours, 'operators' => $operators]);
     }
 
     public function tours()

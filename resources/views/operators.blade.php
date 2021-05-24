@@ -696,7 +696,7 @@
                     </div>
                     <ul class="row list__snippets">
                         @foreach($users as $user)
-                        <li class="col col-12 list__item   reload  " data-id="1322">
+                        <li class="col col-12 list__item" data-id="1322">
                             <script type="text/javascript">if (!filterbyhash) {
                                     document.querySelector('li[data-id="1322"]').classList.remove('reload');
                                 } </script>

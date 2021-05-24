@@ -4668,7 +4668,7 @@
                     <span class="txt header__icon-desc">Menu</span>
                 </button>
                 <div class="col col-6 col-t-3 col-p-12">
-                    <a href="index.html" title="SafariBookings.com">
+                    <a href="{{url('/')}}" title="SafariBookings.com">
                             <h2 style="padding-top: 15px;color: white">Safari Bookings</h2>
 {{--                            <img src="../cfstatic.safaribookings.com/img/logos/logo-173x22.png"--}}
 {{--                                 srcset="https://cfstatic.safaribookings.com/img/logos/logo-173x22@2x.png 2x"--}}
@@ -4685,101 +4685,101 @@
                                         <a class="nav-t__link nav-t__sub-link" href="tours/botswana.html"
                                            title="Botswana">Botswana</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (459)
+                        ({{\App\Tours::where('country_name', 'Botswana')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/dr-congo.html"
                                            title="Congo (DRC)">Congo (DRC)</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (21)
+                        ({{\App\Tours::where('country_name', 'Congo,Democratic Republic')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/ethiopia.html"
                                            title="Ethiopia">Ethiopia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (34)
+                        ({{\App\Tours::where('country_name', 'Ethiopia')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/kenya.html" title="Kenya">Kenya</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (2,227)
+                        ({{\App\Tours::where('country_name', 'Kenya')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/madagascar.html"
                                            title="Madagascar">Madagascar</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (21)
+                        ({{\App\Tours::where('country_name', 'Madagascar')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/malawi.html" title="Malawi">Malawi</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (34)
+                        ({{\App\Tours::where('country_name', 'Malawi')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/mozambique.html"
                                            title="Mozambique">Mozambique</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (36)
+                        ({{\App\Tours::where('country_name', 'Mozambique')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/namibia.html"
                                            title="Namibia">Namibia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (224)
+                        ({{\App\Tours::where('country_name', 'Namibia')->count()}})
                     </span>
                                     </li>
 
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/rwanda.html" title="Rwanda">Rwanda</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (197)
+                        ({{\App\Tours::where('country_name', 'Rwanda')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/south-africa.html"
                                            title="South Africa">South Africa</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (678)
+                        ({{\App\Tours::where('country_name', 'South Africa')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/swaziland.html"
                                            title="Swaziland">Swaziland</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (12)
+                        ({{\App\Tours::where('country_name', 'Swaziland')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/tanzania.html"
                                            title="Tanzania">Tanzania</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (3,140)
+                        ({{\App\Tours::where('country_name', 'Tanzania')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/uganda.html" title="Uganda">Uganda</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (1,113)
+                        ({{\App\Tours::where('country_name', 'Uganda')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/zambia.html" title="Zambia">Zambia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (132)
+                        ({{\App\Tours::where('country_name', 'Zambia')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" href="tours/zimbabwe.html"
                                            title="Zimbabwe">Zimbabwe</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        (181)
+                        ({{\App\Tours::where('country_name', 'Zimbabwe')->count()}})
                     </span>
                                     </li>
 
@@ -4787,7 +4787,7 @@
                                         <a class="nav-t__link nav-t__sub-link" href="tours.html"
                                            title="All Safaris & Tours">All Safaris &amp; Tours</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                    (7,986)
+                    ({{\App\Tours::all()->count()}})
                 </span>
                                     </li>
 

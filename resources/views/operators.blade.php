@@ -710,13 +710,13 @@
                                 <div class="hide-t list__item--image__full  ">
                                     <picture>
                                         <img
-                                            src="{{url('view-user-file')}}/{{$user->id}}"
-                                            srcset="{{url('view-user-file')}}/{{$user->id}}"
+                                            src="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
+                                            srcset="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
                                             alt="{{$user->company_name}}"/>
                                         <noscript>
                                             <img
-                                                src="{{url('view-user-file')}}/{{$user->id}}"
-                                                srcset="{{url('view-user-file')}}/{{$user->id}}"
+                                                src="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
+                                                srcset="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
                                                 title="{{$user->company_name}}"
                                                 alt="{{$user->company_name}}">
                                         </noscript>
@@ -740,13 +740,13 @@
                                     <div class="picture-frame">
                                         <div>
                                             <img
-                                                src="{{url('view-user-file')}}/{{$user->id}}"
-                                                srcset="{{url('view-user-file')}}/{{$user->id}}"
+                                                src="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
+                                                srcset="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
                                                 title="{{$user->company_name}}"
                                                 alt="{{$user->company_name}}"/>
                                             <noscript>
                                                 <img
-                                                    src="{{url('view-user-file')}}/{{$user->id}}"
+                                                    src="{{env('OPERATOR_URL')}}/view-user-file/{{$user->id}}"
                                                     title=" {{$user->company_name}}"
                                                     alt=" {{$user->company_name}}">
                                             </noscript>
@@ -820,7 +820,7 @@
                                 </div>
                                 <div class="col col-0 col-t-2-5 col-d-3 logo-holder">
                                     <img
-                                        src="{{url('view-user-company-file')}}/{{$user->id}}"
+                                        src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$user->id}}"
                                         class="operator-logo" title="{{$user->company_name}}"
                                         alt="{{$user->company_name}}"/>
                                 </div>

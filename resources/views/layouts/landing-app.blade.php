@@ -4798,7 +4798,7 @@
                                     & Parks</a>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="operators.html" class="nav-t__link nav-operators" title="Tour Operators"><span>Tour </span>Operators</a>
+                                <a href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span>Tour </span>Operators</a>
                             </li>
                         </ul>
                     </nav>

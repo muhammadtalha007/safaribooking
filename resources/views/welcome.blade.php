@@ -1268,12 +1268,12 @@
             </div>
 
             <div class="row">
-                @foreach($operators as $operator)
+                @foreach($operators as $key => $operator)
                 <div class="col col-12 col-t-4 col-d-3">
                     <a href="p4494.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
                        data-id="4494">
 
-                        <div class="topratedoperators__snippet__rank"><span>#1</span></div>
+                        <div class="topratedoperators__snippet__rank"><span>#{{$key+1}}</span></div>
 
                         <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
                             <div class="operator_name">

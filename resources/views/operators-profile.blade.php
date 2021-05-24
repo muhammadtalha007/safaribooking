@@ -171,7 +171,7 @@
                                 <li><a onclick="openTab('overview')" id="overview-link" class="active" itemprop="url"
                                        data-ajax="overview-tab" role="tab" title="Overview">Overview</a></li>
                                 <li>
-                                    <a onclick="openTab('tours')" id="tour-link" data-ajax="tours-tab" role="tab"
+                                    <a onclick="openTab('tours')" id="tours-link" data-ajax="tours-tab" role="tab"
                                        title="Safaris & Tours" rel="nofollow"><em>Safaris &amp; </em>Tours<span
                                             class="hide show-ti">0</span></a>
                                 </li>
@@ -188,8 +188,10 @@
                                                                   rel="nofollow">Contact</a></li>
                             </ul>
 
-                            <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"
-                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">Get a Free
+                            <a href="#" rel="nofollow"
+                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">BID on tour<span>for a custom tour</span></a>
+                            <a href="#" rel="nofollow"
+                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px">Get a Free
                                 Quote<span>for a custom tour</span></a>
                         </div>
 
@@ -869,7 +871,7 @@
                                     <div class="lazyload lazyload-mobile" data-load="https://www.safaribookings.com/operator-contact/p3099"></div>
 
                                 </div>
-                                <div id="destinations-tab" class="destinations-tab" role="tabpanel" data-title="List of countries Spirit of Kenya offers tours to" style="opacity: 1;">
+                                <div id="destinations-tab" class="destinations-tab" role="tabpanel" data-title="List of countries Spirit of Kenya offers tours to" style="opacity: 1;display: none">
 
                                     <div class="detail__title__block row">
                                         <div class="col col-12">
@@ -916,7 +918,7 @@
                                     </div>
 
                                 </div>
-                                <div id="contact-tab" class="contact-tab" role="tabpanel" data-title="Contact Spirit of Kenya" style="opacity: 1;">
+                                <div id="contact-tab" class="contact-tab" role="tabpanel" data-title="Contact Spirit of Kenya" style="opacity: 1;display: none">
 
                                     <div class="detail__title__block row">
                                         <div class="col col-12">
@@ -975,13 +977,13 @@
             document.getElementById('destinations-tab').style.display = 'none';
             document.getElementById('contact-tab').style.display = 'none';
             document.getElementById(name + '-tab').style.display = 'block';
-            document.getElementById('overview-link').classList.remove('active')
-            document.getElementById('tours-link').classList.remove('active')
-            document.getElementById('reviews-link').classList.remove('active')
-            document.getElementById('company-profile-link').classList.remove('active')
-            document.getElementById('destinations-link').classList.remove('active')
-            document.getElementById('contact-link').classList.remove('active')
-            document.getElementById(name + '-link').classList.add('active')
+            document.getElementById('overview-link').classList.remove('active');
+            document.getElementById('tours-link').classList.remove('active');
+            document.getElementById('reviews-link').classList.remove('active');
+            document.getElementById('company-profile-link').classList.remove('active');
+            document.getElementById('destinations-link').classList.remove('active');
+            document.getElementById('contact-link').classList.remove('active');
+            document.getElementById(name + '-link').classList.add('active');
         }
     </script>
 @endsection

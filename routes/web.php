@@ -37,6 +37,10 @@ Route::get('operator-profile/{id}', "AuthController@viewOperatorProfile");
 Route::get('all-safari-tours', "ToursController@viewAllToursPage");
 Route::get('countries', "CountriesParksController@viewCountriesParksPage");
 Route::get('tour/{id}/detail', "ToursController@viewTourDetailPage");
+Route::get('review/{id}', "AuthController@operatorReviewPage");
+Route::post('post-review', "AuthController@saveReview");
+Route::get('review-success', "AuthController@reviewSuccess");
+Route::get('view-review-image/{id}', "AuthController@viewReviewImage");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();

@@ -67,15 +67,13 @@
 
                         <span class="op-reviews">
                     <div class="stars      " title="5 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
+                             @for($i=0;$i<$user->rating;$i++)
+                            <i class="sbi sbi--star"></i>
+                        @endfor
         </div>
-                    <span class="review-score review-score--white"><em>5.0</em>/5</span> &nbsp;&ndash;&nbsp;
-                    <a href="https://www.safaribookings.com/reviews/p3424" class="reviews-link"
-                       rel="nofollow">0 Reviews</a>
+                    <span class="review-score review-score--white"><em>{{$user->rating}}</em>/5</span> &nbsp;&ndash;&nbsp;
+                    <a href="#" onclick="openTab('reviews')" class="reviews-link"
+                       rel="nofollow">{{$user->reviews}} Reviews</a>
                 </span>
 
                         <dl>
@@ -146,10 +144,10 @@
 
                         <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"
                            class="btn btn--orange btn--reqquote btn--withsubtext">Get a Free Quote<br/><span>for a custom tour</span></a>
-                        <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"
-                           class="btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: 5px">Bid on this
-                            tour<br/><span>for a custom tour</span></a>
-                        <p class="txt--small">Your request or bid will be sent directly to the operator</p>
+{{--                        <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"--}}
+{{--                           class="btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: 5px">Bid on this--}}
+{{--                            tour<br/><span>for a custom tour</span></a>--}}
+                        <p class="txt--small">Your request will be sent directly to the operator</p>
 
                     </div>
                 </div>
@@ -173,10 +171,10 @@
                                 <li>
                                     <a onclick="openTab('tours')" id="tours-link" data-ajax="tours-tab" role="tab"
                                        title="Safaris & Tours" rel="nofollow"><em>Safaris &amp; </em>Tours<span
-                                            class="hide show-ti">0</span></a>
+                                            class="hide show-ti">{{count($user->tours)}}</span></a>
                                 </li>
                                 <li class=""><a onclick="openTab('reviews')" id="reviews-link" data-ajax="reviews-tab"
-                                                role="tab" title="Reviews" rel="nofollow">Reviews<span>0</span></a></li>
+                                                role="tab" title="Reviews" rel="nofollow">Reviews<span>{{$user->reviews}}</span></a></li>
                                 <li class="last-m"><a onclick="openTab('company-profile')" id="company-profile-link"
                                                       data-ajax="profile-tab" role="tab" title="Company Profile"
                                                       rel="nofollow"><em>Company&nbsp;</em>Profile</a></li>
@@ -188,8 +186,8 @@
                                                                   rel="nofollow">Contact</a></li>
                             </ul>
 
-                            <a href="#" rel="nofollow"
-                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">BID on tour<span>for a custom tour</span></a>
+{{--                            <a href="#" rel="nofollow"--}}
+{{--                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">BID on tour<span>for a custom tour</span></a>--}}
                             <a href="#" rel="nofollow"
                                class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px">Get a Free
                                 Quote<span>for a custom tour</span></a>
@@ -246,69 +244,83 @@
 
                                                 <h3 class="detail__heading">
                                                     <span class="detail__heading-main">Safaris &amp; Tours</span>
-                                                    <span class="detail__heading-number number">0</span>
+                                                    <span class="detail__heading-number number">{{count($user->tours)}}</span>
                                                     <span
                                                         class="detail__heading-separator grey hide show-di">&ndash;</span>
                                                     <span
                                                         class="detail__heading-extra grey nobr">Offered by {{$user->company_name}}</span>
                                                 </h3>
-
+                                                @if(count($user->tours) == 0)
+                                                    <h3 style="text-align: center">No tours Found!</h3>
+                                                @endif
                                                 <div class="list--tours list--tours--small first-elem">
+
                                                     <ul class="row">
+                                                        @foreach($user->tours as $tour)
                                                         <li class="col   col-12 col-t-6   ">
                                                             <a class="list__item    "
-                                                               href="https://www.safaribookings.com/tours/t32667"
+                                                               href="#"
                                                                target="_blank" data-id="32667"
-                                                               title="5-Day Uganda Gorilla and Wildlife Safari">
+                                                               title="{{$tour->title}}">
                                                                 <div class="list__item--image__full">
 
                                                                     <picture class="list__picture">
                                                                         <!--[if IE 9]>
                                                                         <video style="display: none;"><![endif]-->
                                                                         <source
-                                                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_046.jpg"
+                                                                            srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                                                                             media="(min-width: 501px) and (max-width: 743px)">
                                                                         <!--[if IE 9]></video><![endif]-->
                                                                         <img
-                                                                            src="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_046.jpg"
-                                                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_046@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_046.jpg 1x"
-                                                                            alt="5-Day Uganda Gorilla and Wildlife Safari"/>
+                                                                            src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                            srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                            alt="{{$tour->title}}"/>
                                                                         <noscript>
                                                                             <source
-                                                                                srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_046.jpg"
+                                                                                srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                                                                                 media="(min-width: 501px) and (max-width: 743px)">
                                                                             <img
-                                                                                src="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_046.jpg"
-                                                                                srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_046@2x.jpg 2x"/>
+                                                                                src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                                srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"/>
                                                                         </noscript>
                                                                     </picture>
 
                                                                     <div class="holder-tourtitle">
-                                                                        <h2 class="serif tourtitle">5-Day Uganda Gorilla
-                                                                            and Wildlife Safari</h2>
+                                                                        <h2 class="serif tourtitle">{{$tour->title}}</h2>
                                                                     </div>
 
                                                                 </div>
                                                                 <div class="list__item--data  matchheight ">
 
                                                                     <p class="price">
-                                                                        <b>$1,665</b>
+                                                                        <b>${{$tour->price}}</b>
                                                                         pp (USD)
                                                                     </p>
 
 
                                                                     <p class="desc">
-                                                                        <b>Uganda:</b>
-                                                                        Private tour<span></span>Budget<span></span>Lodge
-                                                                        & Resort
+                                                                        <b>{{$tour->country_name}}:</b>
+                                                                        Private tour
+                                                                        @foreach($tour->features as $feature)
+                                                                            <span></span><nobr>{{\App\Features::where('id', $feature->feature_id)->first()['name']}}</nobr>
+
+                                                                        @endforeach
+                                                                    </p>
+                                                                    <p class="visit"><b>You Visit:</b> @foreach($tour->routes as $key=>$route)
+                                                                            @if(count($tour->routes)-1 == $key)
+                                                                                <span style="color: #999">(start)</span> {{$route->route_name}}
+                                                                            @else
+                                                                                <span style="color: #999">(start)</span> {{$route->route_name}} |
+                                                                            @endif
+                                                                        @endforeach
                                                                     </p>
 
-                                                                    <p class="visit"><b>You Visit:</b> Entebbe <span>(Start)</span>,
-                                                                        Queen Elizabeth NP, Bwindi NP <span
-                                                                            class="grey">(Gorillas)</span>, Lake
-                                                                        Bunyonyi, <span
-                                                                            class="nowrap">Entebbe Airport <span>(End)</span></span>
-                                                                    </p>
+{{--                                                                    <p class="visit"><b>You Visit:</b> Entebbe <span>(Start)</span>,--}}
+{{--                                                                        Queen Elizabeth NP, Bwindi NP <span--}}
+{{--                                                                            class="grey">(Gorillas)</span>, Lake--}}
+{{--                                                                        Bunyonyi, <span--}}
+{{--                                                                            class="nowrap">Entebbe Airport <span>(End)</span></span>--}}
+{{--                                                                    </p>--}}
                                                                 </div>
 
 
@@ -323,12 +335,11 @@
 
                                                             </a>
                                                         </li>
-
-                                                        <li class="col   col-12 col-t-6   ">
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="#" class="btn btn--white btn--next" rel="nofollow">All 0
+                                                    <a href="#" class="btn btn--white btn--next" rel="nofollow">All {{count($user->tours)}}
                                                         Safari Tours</a>
                                                 </div>
 
@@ -339,7 +350,7 @@
                                                 <div class="col col-12 col-t-5 col-d-12">
                                                     <h3 class="detail__heading">
                                                         <span class="detail__heading-main">Reviews</span>
-                                                        <span class="detail__heading-number number">0</span>
+                                                        <span class="detail__heading-number number">{{$user->reviews}}</span>
                                                         <span class="detail__heading-separator grey hide show-di">&ndash;</span>
                                                         <span
                                                             class="detail__heading-extra grey hide show-ti">About {{$user->company_name}}</span>
@@ -350,157 +361,104 @@
                                                         <div class="stars    large    " title="5 / 5"
                                                              itemprop="aggregateRating" itemscope
                                                              itemtype="http://schema.org/AggregateRating">
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
+                                                            @for($i=0;$i<$user->rating;$i++)
+                                                                <i class="sbi sbi--star"></i>
+                                                            @endfor
                                                             <meta itemprop="ratingValue" content="5.0"/>
                                                             <meta itemprop="worstRating" content="1"/>
                                                             <meta itemprop="bestRating" content="5"/>
                                                             <meta itemprop="reviewCount" content="56"/>
                                                         </div>
-                                                        <span class="review-score"><em>5.0</em>/5 &nbsp;&ndash;&nbsp; <a
-                                                                href="https://www.safaribookings.com/reviews/p3424"
-                                                                rel="nofollow">0 Reviews</a></span>
+                                                        <span class="review-score"><em>{{$user->rating}}</em>/5 &nbsp;&ndash;&nbsp; <a
+                                                                href="#"
+                                                                onclick="opneTab('reviews')"
+                                                                rel="nofollow">{{$user->reviews}} Reviews</a></span>
                                                     </div>
 
                                                     <div class="hide show-t">
-                                                        <b><span class="hide show-ti">Rating&nbsp;</span>Breakdown</b>
-                                                        <div class="review-breakdown  ">
-                                                            <ul>
-                                                                <li>
-                                                                    5 star
-                                                                    <span><em style="width: 98.2%"></em></span>
-                                                                    <a href="https://www.safaribookings.com/reviews/p3424?stars=5"
-                                                                       data-ajax="reviews-tab">0</a>
-                                                                </li>
-                                                                <li>
-                                                                    4 star
-                                                                    <span><em style="width: 1.8%"></em></span>
-                                                                    <a href="https://www.safaribookings.com/reviews/p3424?stars=4"
-                                                                       data-ajax="reviews-tab">0</a>
-                                                                </li>
-                                                                <li>
-                                                                    3 star
-                                                                    <span><em style="width: 0.0%"></em></span>
-                                                                    <i>0</i>
-                                                                </li>
-                                                                <li>
-                                                                    2 star
-                                                                    <span><em style="width: 0.0%"></em></span>
-                                                                    <i>0</i>
-                                                                </li>
-                                                                <li>
-                                                                    1 star
-                                                                    <span><em style="width: 0.0%"></em></span>
-                                                                    <i>0</i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="hide-t">
-                                                        <a href="https://www.safaribookings.com/review/p3424"
-                                                           class="btn btn--white btn--autowidth btn--next"
-                                                           rel="nofollow">Write a Review</a>
-                                                        <br/><br/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col col-0 hide show-t hide-d col-t-7 no-gutter-right">
-                                                    <h3><span>Latest User Review</span></h3>
-
-                                                    <div class="review review--snippet">
-                                                        <div class="review__person matchheight">
-                                                            <i class="sbi sbi--avatar-male"></i>
-                                                            <div class="review__person__info">
-                                                                <strong class="review__person__name">Pavol</strong>
-                                                                <span class="review__person__country">&nbsp;&ndash; &nbsp; <div
-                                                                        class="country-with-flag  " title="Slovakia">
-                                    <img src="https://cfstatic.safaribookings.com/images/flags/sk.png"
-                                         class="country-with-flag__flag" alt="Slovakia" title="Slovakia"/>
-                            <span class="txt--grey">
-                            SK
-                    </span>
-    </div>
-</span>
-                                                                <span class="review__person__reviewed"><b>Reviewed:</b> Jan 24, 2021</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review__body">
-                                                            <h5>3 days safari to Murchison falls</h5>
-                                                            <div class="stars      " title="5 / 5">
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                            </div>
-                                                            <span class="review-score"><em>5</em>/5</span>
-                                                            <p>I was very happy with Najib service. Night safari game
-                                                                drive with ranger in MF is highly recomended, was best
-                                                                experience in my 3 weeks safari in eastern Africa.</p>
-                                                            <p>
-                                                                <a href="https://www.safaribookings.com/reviews/p3424#57178">Full
-                                                                    Review</a></p>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="review-more review-more--write">
-                                                        <a href="https://www.safaribookings.com/reviews/p3424"
-                                                           class="reviews-all-link" rel="nofollow">All 56 Reviews</a>
-                                                        <a href="https://www.safaribookings.com/review/p3424"
-                                                           class="btn btn--orange btn--small btn--autowidth btn--right btn--next"
-                                                           rel="nofollow">Write a Review</a>
+{{--                                                        <b><span class="hide show-ti">Rating&nbsp;</span>Breakdown</b>--}}
+{{--                                                        <div class="review-breakdown  ">--}}
+{{--                                                            <ul>--}}
+{{--                                                                <li>--}}
+{{--                                                                    5 star--}}
+{{--                                                                    <span><em style="width: 98.2%"></em></span>--}}
+{{--                                                                    <a href="https://www.safaribookings.com/reviews/p3424?stars=5"--}}
+{{--                                                                       data-ajax="reviews-tab">0</a>--}}
+{{--                                                                </li>--}}
+{{--                                                                <li>--}}
+{{--                                                                    4 star--}}
+{{--                                                                    <span><em style="width: 1.8%"></em></span>--}}
+{{--                                                                    <a href="https://www.safaribookings.com/reviews/p3424?stars=4"--}}
+{{--                                                                       data-ajax="reviews-tab">0</a>--}}
+{{--                                                                </li>--}}
+{{--                                                                <li>--}}
+{{--                                                                    3 star--}}
+{{--                                                                    <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                                    <i>0</i>--}}
+{{--                                                                </li>--}}
+{{--                                                                <li>--}}
+{{--                                                                    2 star--}}
+{{--                                                                    <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                                    <i>0</i>--}}
+{{--                                                                </li>--}}
+{{--                                                                <li>--}}
+{{--                                                                    1 star--}}
+{{--                                                                    <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                                    <i>0</i>--}}
+{{--                                                                </li>--}}
+{{--                                                            </ul>--}}
+{{--                                                        </div>--}}
                                                     </div>
                                                 </div>
 
                                                 <div
                                                     class="col col-0 hide show-d col-d-12 no-gutter-right extra-top-margin">
                                                     <h5 class="subtitle  ">Latest User Review</h5>
+                                                    @if($user->isReviewAvailable == 0)
 
-                                                    <div class="review review--snippet">
-                                                        <div class="review__person matchheight">
-                                                            <i class="sbi sbi--avatar-male"></i>
-                                                            <div class="review__person__info">
-                                                                <strong class="review__person__name">Pavol</strong>
-                                                                <span class="review__person__country">&nbsp;&ndash; &nbsp; <div
-                                                                        class="country-with-flag  " title="Slovakia">
-                                    <img src="https://cfstatic.safaribookings.com/images/flags/sk.png"
-                                         class="country-with-flag__flag" alt="Slovakia" title="Slovakia"/>
-                            <span class="txt--grey">
-                            SK
-                    </span>
+                                                        <h3>No review available</h3>
+                                                    @else
+
+                                                        <div class="review review--snippet">
+                                                            <div class="review__person matchheight">
+                                                                <i class="sbi sbi--avatar-male"></i>
+                                                                <div class="review__person__info">
+                                                                    <strong class="review__person__name">{{$user->latestReview->name}}</strong>
+                                                                    <span class="review__person__country">&nbsp;&ndash; &nbsp; <div
+                                                                                    class="country-with-flag">
+                                    <span class="txt--grey">
+                                    {{$user->latestReview->country}}
+                            </span>
     </div>
 </span>
-                                                                <span class="review__person__reviewed"><b>Reviewed:</b> Jan 24, 2021</span>
+                                                                    <span class="review__person__reviewed"><b>Reviewed:</b> {{$user->latestReview->created_at}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review__body">
+                                                                <h5>{{$user->latestReview->title}}</h5>
+                                                                <div class="stars      " title="5 / 5">
+                                                                    <i class="sbi sbi--star"></i>
+                                                                    <i class="sbi sbi--star"></i>
+                                                                    <i class="sbi sbi--star"></i>
+                                                                    <i class="sbi sbi--star"></i>
+                                                                    <i class="sbi sbi--star"></i>
+                                                                </div>
+                                                                <span class="review-score"><em>{{$user->latestReview->rating}}</em>/5</span>
+                                                                <p>{{$user->latestReview->review}}</p>
+                                                                <p>
+{{--                                                                    <a href="https://www.safaribookings.com/reviews/p3424#57178">Full--}}
+{{--                                                                        Review</a></p>--}}
                                                             </div>
                                                         </div>
-                                                        <div class="review__body">
-                                                            <h5>3 days safari to Murchison falls</h5>
-                                                            <div class="stars      " title="5 / 5">
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                                <i class="sbi sbi--star"></i>
-                                                            </div>
-                                                            <span class="review-score"><em>5</em>/5</span>
-                                                            <p>I was very happy with Najib service. Night safari game
-                                                                drive with ranger in MF is highly recomended, was best
-                                                                experience in my 3 weeks safari in eastern Africa.</p>
-                                                            <p>
-                                                                <a href="https://www.safaribookings.com/reviews/p3424#57178">Full
-                                                                    Review</a></p>
-                                                        </div>
-                                                    </div>
+                                                    @endif
+
+
 
 
                                                     <div class="review-more review-more--write">
-                                                        <a href="https://www.safaribookings.com/reviews/p3424"
-                                                           class="reviews-all-link" rel="nofollow">All 0 Reviews</a>
-                                                        <a href="https://www.safaribookings.com/review/p3424"
+                                                        <a onclick="openTab('reviews')"
+                                                           class="reviews-all-link" rel="nofollow">All {{$user->reviews}} Reviews</a>
+                                                        <a href="{{url('review')}}/{{$user->id}}"
                                                            class="btn btn--orange btn--small btn--autowidth btn--right btn--next"
                                                            rel="nofollow">Write a Review</a>
                                                     </div>
@@ -525,38 +483,40 @@
                                     </div>
 
                                     <div class="list--tours row">
-
+                                        @if(count($user->tours) == 0)
+                                            <h3 style="text-align: center">No tours Found!</h3>
+                                        @endif
                                         <ul class="row">
+                                            @foreach($user->tours as $tour)
                                             <li class="col   col-12 col-t-6   ">
                                                 <a class="list__item    "
-                                                   href="https://www.safaribookings.com/tours/t24399" target="_blank"
-                                                   data-id="24399" title="6-Day Camping Safari Northern Circuit">
+                                                   href="#" target="_blank"
+                                                   data-id="24399" title="{{$tour->title}}">
                                                     <div class="list__item--image__full">
 
                                                         <picture class="list__picture">
                                                             <!--[if IE 9]>
                                                             <video style="display: none;"><![endif]-->
                                                             <source
-                                                                srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Tarangire_National_Park_003.jpg"
+                                                                srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                                                                 media="(min-width: 501px) and (max-width: 743px)">
                                                             <!--[if IE 9]></video><![endif]-->
                                                             <img
-                                                                src="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Tarangire_National_Park_003.jpg"
-                                                                srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Tarangire_National_Park_003@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Tarangire_National_Park_003.jpg 1x"
-                                                                alt="6-Day Camping Safari Northern Circuit">
+                                                                src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                alt="{{$tour->title}}">
                                                             <noscript>
                                                                 <source
-                                                                    srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Tarangire_National_Park_003.jpg"
+                                                                    srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                                                                     media="(min-width: 501px) and (max-width: 743px)">
                                                                 <img
-                                                                    src="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Tarangire_National_Park_003.jpg"
-                                                                    srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Tarangire_National_Park_003@2x.jpg 2x"/>
+                                                                    src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
+                                                                    srcset="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"/>
                                                             </noscript>
                                                         </picture>
 
                                                         <div class="holder-tourtitle">
-                                                            <h2 class="serif tourtitle">6-Day Camping Safari Northern
-                                                                Circuit</h2>
+                                                            <h2 class="serif tourtitle">{{$tour->total_days}} days-{{$tour->title}}</h2>
                                                         </div>
 
                                                     </div>
@@ -564,21 +524,27 @@
                                                          data-mh="1">
 
                                                         <p class="price">
-                                                            <b>$1,670</b>
+                                                            <b>${{$tour->price}}</b>
                                                             pp (USD)
                                                         </p>
 
 
                                                         <p class="desc">
-                                                            <b>Tanzania:</b>
-                                                            Private tour<span></span>Budget<span></span>Camping &amp;
-                                                            Lodge
-                                                        </p>
+                                                            <b>{{$tour->country_name}}:</b>
+                                                            Private tour
+                                                            @foreach($tour->features as $feature)
+                                                                <span></span><nobr>{{\App\Features::where('id', $feature->feature_id)->first()['name']}}</nobr>
 
-                                                        <p class="visit dsh"><b>You Visit:</b> Arusha
-                                                            <span>(Start)</span>, Lake Manyara NP, Serengeti NP,
-                                                            Ngorongoro Crater, <span
-                                                                class="nowrap">Arusha <span>(End)</span></span></p>
+                                                            @endforeach
+                                                        </p>
+                                                        <p class="visit"><b>You Visit:</b> @foreach($tour->routes as $key=>$route)
+                                                                @if(count($tour->routes)-1 == $key)
+                                                                    <span style="color: #999">(start)</span> {{$route->route_name}}
+                                                                @else
+                                                                    <span style="color: #999">(start)</span> {{$route->route_name}} |
+                                                                @endif
+                                                            @endforeach
+                                                        </p>
                                                     </div>
 
 
@@ -595,13 +561,7 @@
 
                                                 </a>
                                             </li>
-                                            <li class="col   col-12 col-t-6   ">
-
-
-                                            <li class="col   col-12 col-t-6   ">
-                                            <li class="col   col-12 col-t-6   ">
-                                            <li class="col   col-12 col-t-6   ">
-                                            <li class="col   col-12 col-t-6   ">
+                                            @endforeach
                                         </ul>
 
                                         <div class="paginator-container" data-hashtoquery="1">
@@ -632,22 +592,20 @@
                                             <h5 class="subtitle">Average User Rating</h5>
                                             <div class="review-summary--oneline">
                                                 <div class="stars    large    " title="5 / 5" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
+                                                    @for($i=0;$i<$user->rating;$i++)
+                                                        <i class="sbi sbi--star"></i>
+                                                    @endfor
                                                     <meta itemprop="ratingValue" content="5.0">
                                                     <meta itemprop="worstRating" content="1">
                                                     <meta itemprop="bestRating" content="5">
                                                     <meta itemprop="reviewCount" content="43">
                                                 </div>
-                                                <span class="review-score"><em>5.0</em>/5</span>
+                                                <span class="review-score"><em>{{$user->rating}}</em>/5</span>
                                             </div>
 
                                             <div class="hide show-t">
                                                 <br>
-                                                <a href="https://www.safaribookings.com/review/p3429" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
                                             </div>
                                             <div class="hide-t">
                                                 <br>
@@ -656,39 +614,39 @@
                                         </div>
                                         <div class="col col-12 col-t-6 hide-d">
 
-                                            <h5 class="subtitle">Rating Breakdown</h5>
+{{--                                            <h5 class="subtitle">Rating Breakdown</h5>--}}
                                             <div class="review-breakdown  ">
-                                                <ul>
-                                                    <li>
-                                                        5 star
-                                                        <span><em style="width: 100.0%"></em></span>
-                                                        <a href="https://www.safaribookings.com/reviews/p3429?stars=5" data-ajax="reviews-tab">43</a>
-                                                    </li>
-                                                    <li>
-                                                        4 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        3 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        2 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        1 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                </ul>
+{{--                                                <ul>--}}
+{{--                                                    <li>--}}
+{{--                                                        5 star--}}
+{{--                                                        <span><em style="width: 100.0%"></em></span>--}}
+{{--                                                        <a href="https://www.safaribookings.com/reviews/p3429?stars=5" data-ajax="reviews-tab">43</a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        4 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        3 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        2 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        1 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
                                             </div>
                                             <div class="hide-t">
                                                 <br>
-                                                <a href="https://www.safaribookings.com/review/p3429" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
                                                 <br>
                                                 <br>
                                             </div>
@@ -697,100 +655,83 @@
                                         </div>
 
                                         <div class="col col-12 reviewlist__sorting">
-                                            <div>
-                                                Sort By: <a href="https://www.safaribookings.com/reviews/p3429?s=date&amp;sd=asc" class="active-desc sb-red" data-ajax="reviews-tab" title="Sort by Date">Date</a> <a href="https://www.safaribookings.com/reviews/p3429?s=helpful&amp;sd=desc" data-ajax="reviews-tab" title="Sort by Most Helpful">Most Helpful</a> <a href="https://www.safaribookings.com/reviews/p3429?s=rating&amp;sd=desc" data-ajax="reviews-tab" title="Sort by Rating">Rating</a>            <span>
-                <strong>1</strong>-<strong>10</strong> of 43 Reviews
-            </span>
-                                            </div>
+{{--                                            <div>--}}
+{{--                                                Sort By: <a href="https://www.safaribookings.com/reviews/p3429?s=date&amp;sd=asc" class="active-desc sb-red" data-ajax="reviews-tab" title="Sort by Date">Date</a> <a href="https://www.safaribookings.com/reviews/p3429?s=helpful&amp;sd=desc" data-ajax="reviews-tab" title="Sort by Most Helpful">Most Helpful</a> <a href="https://www.safaribookings.com/reviews/p3429?s=rating&amp;sd=desc" data-ajax="reviews-tab" title="Sort by Rating">Rating</a>            <span>--}}
+{{--                <strong>1</strong>-<strong>10</strong> of 43 Reviews--}}
+{{--            </span>--}}
+{{--                                            </div>--}}
                                         </div>
 
                                         <div class="col col-12 col-d-9 reviewlist__list">
-
+                                            @foreach($user->reviewsDeceding as $review)
                                             <div class="review initialized" id="58806" itemprop="reviews" itemscope="" itemtype="http://schema.org/Review">
                                                 <div class="review__person" itemtype="http://schema.org/Person" itemscope="" itemprop="author">
                                                     <i class="sbi sbi--avatar-female"></i>
-                                                    <strong class="review__person__name" itemprop="name">Natalia</strong>
-                                                    <span class="review__person__country">&nbsp; – &nbsp; <div class="country-with-flag  " title="Spain">
-                                    <img src="https://cfstatic.safaribookings.com/images/flags/es.png" class="country-with-flag__flag" alt="Spain" title="Spain">
+                                                    <strong class="review__person__name" itemprop="name">{{$review->name}}</strong>
+                                                    <span class="review__person__country">&nbsp; –
+                                                        <div class="country-with-flag  " title="Spain">
                             <span class="txt--grey">
-                            ES
+                            {{$review->country}}
                     </span>
     </div>
 </span>
-                                                    <meta itemprop="nationality" content="Spain">
-                                                    <span class="review__person__when"><b>Visited:</b> April 2021</span>
-                                                    <span class="review__person__reviewed"><b>Reviewed:</b> May 10, 2021</span>
+                                                    <span class="review__person__when"><b>Visited:</b> {{$review->month}}, {{$review->year}}</span>
+                                                    <span class="review__person__reviewed"><b>Reviewed:</b> {{$review->created_at}}</span>
                                                     <p>
-                                                        <span><a href="https://www.safaribookings.com/or58806/contact" title="Contact Natalia" rel="overlay" data-overlay-hash="contact">Email Natalia</a></span>
-                                                        &nbsp;|&nbsp;                         <span>50-65 years of age</span>
-                                                        &nbsp;|&nbsp;                         <span>Experience level: first safari</span>
+{{--                                                        <span><a href="https://www.safaribookings.com/or58806/contact" title="Contact Natalia" rel="overlay" data-overlay-hash="contact">Email Natalia</a></span>--}}
+{{--                                                        &nbsp;|&nbsp;                         <span>50-65 years of age</span>--}}
+{{--                                                        &nbsp;|&nbsp;                         <span>Experience level: first safari</span>--}}
                                                     </p>
                                                     <span itemprop="gender" itemscope="" itemtype="http://schema.org/GenderType">
                 <span itemprop="name" content="Female"></span>
             </span>
                                                 </div>
                                                 <div class="review__body">
-                                                    <h5 itemprop="name">Amazing safari, great guide and very well organized</h5>
+                                                    <h5 itemprop="name">{{$review->title}}</h5>
 
                                                     <div class="overallrating">
-                                                        <div class="stars    large    " title="5 / 5" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
-                                                            <i class="sbi sbi--star"></i>
+                                                        <div class="stars    large    " itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                                            @for($i=0;$i<$review->rating;$i++)
+                                                                <i class="sbi sbi--star"></i>
+                                                            @endfor
                                                             <meta itemprop="ratingValue" content="5">
                                                             <meta itemprop="worstRating" content="1">
                                                             <meta itemprop="bestRating" content="5">
                                                         </div>
-                                                        <span class="review-score"><em>5</em>/5</span>
+                                                        <span class="review-score"><em>{{$review->rating}}</em>/5</span>
                                                     </div>
 
 
-                                                    <p itemprop="reviewBody">I based the selection of the tour on the previous reviews and was not mistaken. From the very beginning the communication was very fluid, they answered all questions promtly and made suggestions on accomadation which resulted great.<br>
-                                                        <br>
-                                                        As I could see from other quotations safari was reasonably priced. As suggested, we finally decided to stay at Lake Manyara Kilimamoja lodge and it's definitely worth paying a little bit more. <br>
-                                                        <br>
-                                                        We took a private safari and I must give a special mention to our guide, Lordard. Very attentive and professional and made us feel easy and comfortable. Apart from this, he speaks good Spanish. The safari itself is a great experience, it's difficult to explain how impressive it was.<br>
-                                                        <br>
-                                                        Thanks a lot for this wordenful experience!<br>
-                                                        <br>
+                                                    <p itemprop="reviewBody">
+                                                        {{$review->review}}
                                                     </p>
 
-                                                    <meta itemprop="url" content="https://www.safaribookings.com/reviews/p3429#58806">
 
-                                                    <meta itemprop="dateCreated" content="2021-05-10" datetime="2021-05-10">
 
                                                     <div class="review__body__photos galleryitems" data-overlay-hash="p58806">
-                                                        <a itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/MediaObject" href="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106506.jpg" title="" rel="overlay" class="galleryitem">
-                                                            <img src="https://cloudfront.safaribookings.com/reviews/operator/s/African_Big_Cats_Safaris-106506.jpg" data-location="Photo by Natalia" data-country="included in the review of African Big Cats Safaris">
-                                                            <meta itemprop="contentUrl" content="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106506.jpg">
-                                                        </a>
-                                                        <a itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/MediaObject" href="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106507.jpg" title="" rel="overlay" class="galleryitem">
-                                                            <img src="https://cloudfront.safaribookings.com/reviews/operator/s/African_Big_Cats_Safaris-106507.jpg" data-location="Photo by Natalia" data-country="included in the review of African Big Cats Safaris">
-                                                            <meta itemprop="contentUrl" content="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106507.jpg">
-                                                        </a>
-                                                        <a itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/MediaObject" href="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106508.jpg" title="" rel="overlay" class="galleryitem">
-                                                            <img src="https://cloudfront.safaribookings.com/reviews/operator/s/African_Big_Cats_Safaris-106508.jpg" data-location="Photo by Natalia" data-country="included in the review of African Big Cats Safaris">
-                                                            <meta itemprop="contentUrl" content="https://cloudfront.safaribookings.com/reviews/operator/l/African_Big_Cats_Safaris-106508.jpg">
-                                                        </a>
+                                                        @foreach($review->images as $image)
+                                                            <a itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/MediaObject" target="_blank" href="{{url('view-review-image')}}/{{$image->id}}" title="" rel="overlay" class="galleryitem">
+                                                                <img src="{{url('view-review-image')}}/{{$image->id}}" >
+                                                            </a>
+                                                        @endforeach
                                                     </div>
 
-                                                    <div class="review__body__footer">
-                                                        <div>
-                                        <span>
-                                                                        Was this review helpful?
-                                                                </span>
+{{--                                                    <div class="review__body__footer">--}}
+{{--                                                        <div>--}}
+{{--                                        <span>--}}
+{{--                                                                        Was this review helpful?--}}
+{{--                                                                </span>--}}
 
-                                                            <span class="nowrap">
-                                                <a href="javascript:void(0);" data-url="https://www.safaribookings.com/or58806" class="review_helpful_link review_helpful_yes"><i class="sbi sbi--like"></i><span>Yes</span></a>
-                        <a href="javascript:void(0);" data-url="https://www.safaribookings.com/or58806" class="review_helpful_link review_helpful_no"><i class="sbi sbi--dislike"></i><span>No</span></a>
-                    </span>
-                                                        </div>
-                                                        <a href="javascript:void(0)" class="hide show-ti link-to textual help" data-help="https://www.safaribookings.com/or58806" title="Copy the link to this review">Link to This Review</a>
-                                                    </div>
+{{--                                                            <span class="nowrap">--}}
+{{--                                                <a href="javascript:void(0);" data-url="https://www.safaribookings.com/or58806" class="review_helpful_link review_helpful_yes"><i class="sbi sbi--like"></i><span>Yes</span></a>--}}
+{{--                        <a href="javascript:void(0);" data-url="https://www.safaribookings.com/or58806" class="review_helpful_link review_helpful_no"><i class="sbi sbi--dislike"></i><span>No</span></a>--}}
+{{--                    </span>--}}
+{{--                                                        </div>--}}
+{{--                                                        <a href="javascript:void(0)" class="hide show-ti link-to textual help" data-help="https://www.safaribookings.com/or58806" title="Copy the link to this review">Link to This Review</a>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             </div>
+                                            @endforeach
 
 
 
@@ -800,50 +741,48 @@
                                             <h5 class="subtitle">Average User Rating</h5>
                                             <div class="review-summary--oneline">
                                                 <div class="stars    large    " title="5 / 5" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
-                                                    <i class="sbi sbi--star"></i>
+                                                    @for($i=0;$i<$user->rating;$i++)
+                                                        <i class="sbi sbi--star"></i>
+                                                    @endfor
                                                     <meta itemprop="ratingValue" content="5.0">
                                                     <meta itemprop="worstRating" content="1">
                                                     <meta itemprop="bestRating" content="5">
                                                     <meta itemprop="reviewCount" content="43">
                                                 </div>
-                                                <span class="review-score"><em>5.0</em>/5</span>
+                                                <span class="review-score"><em>{{$user->rating}}</em>/5</span>
                                             </div>
 
-                                            <h5 class="subtitle extramargin">Rating Breakdown</h5>
+{{--                                            <h5 class="subtitle extramargin">Rating Breakdown</h5>--}}
                                             <div class="review-breakdown  ">
-                                                <ul>
-                                                    <li>
-                                                        5 star
-                                                        <span><em style="width: 100.0%"></em></span>
-                                                        <a href="https://www.safaribookings.com/reviews/p3429?stars=5" data-ajax="reviews-tab">43</a>
-                                                    </li>
-                                                    <li>
-                                                        4 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        3 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        2 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                    <li>
-                                                        1 star
-                                                        <span><em style="width: 0.0%"></em></span>
-                                                        <i>0</i>
-                                                    </li>
-                                                </ul>
+{{--                                                <ul>--}}
+{{--                                                    <li>--}}
+{{--                                                        5 star--}}
+{{--                                                        <span><em style="width: 100.0%"></em></span>--}}
+{{--                                                        <a href="https://www.safaribookings.com/reviews/p3429?stars=5" data-ajax="reviews-tab">43</a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        4 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        3 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        2 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        1 star--}}
+{{--                                                        <span><em style="width: 0.0%"></em></span>--}}
+{{--                                                        <i>0</i>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
                                             </div>
-                                            <a href="https://www.safaribookings.com/review/p3429" class="btn btn--orange btn--small btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                            <a href="{{url('review')}}/{{$user->id}}" class="btn btn--orange btn--small btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
 
                                         </div>
 

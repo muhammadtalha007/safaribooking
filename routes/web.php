@@ -34,6 +34,9 @@ Route::get('operators', "AuthController@operators");
 Route::get('view-user-file/{id}', "AuthController@viewUserFile");
 Route::get('view-user-company-file/{id}', "AuthController@viewUserCompanyFile");
 Route::get('operator-profile/{id}', "AuthController@viewOperatorProfile");
+Route::get('all-safari-tours', "ToursController@viewAllToursPage");
+Route::get('countries', "CountriesParksController@viewCountriesParksPage");
+Route::get('tour/{id}/detail', "ToursController@viewTourDetailPage");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();

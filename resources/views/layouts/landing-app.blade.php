@@ -4678,7 +4678,7 @@
                     <nav class="header__nav nav-t  ">
                         <ul class="nav-t__list">
                             <li class="nav-t__item nav-t__item--has-sub ">
-                                <a href="tours.html" class="nav-t__link nav-tours" title="African Safari Tours"><span>Safaris & </span>Tours</a>
+                                <a href="{{url('all-safari-tours')}}" class="nav-t__link nav-tours" title="African Safari Tours"><span>Safaris & </span>Tours</a>
                                 <ul class="subnav  header__subnav nav-t__list nav-t__sub-list shadowed-box list list--icon list--icon-arrow list--icon-nopadding ">
 
                                     <li class="nav-t__item nav-t__sub-item">
@@ -4794,8 +4794,7 @@
                                 </ul>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="countries-parks.html" class="nav-t__link" title="Countries &amp; Parks">Countries
-                                    & Parks</a>
+                                <a href="{{url('countries')}}" class="nav-t__link" title="Countries">Countries</a>
                             </li>
                             <li class="nav-t__item ">
                                 <a href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span>Tour </span>Operators</a>
@@ -4997,8 +4996,8 @@
                     </ul>
                 </li>
                 <li class="nav-m__item ">
-                    <a class="nav-m__link" href="countries-parks.html" title="Countries & Parks">
-                        Countries &amp; Parks
+                    <a class="nav-m__link" href="{{url('countries')}}" title="Countries">
+                        Countries
                     </a>
 
                 </li>

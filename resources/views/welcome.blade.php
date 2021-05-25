@@ -1000,257 +1000,259 @@
             <div class="list--tours row">
                 <ul class="row">
                     @foreach($tours as $item)
-                    <li class="col   col-12 col-t-6 col-d-4   ">
-                        <a class="list__item    " href="tours/t17948.html" target="_blank" data-id="17948"
-                           title="5-Day Living Among Lions - Mid-Range">
-                            <div class="list__item--image__full">
+                        <li class="col   col-12 col-t-6 col-d-4   ">
+                            <a class="list__item    " href="{{url('tour')}}/{{$item->id}}/details" target="_blank" data-id="17948"
+                               title="5-Day Living Among Lions - Mid-Range">
+                                <div class="list__item--image__full">
 
-                                <picture class="list__picture">
-                                    <img
-                                        src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$item->id}}"
-                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg 1x"
-                                        class="lazyload" alt="5-Day Living Among Lions - Mid-Range"/>
-                                </picture>
+                                    <picture class="list__picture">
+                                        <img
+                                            src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$item->id}}"
+                                            data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg 1x"
+                                            class="lazyload" alt="5-Day Living Among Lions - Mid-Range"/>
+                                    </picture>
 
-                                <div class="holder-tourtitle">
-                                    <h2 class="serif tourtitle">{{$item->total_days}}-Day {{$item->title}} - Mid-Range</h2>
+                                    <div class="holder-tourtitle">
+                                        <h2 class="serif tourtitle">{{$item->total_days}}-Day {{$item->title}} -
+                                            Mid-Range</h2>
+                                    </div>
+
+                                </div>
+                                <div class="list__item--data  matchheight ">
+
+                                    <p class="price">
+                                        <b>${{$item->price}}</b> pp (USD)
+                                    </p>
+
+
+                                    <p class="desc">
+                                        <b>{{$item->country_name}}:</b>
+                                        Private tour
+                                        @foreach($item->features as $feature)
+                                            <span></span>
+                                            <nobr>{{\App\Features::where('id', $feature->feature_id)->first()['name']}}</nobr>
+
+                                        @endforeach
+                                    </p>
+
+                                    <p class="visit"><b>You Visit:</b> @foreach($item->routes as $route)
+                                            <span style="color: #999">(start)</span> {{$route->route_name}}
+                                        @endforeach,</p>
                                 </div>
 
-                            </div>
-                            <div class="list__item--data  matchheight ">
+                                <div class="operator-snippet__data">
+                                    <div class="opdata__image">
+                                        <img
+                                            src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$item->user->id}}"
+                                            data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_1478192437.gif"
+                                            class="lazyload" alt="Unlimited Expeditions - The Soul of Tanzania"
+                                            title="Unlimited Expeditions - The Soul of Tanzania"/>
+                                    </div>
+                                    <p>
+                                        <b>
+                                            {{$item->user->company_name}}
 
-                                <p class="price">
-                                    <b>${{$item->price}}</b> pp (USD)
-                                </p>
-
-
-                                <p class="desc">
-                                    <b>Tanzania:</b>
-                                    Private tour
-                                    @foreach($item->features as $feature)
-                                        <span></span><nobr>{{\App\Features::where('id', $feature->feature_id)->first()['name']}}</nobr>
-
-                                    @endforeach
-                                </p>
-
-                                <p class="visit"><b>You Visit:</b> @foreach($item->routes as $route)
-                                    <span style="color: #999">(start)</span> {{$route->route_name}}
-                                    @endforeach,</p>
-                            </div>
-
-                            <div class="operator-snippet__data">
-                                <div class="opdata__image">
-                                    <img
-                                        src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$item->user->id}}"
-                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_1478192437.gif"
-                                        class="lazyload" alt="Unlimited Expeditions - The Soul of Tanzania"
-                                        title="Unlimited Expeditions - The Soul of Tanzania"/>
+                                        </b>
+                                    </p>
+                                    <div class="stars      " title="5 / 5">
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                    </div>
+                                    <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span
+                                            class="nowrap">229 Reviews</span></p>
                                 </div>
-                                <p>
-                                    <b>
-                                        {{$item->user->company_name}}
-
-                                    </b>
-                                </p>
-                                <div class="stars      " title="5 / 5">
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                </div>
-                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span
-                                        class="nowrap">229 Reviews</span></p>
-                            </div>
 
 
-                            <span class="favorite-save  " data-id="17948" data-type="tour"
-                                  title="Add to your favorites list">
+                                <span class="favorite-save  " data-id="17948" data-type="tour"
+                                      title="Add to your favorites list">
                                         <img class="svg svg--shadowed"
                                              src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
                                              alt="Not in favorites"/>
                                     </span>
 
-                        </a>
-                    </li>
+                            </a>
+                        </li>
                     @endforeach
-{{--                    <li class="col   col-12 col-t-6 col-d-4   ">--}}
-{{--                        <a class="list__item    " href="tours/t12596.html" target="_blank" data-id="12596"--}}
-{{--                           title="4-Day Pearl of Africa Trip Including Gorilla Trekking">--}}
-{{--                            <div class="list__item--image__full">--}}
+                    {{--                    <li class="col   col-12 col-t-6 col-d-4   ">--}}
+                    {{--                        <a class="list__item    " href="tours/t12596.html" target="_blank" data-id="12596"--}}
+                    {{--                           title="4-Day Pearl of Africa Trip Including Gorilla Trekking">--}}
+                    {{--                            <div class="list__item--image__full">--}}
 
-{{--                                <picture class="list__picture">--}}
-{{--                                    <!--[if IE 9]>--}}
-{{--                                    <video style="display: none;"><![endif]-->--}}
-{{--                                    <source--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"--}}
-{{--                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">--}}
-{{--                                    <!--[if IE 9]></video><![endif]-->--}}
-{{--                                    <img--}}
-{{--                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg 1x"--}}
-{{--                                        class="lazyload" alt="4-Day Pearl of Africa Trip Including Gorilla Trekking"/>--}}
-{{--                                    <noscript>--}}
-{{--                                        <source--}}
-{{--                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"--}}
-{{--                                            media="(min-width: 501px) and (max-width: 743px)">--}}
-{{--                                        <img--}}
-{{--                                            src="../cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg"--}}
-{{--                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x"/>--}}
-{{--                                    </noscript>--}}
-{{--                                </picture>--}}
+                    {{--                                <picture class="list__picture">--}}
+                    {{--                                    <!--[if IE 9]>--}}
+                    {{--                                    <video style="display: none;"><![endif]-->--}}
+                    {{--                                    <source--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"--}}
+                    {{--                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">--}}
+                    {{--                                    <!--[if IE 9]></video><![endif]-->--}}
+                    {{--                                    <img--}}
+                    {{--                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg 1x"--}}
+                    {{--                                        class="lazyload" alt="4-Day Pearl of Africa Trip Including Gorilla Trekking"/>--}}
+                    {{--                                    <noscript>--}}
+                    {{--                                        <source--}}
+                    {{--                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/744x372/Bwindi_Impenetrable_National_Park_007.jpg"--}}
+                    {{--                                            media="(min-width: 501px) and (max-width: 743px)">--}}
+                    {{--                                        <img--}}
+                    {{--                                            src="../cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007.jpg"--}}
+                    {{--                                            srcset="https://cloudfront.safaribookings.com/lib/uganda/tour/480x240/Bwindi_Impenetrable_National_Park_007@2x.jpg 2x"/>--}}
+                    {{--                                    </noscript>--}}
+                    {{--                                </picture>--}}
 
-{{--                                <div class="holder-tourtitle">--}}
-{{--                                    <h2 class="serif tourtitle">4-Day Pearl of Africa Trip Including Gorilla--}}
-{{--                                        Trekking</h2>--}}
-{{--                                </div>--}}
+                    {{--                                <div class="holder-tourtitle">--}}
+                    {{--                                    <h2 class="serif tourtitle">4-Day Pearl of Africa Trip Including Gorilla--}}
+                    {{--                                        Trekking</h2>--}}
+                    {{--                                </div>--}}
 
-{{--                            </div>--}}
-{{--                            <div class="list__item--data  matchheight ">--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="list__item--data  matchheight ">--}}
 
-{{--                                <p class="price">--}}
-{{--                                    <b>$1,487</b>--}}
-{{--                                    pp (USD)--}}
-{{--                                </p>--}}
-
-
-{{--                                <p class="desc">--}}
-{{--                                    <b>Uganda:</b>--}}
-{{--                                    Private tour<span></span>Budget<span></span>Tented Camp & Resort--}}
-{{--                                </p>--}}
-
-{{--                                <p class="visit"><b>You Visit:</b> Entebbe <span>(Start)</span>, Lake Mburo NP, Bwindi--}}
-{{--                                    NP <span class="grey">(Gorillas)</span>, Lake Bunyonyi, <span class="nowrap">Entebbe Airport <span>(End)</span></span>--}}
-{{--                                </p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="operator-snippet__data">--}}
-{{--                                <div class="opdata__image">--}}
-{{--                                    <img--}}
-{{--                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo1_1499683350.gif"--}}
-{{--                                        class="lazyload" alt="Home To Africa Tours and Travel"--}}
-{{--                                        title="Home To Africa Tours and Travel"/>--}}
-{{--                                </div>--}}
-{{--                                <p>--}}
-{{--                                    <b>--}}
-{{--                                        Home To Africa Tours and Travel--}}
-
-{{--                                    </b>--}}
-{{--                                </p>--}}
-{{--                                <div class="stars      " title="5 / 5">--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                </div>--}}
-{{--                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span--}}
-{{--                                        class="nowrap">154 Reviews</span></p>--}}
-{{--                            </div>--}}
+                    {{--                                <p class="price">--}}
+                    {{--                                    <b>$1,487</b>--}}
+                    {{--                                    pp (USD)--}}
+                    {{--                                </p>--}}
 
 
-{{--                            <span class="favorite-save  " data-id="12596" data-type="tour"--}}
-{{--                                  title="Add to your favorites list">--}}
-{{--                                        <img class="svg svg--shadowed"--}}
-{{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
-{{--                                             alt="Not in favorites"/>--}}
-{{--                                    </span>--}}
+                    {{--                                <p class="desc">--}}
+                    {{--                                    <b>Uganda:</b>--}}
+                    {{--                                    Private tour<span></span>Budget<span></span>Tented Camp & Resort--}}
+                    {{--                                </p>--}}
 
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="col   col-12 col-t-6 col-d-4   ">--}}
-{{--                        <a class="list__item    " href="tours/t20511.html" target="_blank" data-id="20511"--}}
-{{--                           title="8-Day Migration Serengeti (Jun to Jul) Mid -Range">--}}
-{{--                            <div class="list__item--image__full">--}}
+                    {{--                                <p class="visit"><b>You Visit:</b> Entebbe <span>(Start)</span>, Lake Mburo NP, Bwindi--}}
+                    {{--                                    NP <span class="grey">(Gorillas)</span>, Lake Bunyonyi, <span class="nowrap">Entebbe Airport <span>(End)</span></span>--}}
+                    {{--                                </p>--}}
+                    {{--                            </div>--}}
 
-{{--                                <picture class="list__picture">--}}
-{{--                                    <!--[if IE 9]>--}}
-{{--                                    <video style="display: none;"><![endif]-->--}}
-{{--                                    <source--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"--}}
-{{--                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">--}}
-{{--                                    <!--[if IE 9]></video><![endif]-->--}}
-{{--                                    <img--}}
-{{--                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg 1x"--}}
-{{--                                        class="lazyload" alt="8-Day Migration Serengeti (Jun to Jul) Mid -Range"/>--}}
-{{--                                    <noscript>--}}
-{{--                                        <source--}}
-{{--                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"--}}
-{{--                                            media="(min-width: 501px) and (max-width: 743px)">--}}
-{{--                                        <img--}}
-{{--                                            src="../cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg"--}}
-{{--                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x"/>--}}
-{{--                                    </noscript>--}}
-{{--                                </picture>--}}
+                    {{--                            <div class="operator-snippet__data">--}}
+                    {{--                                <div class="opdata__image">--}}
+                    {{--                                    <img--}}
+                    {{--                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo1_1499683350.gif"--}}
+                    {{--                                        class="lazyload" alt="Home To Africa Tours and Travel"--}}
+                    {{--                                        title="Home To Africa Tours and Travel"/>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p>--}}
+                    {{--                                    <b>--}}
+                    {{--                                        Home To Africa Tours and Travel--}}
 
-{{--                                <div class="holder-tourtitle">--}}
-{{--                                    <h2 class="serif tourtitle">8-Day Migration Serengeti (Jun to Jul) Mid -Range</h2>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                            <div class="list__item--data  matchheight ">--}}
-
-{{--                                <p class="price">--}}
-{{--                                    <b>$2,920</b>--}}
-{{--                                    pp (USD)--}}
-{{--                                </p>--}}
+                    {{--                                    </b>--}}
+                    {{--                                </p>--}}
+                    {{--                                <div class="stars      " title="5 / 5">--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span--}}
+                    {{--                                        class="nowrap">154 Reviews</span></p>--}}
+                    {{--                            </div>--}}
 
 
-{{--                                <p class="desc">--}}
-{{--                                    <b>Tanzania:</b>--}}
-{{--                                    Private tour<span></span>--}}
-{{--                                    <nobr>Mid-range</nobr>--}}
-{{--                                    <span></span>Lodge & Tented Camp--}}
-{{--                                </p>--}}
+                    {{--                            <span class="favorite-save  " data-id="12596" data-type="tour"--}}
+                    {{--                                  title="Add to your favorites list">--}}
+                    {{--                                        <img class="svg svg--shadowed"--}}
+                    {{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
+                    {{--                                             alt="Not in favorites"/>--}}
+                    {{--                                    </span>--}}
 
-{{--                                <p class="visit"><b>You Visit:</b> Arusha <span>(Start)</span>, Lake Manyara NP,--}}
-{{--                                    Serengeti NP, Ngorongoro Highlands, Ngorongoro Crater, Tarangire NP, <span--}}
-{{--                                        class="nowrap">Arusha <span>(End)</span></span></p>--}}
-{{--                            </div>--}}
+                    {{--                        </a>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li class="col   col-12 col-t-6 col-d-4   ">--}}
+                    {{--                        <a class="list__item    " href="tours/t20511.html" target="_blank" data-id="20511"--}}
+                    {{--                           title="8-Day Migration Serengeti (Jun to Jul) Mid -Range">--}}
+                    {{--                            <div class="list__item--image__full">--}}
 
-{{--                            <div class="operator-snippet__data">--}}
-{{--                                <div class="opdata__image">--}}
-{{--                                    <img--}}
-{{--                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
-{{--                                        class="lazyload" alt="Lion King Adventures" title="Lion King Adventures"/>--}}
-{{--                                </div>--}}
-{{--                                <p>--}}
-{{--                                    <b>--}}
-{{--                                        Lion King Adventures--}}
+                    {{--                                <picture class="list__picture">--}}
+                    {{--                                    <!--[if IE 9]>--}}
+                    {{--                                    <video style="display: none;"><![endif]-->--}}
+                    {{--                                    <source--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"--}}
+                    {{--                                        media="(min-width: 501px) and (max-width: 743px)" class="lazyload">--}}
+                    {{--                                    <!--[if IE 9]></video><![endif]-->--}}
+                    {{--                                    <img--}}
+                    {{--                                        data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x, https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg 1x"--}}
+                    {{--                                        class="lazyload" alt="8-Day Migration Serengeti (Jun to Jul) Mid -Range"/>--}}
+                    {{--                                    <noscript>--}}
+                    {{--                                        <source--}}
+                    {{--                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Serengeti_National_Park_034.jpg"--}}
+                    {{--                                            media="(min-width: 501px) and (max-width: 743px)">--}}
+                    {{--                                        <img--}}
+                    {{--                                            src="../cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034.jpg"--}}
+                    {{--                                            srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Serengeti_National_Park_034@2x.jpg 2x"/>--}}
+                    {{--                                    </noscript>--}}
+                    {{--                                </picture>--}}
 
-{{--                                    </b>--}}
-{{--                                </p>--}}
-{{--                                <div class="stars      " title="5 / 5">--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                </div>--}}
-{{--                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span--}}
-{{--                                        class="nowrap">333 Reviews</span></p>--}}
-{{--                            </div>--}}
+                    {{--                                <div class="holder-tourtitle">--}}
+                    {{--                                    <h2 class="serif tourtitle">8-Day Migration Serengeti (Jun to Jul) Mid -Range</h2>--}}
+                    {{--                                </div>--}}
+
+                    {{--                            </div>--}}
+                    {{--                            <div class="list__item--data  matchheight ">--}}
+
+                    {{--                                <p class="price">--}}
+                    {{--                                    <b>$2,920</b>--}}
+                    {{--                                    pp (USD)--}}
+                    {{--                                </p>--}}
 
 
-{{--                            <span class="favorite-save  " data-id="20511" data-type="tour"--}}
-{{--                                  title="Add to your favorites list">--}}
-{{--                                        <img class="svg svg--shadowed"--}}
-{{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
-{{--                                             alt="Not in favorites"/>--}}
-{{--                                    </span>--}}
+                    {{--                                <p class="desc">--}}
+                    {{--                                    <b>Tanzania:</b>--}}
+                    {{--                                    Private tour<span></span>--}}
+                    {{--                                    <nobr>Mid-range</nobr>--}}
+                    {{--                                    <span></span>Lodge & Tented Camp--}}
+                    {{--                                </p>--}}
 
-{{--                        </a>--}}
-{{--                    </li>--}}
+                    {{--                                <p class="visit"><b>You Visit:</b> Arusha <span>(Start)</span>, Lake Manyara NP,--}}
+                    {{--                                    Serengeti NP, Ngorongoro Highlands, Ngorongoro Crater, Tarangire NP, <span--}}
+                    {{--                                        class="nowrap">Arusha <span>(End)</span></span></p>--}}
+                    {{--                            </div>--}}
+
+                    {{--                            <div class="operator-snippet__data">--}}
+                    {{--                                <div class="opdata__image">--}}
+                    {{--                                    <img--}}
+                    {{--                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                    {{--                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
+                    {{--                                        class="lazyload" alt="Lion King Adventures" title="Lion King Adventures"/>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p>--}}
+                    {{--                                    <b>--}}
+                    {{--                                        Lion King Adventures--}}
+
+                    {{--                                    </b>--}}
+                    {{--                                </p>--}}
+                    {{--                                <div class="stars      " title="5 / 5">--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                    <i class="sbi sbi--star"></i>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p><span class="review-score"><em>5.0</em>/5</span>&nbsp;&ndash;&nbsp;<span--}}
+                    {{--                                        class="nowrap">333 Reviews</span></p>--}}
+                    {{--                            </div>--}}
+
+
+                    {{--                            <span class="favorite-save  " data-id="20511" data-type="tour"--}}
+                    {{--                                  title="Add to your favorites list">--}}
+                    {{--                                        <img class="svg svg--shadowed"--}}
+                    {{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
+                    {{--                                             alt="Not in favorites"/>--}}
+                    {{--                                    </span>--}}
+
+                    {{--                        </a>--}}
+                    {{--                    </li>--}}
                 </ul>
             </div>
             <div class="row">
                 <div class="col col-12">
 
                     <div class="button-holder">
-                        <a class="btn btn--next btn--white btn--autowidth-t" href="tours.html"
+                        <a class="btn btn--next btn--white btn--autowidth-t" href="{{url('all-safari-tours')}}"
                            title="All 7,986 Safari Tours">All {{\App\Tours::all()->count()}} Safari Tours</a>
                     </div>
 
@@ -1269,296 +1271,296 @@
 
             <div class="row">
                 @foreach($operators as $key => $operator)
-                <div class="col col-12 col-t-4 col-d-3">
-                    <a href="p4494.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
-                       data-id="4494">
+                    <div class="col col-12 col-t-4 col-d-3">
+                        <a href="p4494.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "
+                           data-id="4494">
 
-                        <div class="topratedoperators__snippet__rank"><span>#{{$key+1}}</span></div>
+                            <div class="topratedoperators__snippet__rank"><span>#{{$key+1}}</span></div>
 
-                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
-                            <div class="operator_name">
-                                <h2>
-                                    {{$operator->company_name}}
-                                </h2>
+                            <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">
+                                <div class="operator_name">
+                                    <h2>
+                                        {{$operator->company_name}}
+                                    </h2>
 
-                            </div>
-                        </div>
-
-                        <div class="topratedoperators__snippet__head hide show-t col col-12">
-                            <picture>
-                                <img
-                                    src="{{env('OPERATOR_URL')}}/view-user-file/{{$operator->id}}"
-                                    data-src="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
-                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
-                                    class="operator-photo lazyload" title="Sino Africa Safari"
-                                    alt="Sino Africa Safari Photo"/>
-                                <noscript>
-                                    <img
-                                        src="../cloudfront.safaribookings.com/operators/photos/0a8a9799-%e7%bc%96%e8%be%91_%e5%89%af%e6%9c%ac_4494_5e4ecbaf30995.jpg"
-                                        title="Sino Africa Safari" alt="Sino Africa Safari Photo">
-                                </noscript>
-                            </picture>
-                            <div class="operator_name">
-                                <h2>
-                                    {{$operator->company_name}}
-                                </h2>
-                                <div class="rank show hide-t">
-                                    <i class="sbi sbi--medal medal"></i>
-                                    #1 of all tour operators
                                 </div>
                             </div>
-                            <span class="favorite-save  " data-id="4494" data-type="operator"
-                                  title="Add to your favorites list">
+
+                            <div class="topratedoperators__snippet__head hide show-t col col-12">
+                                <picture>
+                                    <img
+                                        src="{{env('OPERATOR_URL')}}/view-user-file/{{$operator->id}}"
+                                        data-src="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
+                                        data-srcset="https://cloudfront.safaribookings.com/operators/photos/0a8a9799-编辑_副本_4494_5e4ecbaf30995.jpg"
+                                        class="operator-photo lazyload" title="Sino Africa Safari"
+                                        alt="Sino Africa Safari Photo"/>
+                                    <noscript>
+                                        <img
+                                            src="../cloudfront.safaribookings.com/operators/photos/0a8a9799-%e7%bc%96%e8%be%91_%e5%89%af%e6%9c%ac_4494_5e4ecbaf30995.jpg"
+                                            title="Sino Africa Safari" alt="Sino Africa Safari Photo">
+                                    </noscript>
+                                </picture>
+                                <div class="operator_name">
+                                    <h2>
+                                        {{$operator->company_name}}
+                                    </h2>
+                                    <div class="rank show hide-t">
+                                        <i class="sbi sbi--medal medal"></i>
+                                        #1 of all tour operators
+                                    </div>
+                                </div>
+                                <span class="favorite-save  " data-id="4494" data-type="operator"
+                                      title="Add to your favorites list">
                                         <img class="svg svg--shadowed"
                                              src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
                                              alt=""/>
                                     </span>
-                        </div>
-
-                        <div class="topratedoperators__snippet__body col col-12">
-                            <div class="operator_logo">
-                                <img
-                                    src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$operator->id}}"
-                                    data-src="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
-                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
-                                    class="operator-logo lazyload" title="Sino Africa Safari"
-                                    alt="Sino Africa Safari Logo"/>
                             </div>
-                            <div class="reviews txt--small">
-                                <div class="stars      " title="4.9 / 5">
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
-                                    <i class="sbi sbi--star"></i>
+
+                            <div class="topratedoperators__snippet__body col col-12">
+                                <div class="operator_logo">
+                                    <img
+                                        src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$operator->id}}"
+                                        data-src="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
+                                        data-srcset="https://cloudfront.safaribookings.com/operators/logos/_20200221093832_4494_5e4f7b1f5c3a9.gif"
+                                        class="operator-logo lazyload" title="Sino Africa Safari"
+                                        alt="Sino Africa Safari Logo"/>
                                 </div>
-                                <br class="hide show-t"/>
-                                443 Reviews
-                                <div class="txt--xgrey show hide-t">
-                                    <i class="sbi sbi--medal medal"></i>
-                                    <b>#1</b> of all tour operators
+                                <div class="reviews txt--small">
+                                    <div class="stars      " title="4.9 / 5">
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                        <i class="sbi sbi--star"></i>
+                                    </div>
+                                    <br class="hide show-t"/>
+                                    443 Reviews
+                                    <div class="txt--xgrey show hide-t">
+                                        <i class="sbi sbi--medal medal"></i>
+                                        <b>#1</b> of all tour operators
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </a>
-                </div>
+                        </a>
+                    </div>
                 @endforeach
-{{--                <div class="col col-12 col-t-4 col-d-3  ">--}}
-{{--                    <a href="p209.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
-{{--                       data-id="209">--}}
+                {{--                <div class="col col-12 col-t-4 col-d-3  ">--}}
+                {{--                    <a href="p209.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
+                {{--                       data-id="209">--}}
 
-{{--                        <div class="topratedoperators__snippet__rank"><span>#2</span></div>--}}
+                {{--                        <div class="topratedoperators__snippet__rank"><span>#2</span></div>--}}
 
-{{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Pembury Tours--}}
-{{--                                </h2>--}}
+                {{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Pembury Tours--}}
+                {{--                                </h2>--}}
 
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
-{{--                            <picture>--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
-{{--                                    class="operator-photo lazyload" title="Pembury Tours" alt="Pembury Tours Photo"/>--}}
-{{--                                <noscript>--}}
-{{--                                    <img--}}
-{{--                                        src="../cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
-{{--                                        title="Pembury Tours" alt="Pembury Tours Photo">--}}
-{{--                                </noscript>--}}
-{{--                            </picture>--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Pembury Tours--}}
-{{--                                </h2>--}}
-{{--                                <div class="rank show hide-t">--}}
-{{--                                    <i class="sbi sbi--medal-silver medal"></i>--}}
-{{--                                    #2 of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <span class="favorite-save  " data-id="209" data-type="operator"--}}
-{{--                                  title="Add to your favorites list">--}}
-{{--                                        <img class="svg svg--shadowed"--}}
-{{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
-{{--                                             alt=""/>--}}
-{{--                                    </span>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
+                {{--                            <picture>--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
+                {{--                                    class="operator-photo lazyload" title="Pembury Tours" alt="Pembury Tours Photo"/>--}}
+                {{--                                <noscript>--}}
+                {{--                                    <img--}}
+                {{--                                        src="../cloudfront.safaribookings.com/operators/photos/pembury-tours-p_1360846320.jpg"--}}
+                {{--                                        title="Pembury Tours" alt="Pembury Tours Photo">--}}
+                {{--                                </noscript>--}}
+                {{--                            </picture>--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Pembury Tours--}}
+                {{--                                </h2>--}}
+                {{--                                <div class="rank show hide-t">--}}
+                {{--                                    <i class="sbi sbi--medal-silver medal"></i>--}}
+                {{--                                    #2 of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <span class="favorite-save  " data-id="209" data-type="operator"--}}
+                {{--                                  title="Add to your favorites list">--}}
+                {{--                                        <img class="svg svg--shadowed"--}}
+                {{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
+                {{--                                             alt=""/>--}}
+                {{--                                    </span>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__body col col-12">--}}
-{{--                            <div class="operator_logo">--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"--}}
-{{--                                    class="operator-logo lazyload" title="Pembury Tours" alt="Pembury Tours Logo"/>--}}
-{{--                            </div>--}}
-{{--                            <div class="reviews txt--small">--}}
-{{--                                <div class="stars      " title="5 / 5">--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                </div>--}}
-{{--                                <br class="hide show-t"/>--}}
-{{--                                347 Reviews--}}
-{{--                                <div class="txt--xgrey show hide-t">--}}
-{{--                                    <i class="sbi sbi--medal-silver medal"></i>--}}
-{{--                                    <b>#2</b> of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__body col col-12">--}}
+                {{--                            <div class="operator_logo">--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/pembury-tours-l_1360846325.gif"--}}
+                {{--                                    class="operator-logo lazyload" title="Pembury Tours" alt="Pembury Tours Logo"/>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="reviews txt--small">--}}
+                {{--                                <div class="stars      " title="5 / 5">--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                </div>--}}
+                {{--                                <br class="hide show-t"/>--}}
+                {{--                                347 Reviews--}}
+                {{--                                <div class="txt--xgrey show hide-t">--}}
+                {{--                                    <i class="sbi sbi--medal-silver medal"></i>--}}
+                {{--                                    <b>#2</b> of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--                <div class="col col-12 col-t-4 col-d-3  ">--}}
-{{--                    <a href="p2673.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
-{{--                       data-id="2673">--}}
+                {{--                    </a>--}}
+                {{--                </div>--}}
+                {{--                <div class="col col-12 col-t-4 col-d-3  ">--}}
+                {{--                    <a href="p2673.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
+                {{--                       data-id="2673">--}}
 
-{{--                        <div class="topratedoperators__snippet__rank"><span>#3</span></div>--}}
+                {{--                        <div class="topratedoperators__snippet__rank"><span>#3</span></div>--}}
 
-{{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Lion King Adventures--}}
-{{--                                </h2>--}}
+                {{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Lion King Adventures--}}
+                {{--                                </h2>--}}
 
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
-{{--                            <picture>--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
-{{--                                    class="operator-photo lazyload" title="Lion King Adventures"--}}
-{{--                                    alt="Lion King Adventures Photo"/>--}}
-{{--                                <noscript>--}}
-{{--                                    <img--}}
-{{--                                        src="../cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
-{{--                                        title="Lion King Adventures" alt="Lion King Adventures Photo">--}}
-{{--                                </noscript>--}}
-{{--                            </picture>--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Lion King Adventures--}}
-{{--                                </h2>--}}
-{{--                                <div class="rank show hide-t">--}}
-{{--                                    <i class="sbi sbi--medal-bronze medal"></i>--}}
-{{--                                    #3 of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <span class="favorite-save  " data-id="2673" data-type="operator"--}}
-{{--                                  title="Add to your favorites list">--}}
-{{--                                        <img class="svg svg--shadowed"--}}
-{{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
-{{--                                             alt=""/>--}}
-{{--                                    </span>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
+                {{--                            <picture>--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
+                {{--                                    class="operator-photo lazyload" title="Lion King Adventures"--}}
+                {{--                                    alt="Lion King Adventures Photo"/>--}}
+                {{--                                <noscript>--}}
+                {{--                                    <img--}}
+                {{--                                        src="../cloudfront.safaribookings.com/operators/photos/lion_king_staff_2673_5bfd5cfdcf23c.jpg"--}}
+                {{--                                        title="Lion King Adventures" alt="Lion King Adventures Photo">--}}
+                {{--                                </noscript>--}}
+                {{--                            </picture>--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Lion King Adventures--}}
+                {{--                                </h2>--}}
+                {{--                                <div class="rank show hide-t">--}}
+                {{--                                    <i class="sbi sbi--medal-bronze medal"></i>--}}
+                {{--                                    #3 of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <span class="favorite-save  " data-id="2673" data-type="operator"--}}
+                {{--                                  title="Add to your favorites list">--}}
+                {{--                                        <img class="svg svg--shadowed"--}}
+                {{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
+                {{--                                             alt=""/>--}}
+                {{--                                    </span>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__body col col-12">--}}
-{{--                            <div class="operator_logo">--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
-{{--                                    class="operator-logo lazyload" title="Lion King Adventures"--}}
-{{--                                    alt="Lion King Adventures Logo"/>--}}
-{{--                            </div>--}}
-{{--                            <div class="reviews txt--small">--}}
-{{--                                <div class="stars      " title="5 / 5">--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                </div>--}}
-{{--                                <br class="hide show-t"/>--}}
-{{--                                333 Reviews--}}
-{{--                                <div class="txt--xgrey show hide-t">--}}
-{{--                                    <i class="sbi sbi--medal-bronze medal"></i>--}}
-{{--                                    <b>#3</b> of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__body col col-12">--}}
+                {{--                            <div class="operator_logo">--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo-safari-boo_1472481300.gif"--}}
+                {{--                                    class="operator-logo lazyload" title="Lion King Adventures"--}}
+                {{--                                    alt="Lion King Adventures Logo"/>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="reviews txt--small">--}}
+                {{--                                <div class="stars      " title="5 / 5">--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                </div>--}}
+                {{--                                <br class="hide show-t"/>--}}
+                {{--                                333 Reviews--}}
+                {{--                                <div class="txt--xgrey show hide-t">--}}
+                {{--                                    <i class="sbi sbi--medal-bronze medal"></i>--}}
+                {{--                                    <b>#3</b> of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--                <div class="col col-12 col-t-4 col-d-3  hide show-d  ">--}}
-{{--                    <a href="p58.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
-{{--                       data-id="58">--}}
+                {{--                    </a>--}}
+                {{--                </div>--}}
+                {{--                <div class="col col-12 col-t-4 col-d-3  hide show-d  ">--}}
+                {{--                    <a href="p58.html" class="topratedoperators__snippet shadowed-box   shadowed-box--hover  "--}}
+                {{--                       data-id="58">--}}
 
-{{--                        <div class="topratedoperators__snippet__rank"><span>#4</span></div>--}}
+                {{--                        <div class="topratedoperators__snippet__rank"><span>#4</span></div>--}}
 
-{{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Matoke Tours--}}
-{{--                                </h2>--}}
+                {{--                        <div class="topratedoperators__snippet__mobilehead show hide-t col col-12">--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Matoke Tours--}}
+                {{--                                </h2>--}}
 
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
-{{--                            <picture>--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
-{{--                                    class="operator-photo lazyload" title="Matoke Tours" alt="Matoke Tours Photo"/>--}}
-{{--                                <noscript>--}}
-{{--                                    <img src="../cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
-{{--                                         title="Matoke Tours" alt="Matoke Tours Photo">--}}
-{{--                                </noscript>--}}
-{{--                            </picture>--}}
-{{--                            <div class="operator_name">--}}
-{{--                                <h2>--}}
-{{--                                    Matoke Tours--}}
-{{--                                </h2>--}}
-{{--                                <div class="rank show hide-t">--}}
-{{--                                    #4 of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <span class="favorite-save  " data-id="58" data-type="operator"--}}
-{{--                                  title="Add to your favorites list">--}}
-{{--                                        <img class="svg svg--shadowed"--}}
-{{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
-{{--                                             alt=""/>--}}
-{{--                                    </span>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__head hide show-t col col-12">--}}
+                {{--                            <picture>--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
+                {{--                                    class="operator-photo lazyload" title="Matoke Tours" alt="Matoke Tours Photo"/>--}}
+                {{--                                <noscript>--}}
+                {{--                                    <img src="../cloudfront.safaribookings.com/operators/photos/1_58_5df36d479384b.jpg"--}}
+                {{--                                         title="Matoke Tours" alt="Matoke Tours Photo">--}}
+                {{--                                </noscript>--}}
+                {{--                            </picture>--}}
+                {{--                            <div class="operator_name">--}}
+                {{--                                <h2>--}}
+                {{--                                    Matoke Tours--}}
+                {{--                                </h2>--}}
+                {{--                                <div class="rank show hide-t">--}}
+                {{--                                    #4 of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                            <span class="favorite-save  " data-id="58" data-type="operator"--}}
+                {{--                                  title="Add to your favorites list">--}}
+                {{--                                        <img class="svg svg--shadowed"--}}
+                {{--                                             src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"--}}
+                {{--                                             alt=""/>--}}
+                {{--                                    </span>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="topratedoperators__snippet__body col col-12">--}}
-{{--                            <div class="operator_logo">--}}
-{{--                                <img--}}
-{{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"--}}
-{{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"--}}
-{{--                                    class="operator-logo lazyload" title="Matoke Tours" alt="Matoke Tours Logo"/>--}}
-{{--                            </div>--}}
-{{--                            <div class="reviews txt--small">--}}
-{{--                                <div class="stars      " title="5 / 5">--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                    <i class="sbi sbi--star"></i>--}}
-{{--                                </div>--}}
-{{--                                <br class="hide show-t"/>--}}
-{{--                                316 Reviews--}}
-{{--                                <div class="txt--xgrey show hide-t">--}}
-{{--                                    <b>#4</b> of all tour operators--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                {{--                        <div class="topratedoperators__snippet__body col col-12">--}}
+                {{--                            <div class="operator_logo">--}}
+                {{--                                <img--}}
+                {{--                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
+                {{--                                    data-src="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"--}}
+                {{--                                    data-srcset="https://cloudfront.safaribookings.com/operators/logos/logo_58_5df375be84bd1.gif"--}}
+                {{--                                    class="operator-logo lazyload" title="Matoke Tours" alt="Matoke Tours Logo"/>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="reviews txt--small">--}}
+                {{--                                <div class="stars      " title="5 / 5">--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                    <i class="sbi sbi--star"></i>--}}
+                {{--                                </div>--}}
+                {{--                                <br class="hide show-t"/>--}}
+                {{--                                316 Reviews--}}
+                {{--                                <div class="txt--xgrey show hide-t">--}}
+                {{--                                    <b>#4</b> of all tour operators--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
 
-{{--                    </a>--}}
-{{--                </div>--}}
+                {{--                    </a>--}}
+                {{--                </div>--}}
             </div>
 
             <div class="row">

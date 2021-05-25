@@ -725,16 +725,6 @@
                                     <h2 class="serif">
                                        {{$user->company_name}}
                                     </h2>
-                                    <div class="review-summary--oneline">
-                                        <div class="stars      " title="4.9 / 5">
-                                            <i class="sbi sbi--starcontrast"></i>
-                                            <i class="sbi sbi--starcontrast"></i>
-                                            <i class="sbi sbi--starcontrast"></i>
-                                            <i class="sbi sbi--starcontrast"></i>
-                                            <i class="sbi sbi--starcontrast"></i>
-                                        </div>
-                                        <span class="review-score"><em>4.9</em>/5</span> &nbsp;&ndash;&nbsp;46 Reviews
-                                    </div>
                                 </div>
                                 <div class="col col-0 col-t-2-5 col-d-2-5 col-w-3 picture-holder">
                                     <div class="picture-frame">
@@ -769,13 +759,11 @@
                                     </h2>
                                     <div class="review-summary--oneline hide show-t">
                                         <div class="stars      " title="5 / 5">
+                                            @for($i=0;$i<$user->rating;$i++)
                                             <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
+                                            @endfor
                                         </div>
-                                        <span class="review-score"><em>5</em>/5</span> &nbsp;&ndash;&nbsp;0 Reviews
+                                        <span class="review-score"><em>{{$user->rating}}</em>/5</span> &nbsp;&ndash;&nbsp;{{$user->reviews}} Reviews
                                     </div>
                                     <dl>
                                         <dt>Office In:</dt>
@@ -829,27 +817,27 @@
                                 <div class="col col-0 col-t-2-5 col-w-3">&nbsp;</div>
                                 <div class="col col-12 col-t-9 col-w-9 ">
                                     <ul class="list list--icon list--icon-arrow list--icon-nopadding txt--small hide show-t">
-                                        <li><a href="tours/t5433.html"
-                                               title="13-Day Around Trip to the Most Charming Regions in Africa">13-Day
-                                                Around Trip to the Most Charming Regions in Africa</a> <span
-                                                class="txt--grey">(from $4,485 pp)</span></li>
-                                        <li><a href="tours/t5434.html"
-                                               title="7-Day Kidepo Valley &amp; Murchison Falls National Parks">7-Day
-                                                Kidepo Valley &amp; Murchison Falls National Parks</a> <span
-                                                class="txt--grey">(from $2,050 pp)</span></li>
-                                        <li><a href="tours/t5554.html"
-                                               title="4-Day Face to Face Experience with Mountain Gorillas">4-Day Face
-                                                to Face Experience with Mountain Gorillas</a> <span class="txt--grey">(from $2,086 pp)</span>
-                                        </li>
+                                        @if(count($user->tours) == 0)
+                                            <li><a href="#"
+                                                   title="Not found">No tour found!</a>
+                                            </li>
+                                        @endif
+                                        @foreach($user->tours as $tour)
+                                            <li><a href="#"
+                                                   title="{{$tour->title}}">{{$tour->total_days}}-Day
+                                                    {{$tour->title}}</a> <span
+                                                    class="txt--grey">(from ${{$tour->price}} pp)</span>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                     <a href="{{url('operator-tours')}}/{{$user->id}}"
                                        class="btn btn--orange btn--small btn--autowidth btn--next"
-                                       title="All tours offered by Pearl Afric Tours &amp; Travel"> All 11
+                                       title="All tours offered by Pearl Afric Tours &amp; Travel"> All {{count($user->tours)}}
                                         Tours </a><span
                                         class="behind-btn"> - Offered by {{$user->company_name}}</span>
-                                    <img
-                                        src="../cloudfront.safaribookings.com/operators/logos/logo_1_1322_5ff9f8880e015.gif"
-                                        class="operator-logo operator-logo-m show hide-t"/>
+{{--                                    <img--}}
+{{--                                        src="../cloudfront.safaribookings.com/operators/logos/logo_1_1322_5ff9f8880e015.gif"--}}
+{{--                                        class="operator-logo operator-logo-m show hide-t"/>--}}
                                 </div>
                             </div>
                         </li>

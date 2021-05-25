@@ -34,6 +34,10 @@ Route::get('operators', "AuthController@operators");
 Route::get('view-user-file/{id}', "AuthController@viewUserFile");
 Route::get('view-user-company-file/{id}', "AuthController@viewUserCompanyFile");
 Route::get('operator-profile/{id}', "AuthController@viewOperatorProfile");
+Route::get('review/{id}', "AuthController@operatorReviewPage");
+Route::post('post-review', "AuthController@saveReview");
+Route::get('review-success', "AuthController@reviewSuccess");
+Route::get('view-review-image/{id}', "AuthController@viewReviewImage");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();

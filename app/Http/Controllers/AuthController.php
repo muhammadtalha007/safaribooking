@@ -6,7 +6,12 @@ use App\CertificateFiles;
 use App\Certificates;
 use App\CompanyDestinations;
 use App\CompanyOffice;
+use App\Review;
+use App\ReviewImage;
+use App\Routes;
 use App\Subscription;
+use App\TourFeatures;
+use App\Tours;
 use App\User;
 use App\UserCardDetails;
 use App\UserTokens;
@@ -32,6 +37,23 @@ class AuthController extends Controller
         foreach ($users as $user){
             $user->offices = CompanyOffice::where('user_id',$user->id)->get();
             $user->destinations = CompanyDestinations::where('user_id',$user->id)->get();
+            $user->tours = Tours::where('user_id', $user->id)->get();
+            $user->reviews = Review::where('operator_id', $user->id)->get();
+            $rating = 0;
+            $count = 0;
+            foreach ($user->reviews as $comment){
+                if ((int)$comment->rating > 0){
+                    $rating = $rating + (int)$comment->rating;
+                    $count++;
+                }
+            }
+            if ($rating > 0){
+                $rating = $rating / $count;
+            }else{
+                $rating =  5;
+            }
+            $user->rating = round($rating, 1);
+            $user->reviews = $count;
         }
         return view('operators')->with(['users' => $users]);
     }
@@ -54,11 +76,88 @@ class AuthController extends Controller
         return readfile($file);
     }
 
+    public function viewReviewImage($id){
+        $file = ReviewImage::where('id', $id)->first();
+        $file = base_path('/data') . '/review-files' . '/' . $file->image;
+        $type = mime_content_type($file);
+        header('Content-Type:' . $type);
+        header('Content-Length: ' . filesize($file));
+        return readfile($file);
+    }
+
     public function viewOperatorProfile($id){
         $user = User::where('id', $id)->first();
         $user->offices = CompanyOffice::where('user_id', $user->id)->get();
         $user->destinations = CompanyDestinations::where('user_id', $user->id)->get();
+        $user->tours = Tours::where('user_id', $user->id)->get();
+        foreach ($user->tours as $item){
+            $item->features = TourFeatures::where('tour_id', $item->id)->get();
+            $item->routes = Routes::where('tour_id', $item->id)->get();
+        }
+        $user->reviews = Review::where('operator_id', $user->id)->get();
+        $user->reviewsDeceding = Review::where('operator_id', $user->id)->latest()->get();
+        foreach ($user->reviewsDeceding as $review){
+            $review->images = ReviewImage::where('review_id', $review->id)->get();
+        }
+        if (count($user->reviews) > 0){
+            $user->isReviewAvailable = 1;
+            $user->latestReview = Review::where('operator_id', $user->id)->latest()->first();
+        }else{
+            $user->isReviewAvailable = 0;
+        }
+
+        $rating = 0;
+        $count = 0;
+        foreach ($user->reviews as $comment){
+            if ((int)$comment->rating > 0){
+                $rating = $rating + (int)$comment->rating;
+                $count++;
+            }
+        }
+        if ($rating > 0){
+            $rating = $rating / $count;
+        }else{
+            $rating =  5;
+        }
+        $user->rating = round($rating, 1);
+        $user->reviews = $count;
+
         return view('operators-profile')->with(['user' => $user]);
+    }
+
+    public function operatorReviewPage($id){
+        $user = User::where('id', $id)->first();
+        return view('operator-review')->with(['user'  => $user]);
+    }
+
+    public function saveReview(Request $request){
+        $review = new Review();
+        $review->month = $request->month;
+        $review->year = $request->year;
+        $review->rating = $request->rate;
+        $review->title = $request->review_title;
+        $review->review = $request->review;
+        $review->name = $request->reviewer_name;
+        $review->country = $request->country;
+        $review->email = $request->reviewer_email;
+        $review->operator_id = $request->operator_id;
+        $review->save();
+        if ($request->hasfile('reviewFiles')) {
+            $files = $request->file('reviewFiles');
+            foreach ($files as $file) {
+                $name =  rand(0, 1000) .time() . '.' . $file->getClientOriginalExtension();
+                $file->move(base_path('/data') . '/review-files' . '/', $name);
+                $reviewImage = new ReviewImage();
+                $reviewImage->review_id = $review->id;
+                $reviewImage->image = $name;
+                $reviewImage->save();
+            }
+        }
+        return redirect('review-success');
+    }
+
+    public function reviewSuccess(){
+        return view('review-success');
     }
 
     public function signup(Request $request)

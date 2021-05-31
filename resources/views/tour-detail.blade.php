@@ -4,12 +4,6 @@
 
         <div itemscope itemtype="http://schema.org/Product">
 
-            <div class="messagebox messagebox--orange messagebox--bar">
-                <a href="../coronavirus.html" class="nowrap">
-                    <i class="sbi sbi--info-blue"></i>
-                    Coronavirus (COVID-19) Support
-                </a>
-            </div>
             <div class="titlebar titlebar--grey titlebar--tour hide show-t">
                 <div class="container">
                     <div class="row">
@@ -21,17 +15,17 @@
                                 <a href="../index.html" title="SafariBookings.com">Home</a>
                             </li>
                             <li data-type='breadcrumb'>
-                                <a href="../tours.html" title="All Tours"><span>All Tours</span></a>
+                                <a href="{{url('all-safari-tours')}}" title="All Tours"><span>All Tours</span></a>
                             </li>
                             <li data-type='breadcrumb'>
-                                <a href="tanzania.html" title="Tanzania Tours"><span>Tanzania Tours</span></a>
+                                <a href="tanzania.html" title="{{$tour->country_name}}"><span>{{$tour->country_name}}</span></a>
                             </li>
                             <li data-type='breadcrumb'>
                                 <a href="../operator-tours/p2750.html"
-                                   title="Unlimited Expeditions - The Soul of Tanzania"><span>Unlimited Expeditions - The Soul of Tanzania</span></a>
+                                   title="{{$companyName}}"><span>{{$companyName}}</span></a>
                             </li>
                             <li>
-                                <span class="breadcrumbs__last" title="5-Day Living Among Lions - Mid-Range">5-Day Living Among Lions - Mid-Range</span>
+                                <span class="breadcrumbs__last" title="{{$tour->total_days}}-Day {{$tour->title}}">{{$tour->total_days}}-Day {{$tour->title}}</span>
                             </li>
                         </ol>
                     </div>
@@ -63,7 +57,7 @@
                         media="(min-width: 481px)" class="lazyload">
                     <!--[if IE 9]></video><![endif]-->
                     <img
-                        data-src="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg"
+                        src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                         data-srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x"
                         class="lazyload" alt=""/>
                     <noscript>
@@ -77,7 +71,7 @@
                             srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/744x372/Katavi_National_Park_021.jpg"
                             media="(min-width: 481px)">
                         <img
-                            src="../../cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021.jpg"
+                            src="{{env('OPERATOR_URL')}}/view-tour-icon/{{$tour->id}}"
                             srcset="https://cloudfront.safaribookings.com/lib/tanzania/tour/480x240/Katavi_National_Park_021@2x.jpg 2x"
                             alt="" itemprop="image"/>
                     </noscript>
@@ -85,18 +79,15 @@
                 <div class="imgpagehead__extragrad hide show-d" style="left: 20.0%"></div>
                 <div class="imgpagehead__extragrad hide show-t hide-d" style="left: 20.0%"></div>
                 <div class="imgpagehead__overlay">
-                    <h1 class="serif" itemprop="name">5-Day Living Among Lions - Mid-Range</h1>
+                    <h1 class="serif" itemprop="name">{{$tour->total_days}}-Day {{$tour->title}}</h1>
                     <div class="imgpagehead__overlay__sub serif hide show-t show-p">
-                        <span>Offered By:</span> <strong><a href="../operator/t17948.html" class="tablink scrolltop">Unlimited
-                                Expeditions - The Soul of Tanzania</a></strong>
+                        <span>Offered By:</span> <strong><a href="../operator/t17948.html" class="tablink scrolltop">{{$companyName}}</a></strong>
                         <div class="stars      " title="5 / 5">
-                            <i class="sbi sbi--starcontrast"></i>
-                            <i class="sbi sbi--starcontrast"></i>
-                            <i class="sbi sbi--starcontrast"></i>
-                            <i class="sbi sbi--starcontrast"></i>
-                            <i class="sbi sbi--starcontrast"></i>
+                            @for($i=0;$i<$rating;$i++)
+                                <i class="sbi sbi--star"></i>
+                            @endfor
                         </div>
-                        <span class="review-score review-score--white"><em>5.0</em>/5 &nbsp; (229 Reviews)</span></div>
+                        <span class="review-score review-score--white"><em>{{$rating}}</em>/5 &nbsp; ({{$reviews}} Reviews)</span></div>
                 </div>
                 <span class="favorite-save  " data-id="17948" data-type="tour" title="Add to your favorites list">
             <img class="svg svg--shadowed" src="https://cfstatic.safaribookings.com/img/sbicons/heart-circled.svg"
@@ -135,9 +126,9 @@
                             </div>
                             <a href="../operator/t17948.html" class="tablink scrolltop operator-snippet__data hide-t">
                                 <div class="opdata__image"><img
-                                        src="../../cloudfront.safaribookings.com/operators/logos/logo_1478192437.gif"/>
+                                        src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$userId}}"/>
                                 </div>
-                                <p><b>Unlimited Expeditions - The Soul of Tanzania</b></p>
+                                <p><b>{{$companyName}}</b></p>
                                 <p>
                                     <i class="sbi sbi--star"></i>
                                     <i class="sbi sbi--star"></i>
@@ -261,14 +252,14 @@
                                     <div class="tourtabs">
                                         <a href="t17948.html" class="active" data-ajax="overview-tab" role="tab"
                                            title="Overview">Overview</a>
-                                        <a href="../day/t17948.html" data-ajax="daybyday-tab" role="tab" rel="nofollow"
-                                           title="Day by Day">Day by Day</a>
+{{--                                        <a href="../day/t17948.html" data-ajax="daybyday-tab" role="tab" rel="nofollow"--}}
+{{--                                           title="Day by Day">Day by Day</a>--}}
                                         <a href="../rates/t17948.html" data-ajax="rates-tab" role="tab" rel="nofollow"
                                            title="Rates">Rates</a>
                                         <a href="../inclusions/t17948.html" data-ajax="inclusions-tab" role="tab"
                                            rel="nofollow" title="Inclusions">Inclusions</a>
-                                        <a href="../gettingthere/t17948.html" class="" data-ajax="gettingthere-tab"
-                                           role="tab" rel="nofollow" title="Getting There">Getting There</a>
+{{--                                        <a href="../gettingthere/t17948.html" class="" data-ajax="gettingthere-tab"--}}
+{{--                                           role="tab" rel="nofollow" title="Getting There">Getting There</a>--}}
                                         <a href="../operator/t17948.html" class="" data-ajax="operator-tab" role="tab"
                                            rel="nofollow" title="Offered By">Offered By</a>
                                     </div>
@@ -284,11 +275,7 @@
                                      data-title="Tanzania Safari: 5-Day Living Among Lions - Mid-Range">
 
                                     <div class="tour__content__block tour__content__block--notitle">
-                                        <p itemprop="description">This is one of our most popular tours as it allows you
-                                            to spend a very reasonable amount of time in the Serengeti (2 nights) and
-                                            still have the chance of exploring Ngorongoro and Manyara or Tarangire
-                                            National Parks. You can either do the tour by land (circle itinerary) or fly
-                                            back from the Serengeti to remove the backtracking.</p>
+                                        <p itemprop="description">{{$tour->description}}</p>
 
                                         <div class="gallery__preview--mobile hide-t">
                                             <a href="t17948.html#photo1" class=""
@@ -327,54 +314,55 @@
                                     <div class="tour__content__block tour__content__block--routemap tour__route">
                                         <h2>Route</h2>
                                         <div class="tour__route-map-list">
-                                            <div
-                                                class="countryoutline countryoutline--withroutemap avoid-break-p tour__route-map">
-                                                <div class="routemap">
-                                                    <div class="loading"></div>
-                                                    <img src="../route/t17948.html" class="svg map-route-svg"/>
-                                                    <div class="map-route-africa bottom-left"
-                                                         style="  bottom:-1px;  left:-1px;  ">
-                                                        <img
-                                                            src="https://cfstatic.safaribookings.com/img/svg/africa-map-small.svg"
-                                                            class="svg map-africa-svg" data-active="tanzania"/>
-                                                        <img src="https://cfstatic.safaribookings.com/img/svg/arrow.svg"
-                                                             data-nocache="1" class="svg arrow-svg  mirrored  "/>
-                                                    </div>
-                                                </div>
-                                            </div>
+{{--                                            <div--}}
+{{--                                                class="countryoutline countryoutline--withroutemap avoid-break-p tour__route-map">--}}
+{{--                                                <div class="routemap">--}}
+{{--                                                    <div class="loading"></div>--}}
+{{--                                                    <img src="../route/t17948.html" class="svg map-route-svg"/>--}}
+{{--                                                    <div class="map-route-africa bottom-left"--}}
+{{--                                                         style="  bottom:-1px;  left:-1px;  ">--}}
+{{--                                                        <img--}}
+{{--                                                            src="https://cfstatic.safaribookings.com/img/svg/africa-map-small.svg"--}}
+{{--                                                            class="svg map-africa-svg" data-active="tanzania"/>--}}
+{{--                                                        <img src="https://cfstatic.safaribookings.com/img/svg/arrow.svg"--}}
+{{--                                                             data-nocache="1" class="svg arrow-svg  mirrored  "/>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
                                             <div class="tour__flow__container tour__route-list"
                                                  data-role="tour-route-list">
                                                 <div class="tour__route-list-inner">
                                                     <table class="route__flow avoid-break-p">
                                                         <tr class="country">
                                                             <td colspan="2"><a href='../tanzania.html'
-                                                                               target="_blank"><strong>Tanzania</strong></a>
+                                                                               target="_blank"><strong>{{$tour->country_name}}</strong></a>
                                                                 <img
                                                                     src='../../cfstatic.safaribookings.com/images/flags/tz.png'
                                                                     alt='' class='flag'/></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Start</td>
-                                                            <td>Arusha <strong>(Day 1)</strong></td>
+{{--                                                            <td>Arusha <strong>(Day 1)</strong></td>--}}
                                                         </tr>
+                                                        @foreach($routes as $item)
                                                         <tr>
-                                                            <td>Day 1</td>
-                                                            <td><a href='../manyara.html' target="_blank">Lake Manyara
-                                                                    NP</a></td>
+                                                            <td>{{$item->route_day}}</td>
+                                                            <td>{{$item->route_name}}</td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>Day 2-3</td>
-                                                            <td><a href='../serengeti.html' target="_blank">Serengeti
-                                                                    NP</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Day 4-5</td>
-                                                            <td><a href='../ngorongoro.html' target="_blank">Ngorongoro
-                                                                    Crater</a></td>
-                                                        </tr>
+                                                        @endforeach
+{{--                                                        <tr>--}}
+{{--                                                            <td>Day 2-3</td>--}}
+{{--                                                            <td><a href='../serengeti.html' target="_blank">Serengeti--}}
+{{--                                                                    NP</a></td>--}}
+{{--                                                        </tr>--}}
+{{--                                                        <tr>--}}
+{{--                                                            <td>Day 4-5</td>--}}
+{{--                                                            <td><a href='../ngorongoro.html' target="_blank">Ngorongoro--}}
+{{--                                                                    Crater</a></td>--}}
+{{--                                                        </tr>--}}
                                                         <tr class="last">
                                                             <td>End</td>
-                                                            <td>Arusha <strong>(Day 5)</strong></td>
+{{--                                                            <td>Arusha <strong>(Day 5)</strong></td>--}}
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -391,62 +379,66 @@
                                         <h2>Tour Features</h2>
 
                                         <div class="row">
+                                            @foreach($tourFeatures as $key => $item)
                                             <div class="col col-12 col-t-6 item  ">
                                                 <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-accomodation-mid.svg"
-                                                        alt=""/>
+                                                    <h1 style="color: #a91615">{{$key+1}}</h1>
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-accomodation-mid.svg"--}}
+{{--                                                        alt=""/>--}}
                                                 </div>
-                                                <h4>Mid-range tour</h4>
-                                                <p>This mid-range tour uses lodges and tented camps.</p>
+
+                                                    <h4>{{$item->featureDetails->name}}</h4>
+                                                    <p>{{$item->featureDetails->description}}</p>
                                             </div>
-                                            <div class="col col-12 col-t-6 item  ">
-                                                <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-private-tour.svg"
-                                                        alt=""/>
-                                                </div>
-                                                <h4>Private tour</h4>
-                                                <p>This tour will be organized exclusively for you and won't be shared
-                                                    with others.</p>
-                                            </div>
-                                            <div class="col col-12 col-t-6 item  hide show-t  ">
-                                                <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-departure-any-day.svg"
-                                                        alt=""/>
-                                                </div>
-                                                <h4>Can start any day</h4>
-                                                <p>If availability permits, this tour can start on any day.</p>
-                                            </div>
-                                            <div class="col col-12 col-t-6 item  ">
-                                                <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-customize-yes.svg"
-                                                        alt=""/>
-                                                </div>
-                                                <h4>Can be customized</h4>
-                                                <p>You can request <strong>minor</strong> changes to the accommodations
-                                                    and destinations of this tour.</p>
-                                            </div>
-                                            <div class="col col-12 col-t-6 item  ">
-                                                <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-solo-travelers-yes.svg"
-                                                        alt=""/>
-                                                </div>
-                                                <h4>Suitable for solo travelers</h4>
-                                                <p>Solo travelers can book this private tour.</p>
-                                            </div>
-                                            <div class="col col-12 col-t-6 item  ">
-                                                <div class="svg-box">
-                                                    <img
-                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-age-all.svg"
-                                                        alt=""/>
-                                                </div>
-                                                <h4>Suitable for all ages</h4>
-                                                <p>This tour is suitable for children of all ages.</p>
-                                            </div>
+                                            @endforeach
+                                            {{--                                            <div class="col col-12 col-t-6 item  ">--}}
+{{--                                                <div class="svg-box">--}}
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-private-tour.svg"--}}
+{{--                                                        alt=""/>--}}
+{{--                                                </div>--}}
+{{--                                                <h4>Private tour</h4>--}}
+{{--                                                <p>This tour will be organized exclusively for you and won't be shared--}}
+{{--                                                    with others.</p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col col-12 col-t-6 item  hide show-t  ">--}}
+{{--                                                <div class="svg-box">--}}
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-departure-any-day.svg"--}}
+{{--                                                        alt=""/>--}}
+{{--                                                </div>--}}
+{{--                                                <h4>Can start any day</h4>--}}
+{{--                                                <p>If availability permits, this tour can start on any day.</p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col col-12 col-t-6 item  ">--}}
+{{--                                                <div class="svg-box">--}}
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-customize-yes.svg"--}}
+{{--                                                        alt=""/>--}}
+{{--                                                </div>--}}
+{{--                                                <h4>Can be customized</h4>--}}
+{{--                                                <p>You can request <strong>minor</strong> changes to the accommodations--}}
+{{--                                                    and destinations of this tour.</p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col col-12 col-t-6 item  ">--}}
+{{--                                                <div class="svg-box">--}}
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-solo-travelers-yes.svg"--}}
+{{--                                                        alt=""/>--}}
+{{--                                                </div>--}}
+{{--                                                <h4>Suitable for solo travelers</h4>--}}
+{{--                                                <p>Solo travelers can book this private tour.</p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col col-12 col-t-6 item  ">--}}
+{{--                                                <div class="svg-box">--}}
+{{--                                                    <img--}}
+{{--                                                        src="https://cfstatic.safaribookings.com/img/svg/icons-red/icon-age-all.svg"--}}
+{{--                                                        alt=""/>--}}
+{{--                                                </div>--}}
+{{--                                                <h4>Suitable for all ages</h4>--}}
+{{--                                                <p>This tour is suitable for children of all ages.</p>--}}
+{{--                                            </div>--}}
                                         </div>
 
                                     </div>
@@ -465,7 +457,7 @@
                                                     </picture>
                                                 </div>
                                                 <span>
-                                    Activities: <b>game drives</b>
+                                                    Activities: <b> @foreach($tourActivities as $item){{$item->activity}} <span style="font-weight: normal">&</span> @endforeach</b>
                                     </span>
                                             </li>
                                             <li>
@@ -545,57 +537,59 @@
                                                 <div>Accommodation</div>
                                                 <div class="hide show-ti">Meals</div>
                                             </li>
+                                            @foreach($accommodationAndMeal as $key =>  $item)
                                             <li>
-                                                <div>1</div>
+                                                <div>{{$key+1}}</div>
                                                 <div>
-                                                    <a href="https://wildlifecamp.co.tz/" target="_blank"
-                                                       rel="noopener nofollow">
-                                                        Manyara Wildlife Safari Camp
-                                                    </a>
-                                                    <span class="txt--small">Mid-range tented camp just outside Lake Manyara NP</span>
+{{--                                                    <a href="https://wildlifecamp.co.tz/" target="_blank"--}}
+{{--                                                       rel="noopener nofollow">--}}
+{{--                                                        Manyara Wildlife Safari Camp--}}
+{{--                                                    </a>--}}
+                                                    <span class="txt--small">{{$item->accommodation}}</span>
                                                 </div>
                                                 <div class="txt--small">
-                                                    All Meals Included
+                                                    {{$item->meal}}
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div>2-3</div>
-                                                <div>
-                                                    <a href="https://eastafricacamps.com/pumzika-classic-safari-camp-serengeti/"
-                                                       target="_blank" rel="noopener nofollow">
-                                                        Pumzika Classic Safari Camp
-                                                    </a>
-                                                    <span
-                                                        class="txt--small">Mid-range tented camp inside Serengeti NP</span>
-                                                </div>
-                                                <div class="txt--small">
-                                                    All Meals Included
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>4</div>
-                                                <div>
-                                                    <a href="https://rhino.co.tz/" target="_blank"
-                                                       rel="noopener nofollow">
-                                                        Rhino Lodge
-                                                    </a>
-                                                    <span class="txt--small">Mid-range lodge on the crater rim of Ngorongoro Crater</span>
-                                                </div>
-                                                <div class="txt--small">
-                                                    All Meals Included
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>5</div>
-                                                <div>
-                                                    End of tour <span
-                                                        class="txt--small txt--xgrey">(No accommodation)</span>
-                                                    <span class="txt--small"> </span>
-                                                </div>
-                                                <div class="txt--small">
-                                                    Breakfast & Lunch Included
-                                                </div>
-                                            </li>
+                                            @endforeach
+{{--                                            <li>--}}
+{{--                                                <div>2-3</div>--}}
+{{--                                                <div>--}}
+{{--                                                    <a href="https://eastafricacamps.com/pumzika-classic-safari-camp-serengeti/"--}}
+{{--                                                       target="_blank" rel="noopener nofollow">--}}
+{{--                                                        Pumzika Classic Safari Camp--}}
+{{--                                                    </a>--}}
+{{--                                                    <span--}}
+{{--                                                        class="txt--small">Mid-range tented camp inside Serengeti NP</span>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="txt--small">--}}
+{{--                                                    All Meals Included--}}
+{{--                                                </div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div>4</div>--}}
+{{--                                                <div>--}}
+{{--                                                    <a href="https://rhino.co.tz/" target="_blank"--}}
+{{--                                                       rel="noopener nofollow">--}}
+{{--                                                        Rhino Lodge--}}
+{{--                                                    </a>--}}
+{{--                                                    <span class="txt--small">Mid-range lodge on the crater rim of Ngorongoro Crater</span>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="txt--small">--}}
+{{--                                                    All Meals Included--}}
+{{--                                                </div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div>5</div>--}}
+{{--                                                <div>--}}
+{{--                                                    End of tour <span--}}
+{{--                                                        class="txt--small txt--xgrey">(No accommodation)</span>--}}
+{{--                                                    <span class="txt--small"> </span>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="txt--small">--}}
+{{--                                                    Breakfast & Lunch Included--}}
+{{--                                                </div>--}}
+{{--                                            </li>--}}
                                         </ul>
                                     </div>
 
@@ -684,8 +678,7 @@
                                     <p class="conversionblock__price price"
                                        data-toggle1="&lt;b class=&quot;conversionblock__priceamount&quot;&gt;$1,970&lt;/b&gt; to &lt;b&gt;$2,170&lt;/b&gt; pp (USD)"
                                        data-toggle2="&lt;b class=&quot;conversionblock__priceamount&quot;&gt;$1,970&lt;/b&gt; to &lt;b&gt;$2,170&lt;/b&gt; pp (USD)"
-                                       data-toggled-item="conversion"><b class="conversionblock__priceamount">$1,970</b>
-                                        to <b>$2,170</b> pp (USD)</p>
+                                       data-toggled-item="conversion"><b class="conversionblock__priceamount">${{$tour->price}}</b> (USD)</p>
                                     <a href="../inclusions/t17948.html" rel="nofollow">What is included in this tour</a>
                                 </div>
                                 <h3>Request a Quote</h3>
@@ -734,10 +727,10 @@
                             <div class="operator__logo">
                                 <a href="../operator/t17948.html" class="tablink scrolltop"
                                    title="Unlimited Expeditions - The Soul of Tanzania"><img
-                                        src="../../cloudfront.safaribookings.com/operators/logos/logo_1478192437.gif"
+                                        src="{{env('OPERATOR_URL')}}/view-user-company-file/{{$userId}}"
                                         itemprop="image" title="Unlimited Expeditions - The Soul of Tanzania"
                                         alt="Unlimited Expeditions - The Soul of Tanzania logo"/></a>
-                                <strong>Unlimited Expeditions - The Soul of Tanzania</strong>
+                                <strong>{{$companyName}}</strong>
                             </div>
 
                             <div class="operator__info">
@@ -745,7 +738,7 @@
                                     <dt>Offered By:</dt>
                                     <dd>
                                         <strong itemprop="name">
-                                            Unlimited Expeditions - <br>The Soul of Tanzania
+                                            {{$companyName}}
 
                                         </strong>
                                     </dd>
@@ -753,11 +746,9 @@
                                     <dt>&nbsp;</dt>
                                     <dd>
                                         <div class="stars      " title="5 / 5">
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
+                                            @for($i=0;$i<$rating;$i++)
+                                                <i class="sbi sbi--star"></i>
+                                            @endfor
                                         </div>
                                         <span class="review-score"><em>5.0</em>/5</span>
                                         <br/>
@@ -767,77 +758,73 @@
                                     <dt>Offices:</dt>
                                     <dd>
                                         <div class="country-with-flag  " title="Tanzania">
-                                            <svg class="country-with-flag__flag" data-role="svg-sprite">
-                                                <title>Tanzania</title>
-                                                <use xlink:href="../img/flags/flags-countries-reviewers.svg#tz"></use>
-                                            </svg>
+{{--                                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
+                                                <title>{{$tour->country_name}}</title>
+{{--                                                <use xlink:href="../img/flags/flags-countries-reviewers.svg#tz"></use>--}}
+{{--                                            </svg>--}}
                                             <span>
-                            Tanzania
+                            {{$tour->country_name}}
                     </span>
                                         </div>
                                     </dd>
 
                                     <dt>Founded In:</dt>
-                                    <dd>2015</dd>
+                                    <dd>{{$foundedIn}}</dd>
 
                                     <dt>Employees:</dt>
-                                    <dd>10-20</dd>
+                                    <dd>{{explode(' ', $companySize)[0]}}</dd>
                                 </dl>
 
                                 <ul class="bulletlist">
-                                    <li><a href="../operator/t17948.html" class="tablink scrolltop" itemprop="url">More
+                                    <li><a href="{{url('operator-profile')}}/{{$userId}}" class="tablink scrolltop" itemprop="url">More
                                             About This Operator</a></li>
                                 </ul>
                             </div>
 
                             <div class="operator__reviews tour__content__block">
-                                <h2>Customer Reviews</h2>
+                                <h2>Customer Review</h2>
 
                                 <div class="review review--snippet">
                                     <div class="review__person matchheight">
                                         <i class="sbi sbi--avatar-male"></i>
                                         <div class="review__person__info">
-                                            <strong class="review__person__name">Afonso Branco </strong>
-                                            <span class="review__person__country">&nbsp;&ndash; &nbsp; <div
+                                            <strong class="review__person__name">{{$review->name}} </strong>
+                                            <span class="review__person__country">&nbsp;&ndash; &nbsp;
+                                                <div
                                                     class="country-with-flag  " title="Portugal">
-                                    <img src="../../cfstatic.safaribookings.com/images/flags/pt.png"
-                                         class="country-with-flag__flag" alt="Portugal" title="Portugal"/>
+{{--                                    <img src="../../cfstatic.safaribookings.com/images/flags/pt.png"--}}
+{{--                                         class="country-with-flag__flag" alt="Portugal" title="Portugal"/>--}}
                             <span class="txt--grey">
-                            PT
+                            {{$review->country}}
                     </span>
     </div>
 </span>
-                                            <span class="review__person__reviewed"><b>Reviewed:</b> Dec 5, 2019</span>
+                                            <span class="review__person__reviewed"><b>Reviewed:</b> {{explode(' ', $review->created_at)[0]}}</span>
                                         </div>
                                     </div>
                                     <div class="review__body">
-                                        <h5>The best experience ever!!</h5>
+                                        <h5>{{$review->title}}</h5>
                                         <div class="stars      " title="5 / 5">
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
-                                            <i class="sbi sbi--star"></i>
+                                            @for($i=0;$i<$review->rating;$i++)
+                                                <i class="sbi sbi--star"></i>
+                                            @endfor
                                         </div>
-                                        <span class="review-score"><em>5</em>/5</span>
-                                        <p>3 day safari I traveled to Tanzania to make my first safari, with so much
-                                            offer I was a little confused which operator to choose, however I chose the
-                                            soul of Tanzania due to all the advantages presented by Luis, such as
-                                            meeting the needs...</p>
-                                        <p><a href="../reviews/p2750/page/5%2349076.html">Full Review</a></p>
+                                        <span class="review-score"><em>{{$review->rating}}</em>/5</span>
+                                        <p>{{$review->review}}</p>
+{{--                                        <p><a href="../reviews/p2750/page/5%2349076.html">Full Review</a></p>--}}
                                     </div>
                                 </div>
 
                                 <div class="hide-onload" data-ajaxfill="../reviews/t17948-2750.html"></div>
 
-                                <div class="row pagination operator__reviews__pagination" data-current="1"
-                                     data-total="229">
-                                    <div class="col col-4"><a href="#"
-                                                              class="btn btn--white btn--prev btn--onlyarrow"></a></div>
-                                    <div class="col col-4 col-sum">1 of 229</div>
-                                    <div class="col col-4"><a href="#"
-                                                              class="btn btn--white btn--next btn--onlyarrow"></a></div>
-                                </div>
+{{--                                <div class="row pagination operator__reviews__pagination" data-current="1"--}}
+{{--                                     data-total="229">--}}
+{{--                                    <div class="col col-4"><a href="#"--}}
+{{--                                                              class="btn btn--white btn--prev btn--onlyarrow"></a></div>--}}
+{{--                                    <div class="col col-4 col-sum">1 of 229</div>--}}
+{{--                                    <div class="col col-4"><a href="#"--}}
+{{--                                                              class="btn btn--white btn--next btn--onlyarrow"></a></div>--}}
+{{--                                </div>--}}
 
                             </div>
 
@@ -855,15 +842,15 @@
                             <span><i class="sbi sbi--photos"></i>Open Photos <i>(26)</i></span>
                         </a>
 
-                        <a class="sidebar__block map-block"
-                           href="../../cloudfront.safaribookings.com/maps/map-of-tanzania.jpg" rel="overlay"
-                           data-overlay-hash="map" title="Map of Tanzania">
-                            <div>
-                                <img src="../../cloudfront.safaribookings.com/maps/704x352/map-of-tanzania.jpg"
-                                     alt="Map of Tanzania"/>
-                            </div>
-                            <span><i class="sbi sbi--full-screen"></i>Tanzania Map</span>
-                        </a>
+{{--                        <a class="sidebar__block map-block"--}}
+{{--                           href="../../cloudfront.safaribookings.com/maps/map-of-tanzania.jpg" rel="overlay"--}}
+{{--                           data-overlay-hash="map" title="Map of Tanzania">--}}
+{{--                            <div>--}}
+{{--                                <img src="../../cloudfront.safaribookings.com/maps/704x352/map-of-tanzania.jpg"--}}
+{{--                                     alt="Map of Tanzania"/>--}}
+{{--                            </div>--}}
+{{--                            <span><i class="sbi sbi--full-screen"></i>Tanzania Map</span>--}}
+{{--                        </a>--}}
 
 
                     </div>

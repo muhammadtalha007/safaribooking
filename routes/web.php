@@ -36,7 +36,7 @@ Route::get('view-user-company-file/{id}', "AuthController@viewUserCompanyFile");
 Route::get('operator-profile/{id}', "AuthController@viewOperatorProfile");
 Route::get('all-safari-tours', "ToursController@viewAllToursPage");
 Route::get('countries', "CountriesParksController@viewCountriesParksPage");
-Route::get('tour/{id}/detail', "ToursController@viewTourDetailPage");
+Route::get('tour/{id}/details', "ToursController@viewTourDetailPage");
 Route::get('review/{id}', "AuthController@operatorReviewPage");
 Route::post('post-review', "AuthController@saveReview");
 Route::get('review-success', "AuthController@reviewSuccess");

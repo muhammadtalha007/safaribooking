@@ -23599,7 +23599,7 @@ html.noscript .climate #temp-chart, html.noscript .climate #rainfall-chart, html
 }
 
 .tour__route-list {
-    display: flex;
+    /*display: flex;*/
     position: relative;
     max-height: 20.1875rem;
     overflow-y: hidden;

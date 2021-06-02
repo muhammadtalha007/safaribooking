@@ -1507,7 +1507,7 @@
             <div class="row">
                 <div class="col col-12">
                     <div class="button-holder">
-                        <a class="btn btn--next btn--white btn--autowidth-t" href="top-rated-operators.html"
+                        <a class="btn btn--next btn--white btn--autowidth-t" href="#"
                            title="All Top Rated Operators">All Top Rated Operators</a>
                     </div>
 

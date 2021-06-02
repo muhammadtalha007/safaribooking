@@ -4609,6 +4609,11 @@
             }
         }
     </style>
+    <link href="{{asset('bootstrap.min.css')}}" rel="stylesheet">
+    <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('jquery/3.5.1/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('popper/popper.min.js')}}"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="preload" class="main-css" data-base="safaribookings_combined" id="sitecss"
           href="{{url('')}}/theme/css/safaribookings_combined.min04bc.css?0.0.1000" as="style" onload="this.rel='stylesheet'" media="all">

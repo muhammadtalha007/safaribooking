@@ -8,6 +8,7 @@ use App\Review;
 use App\Routes;
 use App\TourActivities;
 use App\TourFeatures;
+use App\TourPhotos;
 use App\Tours;
 use App\User;
 use Illuminate\Http\Request;
@@ -61,4 +62,5 @@ class ToursController extends Controller
         $reviews = $count;
         return view('tour-detail')->with(['review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews]);
     }
+
 }

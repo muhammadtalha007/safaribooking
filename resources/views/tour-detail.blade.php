@@ -648,22 +648,21 @@
                                data-overlay-hash="request" class="btn btn--reqquote btn--orange">Get a Free Quote</a>
                         </div>
 
-                        <div class="col col-12 tour__disclaimer avoid-break-p">
-                            <h3>Disclaimer</h3>
-                            <ul class="list list--icon list--icon-arrow list--icon-nopadding txt--small txt--grey">
-                                <li>This tour is offered by <a href='../operator/t17948.html' class='tablink scrolltop'>Unlimited
-                                        Expeditions - The Soul of Tanzania</a>, not SafariBookings.
-                                </li>
-                                <li>This operator reserves the right to change rates advertised on SafariBookings.</li>
-                                <li>If you request changes to this tour, the advertised rates will likely change.</li>
-                            </ul>
-                            <ul class="list list--icon list--icon-arrow list--icon-nopadding txt--small txt--grey">
-                                <li>If an accommodation is fully booked, the operator will suggest a comparable
-                                    alternative.
-                                </li>
-                                <li>The exact order, contents and rates of this tour is subject to availability.</li>
-                            </ul>
-                        </div>
+{{--                        <div class="col col-12 tour__disclaimer avoid-break-p">--}}
+{{--                            <h3>Disclaimer</h3>--}}
+{{--                            <ul class="list list--icon list--icon-arrow list--icon-nopadding txt--small txt--grey">--}}
+{{--                                <li>This tour is offered by <a href='../operator/t17948.html' class='tablink scrolltop'>{{$companyName}}, not SafariBookings.--}}
+{{--                                </li>--}}
+{{--                                <li>This operator reserves the right to change rates advertised on SafariBookings.</li>--}}
+{{--                                <li>If you request changes to this tour, the advertised rates will likely change.</li>--}}
+{{--                            </ul>--}}
+{{--                            <ul class="list list--icon list--icon-arrow list--icon-nopadding txt--small txt--grey">--}}
+{{--                                <li>If an accommodation is fully booked, the operator will suggest a comparable--}}
+{{--                                    alternative.--}}
+{{--                                </li>--}}
+{{--                                <li>The exact order, contents and rates of this tour is subject to availability.</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                     </div>
 
 
@@ -830,18 +829,41 @@
 
                         </div>
 
-                        <a class="sidebar__block photo-block galleryitems"
-                           data-title="5-Day Living Among Lions - Mid-Range"
-                           data-gallery="https://www.safaribookings.com/tours/t17948/photos" href="t17948.html#photo1"
-                           data-tour-gallery="17948" rel="overlay">
+                        <a data-toggle="modal" data-target="#myModal" class="sidebar__block photo-block galleryitems" rel="overlay">
                             <div>
                                 <img
-                                    src="../../cloudfront.safaribookings.com/lib/tanzania/704x440/Serengeti_National_Park_048.jpg"
+                                    src="{{env('OPERATOR_URL')}}/view-tour-cover-photo/{{$tour->id}}"
                                     alt="Open Photos"/>
                             </div>
-                            <span><i class="sbi sbi--photos"></i>Open Photos <i>(26)</i></span>
+                            <span><i class="sbi sbi--photos"></i>Open Photos <i>({{\App\TourPhotos::where('tour_id', $tour->id)->count()}})</i></span>
                         </a>
 
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">All Photos</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            @foreach(\App\TourPhotos::where('tour_id', $tour->id)->get() as $item)
+                                                <div class="col-md-4">
+                                                    <a target="_blank" href="{{env('OPERATOR_URL')}}/show-tour-photos/{{$item->id}}">
+                                                        <img style="width: 200px;height: 200px;object-fit: contain;margin: 10px" src="{{env('OPERATOR_URL')}}/show-tour-photos/{{$item->id}}" >
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 {{--                        <a class="sidebar__block map-block"--}}
 {{--                           href="../../cloudfront.safaribookings.com/maps/map-of-tanzania.jpg" rel="overlay"--}}
 {{--                           data-overlay-hash="map" title="Map of Tanzania">--}}

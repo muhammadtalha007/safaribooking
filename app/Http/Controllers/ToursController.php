@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AccommodationAndMeal;
 use App\Features;
 use App\Review;
+use App\ReviewImage;
 use App\Routes;
 use App\TourActivities;
 use App\TourFeatures;
@@ -34,6 +35,10 @@ class ToursController extends Controller
         $foundedIn = User::where('id', $tour->user_id)->first()['foundedin'];
         $companySize = User::where('id', $tour->user_id)->first()['company_size'];
         $userId = User::where('id', $tour->user_id)->first()['id'];
+        $reviewsDeceding = Review::where('operator_id', $userId)->latest()->get();
+        foreach ($reviewsDeceding as $review){
+            $review->images = ReviewImage::where('review_id', $review->id)->get();
+        }
         $review = Review::where('operator_id', $userId)->latest()->first();
         $routes = Routes::where('tour_id', $tourId)->get();
         $tourActivities = TourActivities::where('tour_id', $tourId)->get();
@@ -60,7 +65,7 @@ class ToursController extends Controller
         }
         $rating = round($rating, 1);
         $reviews = $count;
-        return view('tour-detail')->with(['review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews]);
+        return view('tour-detail')->with(['reviewsDeceding' => $reviewsDeceding,'review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews]);
     }
 
 }

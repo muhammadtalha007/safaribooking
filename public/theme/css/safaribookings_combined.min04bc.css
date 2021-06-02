@@ -96,7 +96,7 @@ a, .a {
     color: #0378a0;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 6px;
+    /*margin-top: 6px;*/
 }
 
 .a {

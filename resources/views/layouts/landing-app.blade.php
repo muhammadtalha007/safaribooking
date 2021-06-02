@@ -4683,7 +4683,7 @@
                     <nav class="header__nav nav-t  ">
                         <ul class="nav-t__list">
                             <li class="nav-t__item nav-t__item--has-sub ">
-                                <a href="{{url('all-safari-tours')}}" class="nav-t__link nav-tours" title="African Safari Tours"><span style="color: white;text-decoration: none">Safaris & Tours</span></a>
+                                <a style="margin-top: 6px" href="{{url('all-safari-tours')}}" class="nav-t__link nav-tours" title="African Safari Tours"><span style="color: white;text-decoration: none">Safaris & Tours</span></a>
                                 <ul class="subnav  header__subnav nav-t__list nav-t__sub-list shadowed-box list list--icon list--icon-arrow list--icon-nopadding ">
 
                                     <li class="nav-t__item nav-t__sub-item">
@@ -4799,10 +4799,10 @@
                                 </ul>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="{{url('countries')}}" class="nav-t__link" title="Countries"><span style="color: white;text-decoration: none">Countries</span></a>
+                                <a style="margin-top: 6px" href="{{url('countries')}}" class="nav-t__link" title="Countries"><span style="color: white;text-decoration: none">Countries</span></a>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span style="color: white;text-decoration: none">Tour Operators</span></a>
+                                <a style="margin-top: 6px" href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span style="color: white;text-decoration: none">Tour Operators</span></a>
                             </li>
                         </ul>
                     </nav>

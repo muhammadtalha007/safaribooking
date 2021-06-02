@@ -1,6 +1,26 @@
 @extends('layouts.landing-app')
 <!--====== BANNER PART START ======-->
 @section('content')
+    <?php
+    $countriesList = ["Botswana", "Congo (DRC)", "Ethiopia", "Kenya", "Madagascar", "Malawi", "Mozambique", "Namibia", "Rwanda", "South Africa", "Swaziland", "Tanzania", "Uganda", "Zambia", "Zimbabwe"];
+
+    ?>
+    <style>
+        .focusbtncustom{
+            margin-top: 10px;
+            background: white;
+            color: black;
+            font-weight: normal;
+            box-shadow: none;
+            outline: none;
+            border: none;
+        }
+        .focusbtncustom:focus{
+            outline: none!important;
+            border: none!important;;
+            box-shadow: none!important;;
+        }
+    </style>
     <main class="main">
 
         {{--        <div class="messagebox messagebox--orange messagebox--bar">--}}
@@ -16,128 +36,39 @@
                 <form class="row tourpreferences  skip-first-count  " autocomplete="off" method="GET"
                       action="https://www.safaribookings.com/tours">
                     <div class="col col-t-3-5 tourpreferences__block tourpreferences__destination">
-                        <i class="sbi sbi--map-pin row-icon"></i>
-                        <div class="tourpreferences__destination__row">
-                            <div class="tourpreferences__destination__row__inner">
-                                <label for="destination">Destination</label>
-                                <input id="destination" type="text" value="" name="destination"
-                                       data-types="destinations" data-shadow="false" spellcheck="false" value=""
-                                       data-title="Start typing or select below" autocomplete="off" data-limit="8">
-                                <div class="placeholder">Where To</div>
-                            </div>
-                            <div class="detail detail__destination"></div>
-                            <span class="clear-btn"></span>
-                            <span class="open-sign open-sign--search"><i
-                                    class="sbi sbi--search-grey mirrored"></i></span>
-                        </div>
-                        <div class="tourpreferences__destination__add  hide hide-t  "><a href="#"><span class="txt2"><i>+</i> Add country, park or highlight</span></a>
-                        </div>
-                    </div>
-                    <div class="col col-t-2-5 tourpreferences__block tourpreferences__date  ">
-                        <span class="clear-btn clear-btn--date" style="display:none"></span>
-                        <span class="open-sign open-sign--arrow">&rsaquo;</span>
-                        <i class="sbi sbi--calendar row-icon"></i>
-                        <span class="lbl lbl-startdate">Start Date</span>
-                        <div class="detail detail__date">
-                            <div class="inner calendar" data-lbl="lbl-startdate" data-clear="clear-btn--date"
-                                 data-hiddenname="date">
-                                <label>Start Date :</label><input name="date" type="date" min="2021-05-20"
-                                                                  max="2024-12-31" value=""/>
-                                <label for="flexdate" class="checkbox-lbl"><input type="checkbox" id="flexdate"
-                                                                                  name="flex" value="1" checked> My
-                                    dates are somewhat flexible</label>
-                            </div>
-                            <div class="detail__title">
-                                Start Date
-                                <button type="button" class="detail__close" aria-label="close 'Start Date' panel"><i
-                                        class="sbi sbi--cross"></i></button>
-                            </div>
-                        </div>
-                        <div class="tourpreferences__date__extraflex">
-                            <label for="flexdateextra" class="checkbox-lbl"><input type="checkbox"
-                                                                                   class="checkbox--blue"
-                                                                                   id="flexdateextra" checked> <span
-                                    class="txt2">My dates are somewhat flexible</span></label>
-                        </div>
-                    </div>
-                    <div class="col col-t-3 tourpreferences__block tourpreferences__persons  filled  ">
-                        <span class="clear-btn clear-btn--persons" style="display:block"></span>
-                        <span class="open-sign open-sign--arrow">&rsaquo;</span>
-                        <i class="sbi sbi--travelers row-icon"></i>
-                        <span class="lbl lbl-persons filled">
-                        <span>2 Adults</span>
-                    </span>
-                        <div class="detail detail__persons">
-                            <div class="inner" data-clear="clear-btn--persons">
-                                <div class="row">
-                                    <div class="no-gutter">
-                                        <label for="adults">Adults <span
-                                                class="hide show-ti txt--small">(18+ years)</span><span
-                                                class="hide-t txt--small">(18+)</span>:</label><input name="adults"
-                                                                                                      id="adults"
-                                                                                                      type="number"
-                                                                                                      min="1" max="99"
-                                                                                                      value="2"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="no-gutter">
-                                        <label for="children">Children <span class="hide show-ti txt--small">(0-17 years)</span><span
-                                                class="hide-t txt--small">(0-17)</span>:</label><input name="children"
-                                                                                                       id="children"
-                                                                                                       type="number"
-                                                                                                       min="0" max="10"
-                                                                                                       value="0"/>
-                                    </div>
-                                </div>
+{{--                        <i class="sbi sbi--map-pin row-icon"></i>--}}
+                        <select id="destination" type="text" value="" name="destination" style="color: black;border: none">
+                            <option value="">Select Destination</option>
+                            @foreach($countriesList as $country)
 
-                                <div class="children-ages" data-state="invisible">
-                                    <div class="row">
-                                        <div class="no-gutter">
-                                            <strong class="txt--grey txt--small">Age at the end of the tour</strong>
-                                        </div>
-                                    </div>
-                                    <div class="row datarow">
-                                        <div class="no-gutter">
-                                            <label class="right-aligned" for="age-child-1">Child 1:</label>
-                                            <div class="select--holder">
-                                                <select name="age-child-1" id="age-child-1">
-                                                    <option value="">- Age -</option>
-                                                    <option value="17">17 years</option>
-                                                    <option value="16">16 years</option>
-                                                    <option value="15">15 years</option>
-                                                    <option value="14">14 years</option>
-                                                    <option value="13">13 years</option>
-                                                    <option value="12">12 years</option>
-                                                    <option value="11">11 years</option>
-                                                    <option value="10">10 years</option>
-                                                    <option value="9">9 years</option>
-                                                    <option value="8">8 years</option>
-                                                    <option value="7">7 years</option>
-                                                    <option value="6">6 years</option>
-                                                    <option value="5">5 years</option>
-                                                    <option value="4">4 years</option>
-                                                    <option value="3">3 years</option>
-                                                    <option value="2">2 years</option>
-                                                    <option value="1">1 year</option>
-                                                    <option value="0">0 years</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <option value="{{$country}}">{{$country}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col col-t-2-5 tourpreferences__block tourpreferences__date  " style="padding-left: 0px!important;padding: 2px!important;">
+{{--                        <i class="sbi sbi--calendar row-icon"></i>--}}
+{{--                        <span>Start Date</span>--}}
+                        <input type="date" name="startDate" placeholder="Start Date" style="padding: 0px!important;border: none">
+                    </div>
+                    <div class="col col-t-3 tourpreferences__block tourpreferences__persons  filled  " style="padding-left: 0px!important;">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle focusbtncustom" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Select Travelers
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding: 15px">
+                                <div class="dropdown-item" >
+                                    <span style="font-weight: bold">Adults:</span>
+                                    <input value="2" name="adults" placeholder="Adults" type="text">
                                 </div>
-                                <input type="submit" class="show btn btn--white btn--autowidth homepersons-ok"
-                                       value="Done"/>
-                            </div>
-                            <div class="detail__title">
-                                Travelers
-                                <button type="button" class="detail__close" aria-label="Close 'Travelers' panel"><i
-                                        class="sbi sbi--cross"></i></button>
+                                <div class="dropdown-item" >
+                                    <span style="font-weight: bold">Children:</span>
+                                    <input value="0" name="children" placeholder="Children" type="text">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col col-t-3  ">
-                        <a href="javascript:void(0);" class="btn btn--blue search btn--next">Show Tours</a>
+                        <a href="javascript:void(0);" class="btn btn--blue search btn--next" style="background: black;margin-top: 0px">Show Tours</a>
                     </div>
                 </form>
 
@@ -270,7 +201,7 @@
         <div class="container container--main container--home-toprated" style="margin-top: 70px">
             <div class="row">
                 <div class="col col-12">
-                    <h2 class="container--home__heading">Top Rated Safari Countries</h2>
+                    <h2 class="container--home__heading">Best Safari Countries</h2>
                 </div>
             </div>
 
@@ -339,35 +270,37 @@
                                      class="toprated-sign loaded" alt="Tanzania - #1 of 8 Major Safari Countries"
                                      title="Tanzania - #1 of 8 Major Safari Countries"
                                      srcset="https://cfstatic.safaribookings.com/img/svg/top-rated.svg">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/tanzania"
+                                <h3 class="serif"><a href="#"
                                                      title="About Tanzania">Tanzania</a></h3>
-                                <div class="txt--grey hide-t"><b>#1</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.8 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.8 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.8</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/tanzania/reviews"
-                                       title="1,040 reviews about Tanzania">1,040 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#1</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#1</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.8 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.8 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.8</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/tanzania/reviews"--}}
+{{--                                       title="1,040 reviews about Tanzania">1,040 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#1</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p class="container--home-toprated__info__content__extrapaddingtablet">Tanzania has
                                     three safari circuits and each one of them would make Tanzania a top wildlife
                                     destination. The popular Northern circuit with the Serengeti and Ngorongoro crater
                                     offers one of the best classical safaris in Africa, especially if timed with the
-                                    annual wildebeest migration. <a href="https://www.safaribookings.com/tanzania"
-                                                                    title="About Tanzania">About Tanzania</a></p>
+                                    annual wildebeest migration. </p>
+                                <br>
 
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
@@ -388,17 +321,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/tanzania"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="3,152 Tanzania Safaris"><b>3,152</b> Tanzania Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/tanzania"
+                                   title="3,152 Tanzania Safaris">Tanzania Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Tanzania Operators"><b>Tanzania </b> Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/tanzania"
-                                   class="btn btn--next btn--white hide-t" title="3,152 Tanzania Safaris"><b>3,152</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="3,152 Tanzania Safaris">
                                     Tanzania Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/tanzania"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Tanzania Operators"><b>Tanzania </b>
                                     Operators</a>
                             </div>
@@ -422,35 +355,36 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/botswana"
+                                <h3 class="serif"><a href="#"
                                                      title="About Botswana">Botswana</a></h3>
-                                <div class="txt--grey hide-t"><b>#2</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.8 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.8 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.8</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/botswana/reviews"
-                                       title="301 reviews about Botswana">301 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#2</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#2</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.8 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.8 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.8</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/botswana/reviews"--}}
+{{--                                       title="301 reviews about Botswana">301 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#2</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>Botswana is the leader in low-impact, upmarket tourism. This eco-friendly approach
                                     promotes a true wilderness experience in this unspoiled country. The beauty of the
                                     Okavango Delta is best discovered by mokoro canoe, while abundant wildlife can be
-                                    encountered in Chobe and Moremi parks. <a
-                                        href="https://www.safaribookings.com/botswana" title="About Botswana">About
-                                        Botswana</a></p>
+                                    encountered in Chobe and Moremi parks. </p>
+                                <br>
 
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
@@ -471,18 +405,18 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/botswana"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="468 Botswana Safaris"><b>468</b> Botswana Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/botswana"
+                                   title="468 Botswana Safaris">Botswana Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Botswana Operators"><b>Botswana </b> Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/botswana"
-                                   class="btn btn--next btn--white hide-t" title="468 Botswana Safaris"><b>468</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="468 Botswana Safaris">
                                     Botswana Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/botswana"
-                                   class="btn btn--next btn--white hide-t" title="Botswana Operators"><b>Botswana </b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="Botswana Operators">
                                     Operators</a>
                             </div>
                         </div>
@@ -505,34 +439,36 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/zambia" title="About Zambia">Zambia</a>
+                                <h3 class="serif"><a href="#" title="About Zambia">Zambia</a>
                                 </h3>
-                                <div class="txt--grey hide-t"><b>#3</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.7 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.7 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.7</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/zambia/reviews"
-                                       title="95 reviews about Zambia">95 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#3</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#3</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.7 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.7 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.7</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/zambia/reviews"--}}
+{{--                                       title="95 reviews about Zambia">95 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#3</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>In Zambia, you’ll be looked after on safari by some of the best guides in Africa.
                                     They’ll happily share everything they know about the local wildlife and landscape,
                                     while safely leading you on game drives, walking safaris, even canoeing safaris
-                                    along the Zambezi River. <a href="https://www.safaribookings.com/zambia"
-                                                                title="About Zambia">About Zambia</a></p>
+                                    along the Zambezi River. </p>
+                                <br>
 
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
@@ -552,17 +488,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/zambia"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="134 Zambia Safaris"><b>134</b> Zambia Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/zambia"
+                                   title="134 Zambia Safaris"> Zambia Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Zambia Operators"><b>Zambia </b>
                                     Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/zambia"
-                                   class="btn btn--next btn--white hide-t" title="134 Zambia Safaris"><b>134</b> Zambia
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="134 Zambia Safaris"> Zambia
                                     Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/zambia"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Zambia Operators"><b>Zambia </b>
                                     Operators</a>
                             </div>
@@ -586,36 +522,38 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/kenya" title="About Kenya">Kenya</a>
+                                <h3 class="serif"><a href="#" title="About Kenya">Kenya</a>
                                 </h3>
-                                <div class="txt--grey hide-t"><b>#4</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.6 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.6 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.6</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/kenya/reviews"
-                                       title="890 reviews about Kenya">890 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#4</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#4</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.6 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.6 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.6</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/kenya/reviews"--}}
+{{--                                       title="890 reviews about Kenya">890 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#4</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>Kenya is a top wildlife destination, recommended especially for those booking a
                                     first-time safari. The Masai Mara offers excellent <a href="#" class="wildlife"
                                                                                           data-val="Big_cats.jpg">big
                                         cat</a> encounters and is the setting for the yearly wildebeest migration.
-                                    Palm-lined beaches offer a perfect place to relax after an action packed safari. <a
-                                        href="https://www.safaribookings.com/kenya" title="About Kenya">About Kenya</a>
+                                    Palm-lined beaches offer a perfect place to relax after an action packed safari.
                                 </p>
+                                <br>
 
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
@@ -636,17 +574,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/kenya"
-                                   class="btn btn--autowidth btn--transparent hide show-ti" title="2,207 Kenya Safaris"><b>2,207</b>
+                                <a href="#"
+                                   class="btn btn--autowidth btn--transparent hide show-ti" title="2,207 Kenya Safaris">
                                     Kenya Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/kenya"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Kenya Operators"><b>Kenya </b>
                                     Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/kenya"
-                                   class="btn btn--next btn--white hide-t" title="2,207 Kenya Safaris"><b>2,207</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="2,207 Kenya Safaris">
                                     Kenya Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/kenya"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Kenya Operators"><b>Kenya </b>
                                     Operators</a>
                             </div>
@@ -671,37 +609,37 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/south-africa"
+                                <h3 class="serif"><a href="#"
                                                      title="About South Africa">South Africa</a></h3>
-                                <div class="txt--grey hide-t"><b>#5</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.6 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.6 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.6</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/south-africa/reviews"
-                                       title="714 reviews about South Africa">714 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#5</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#5</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.6 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.6 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.6</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/south-africa/reviews"--}}
+{{--                                       title="714 reviews about South Africa">714 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#5</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>South Africa is one of Africa’s great wildlife destinations. Vast Kruger National
                                     Park has an abundance of animals and is one of the continent's iconic attractions.
                                     For outdoor adventure, the Blyde River Canyon is the third largest on the planet,
                                     and jagged peaks of the Drakensberg mountains punch into the sky. Cape Town hums
-                                    with an urban beat, and is fringed by white-sandy beaches. <a
-                                        href="https://www.safaribookings.com/south-africa" title="About South Africa">About
-                                        South Africa</a></p>
-
+                                    with an urban beat, and is fringed by white-sandy beaches. </p>
+                                <br>
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
                                             class="sbi  sbi--dollar-small  show hide-t"></i><i
@@ -720,17 +658,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/south-africa"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="674 South Africa Safaris"><b>674</b> South Africa Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/south-africa"
+                                   title="674 South Africa Safaris"> South Africa Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="South Africa Operators"><b>South Africa </b> Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/south-africa"
-                                   class="btn btn--next btn--white hide-t" title="674 South Africa Safaris"><b>674</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="674 South Africa Safaris">
                                     South Africa Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/south-africa"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="South Africa Operators"><b>South
                                         Africa </b> Operators</a>
                             </div>
@@ -754,35 +692,36 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/namibia"
+                                <h3 class="serif"><a href="#"
                                                      title="About Namibia">Namibia</a></h3>
-                                <div class="txt--grey hide-t"><b>#6</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.5 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.5 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.5</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/namibia/reviews"
-                                       title="183 reviews about Namibia">183 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#6</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#6</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.5 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.5 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.5</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/namibia/reviews"--}}
+{{--                                       title="183 reviews about Namibia">183 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#6</b> of 8 Major Safari Countries</div>--}}
+                                <br><br>
+
                                 <p>Namibia is characterized by its desert habitat. The harsh environment forms a
                                     magnificent backdrop for a different kind of safari. Animal populations are smaller,
                                     but sightings in this sparse setting tend to be rewarding. Not to be missed is
-                                    Etosha Pan, the largest salt pan in Africa and a seasonal wildlife magnet. <a
-                                        href="https://www.safaribookings.com/namibia" title="About Namibia">About
-                                        Namibia</a></p>
+                                    Etosha Pan, the largest salt pan in Africa and a seasonal wildlife magnet. </p>
+                                <br>
 
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
@@ -802,17 +741,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/namibia"
-                                   class="btn btn--autowidth btn--transparent hide show-ti" title="222 Namibia Safaris"><b>222</b>
+                                <a href="#"
+                                   class="btn btn--autowidth btn--transparent hide show-ti" title="222 Namibia Safaris">
                                     Namibia Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/namibia"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Namibia Operators"><b>Namibia </b> Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/namibia"
-                                   class="btn btn--next btn--white hide-t" title="222 Namibia Safaris"><b>222</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="222 Namibia Safaris">
                                     Namibia Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/namibia"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Namibia Operators"><b>Namibia </b>
                                     Operators</a>
                             </div>
@@ -836,36 +775,37 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/uganda" title="About Uganda">Uganda</a>
+                                <h3 class="serif"><a href="#" title="About Uganda">Uganda</a>
                                 </h3>
-                                <div class="txt--grey hide-t"><b>#7</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.3 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.3 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.3</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/uganda/reviews"
-                                       title="259 reviews about Uganda">259 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#7</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#7</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.3 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.3 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.3</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/uganda/reviews"--}}
+{{--                                       title="259 reviews about Uganda">259 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#7</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>Uganda is a great destination to view wildlife in both forest and savannah. Not to be
                                     missed is gorilla trekking in Bwindi or Mgahinga, while chimps can easily be spotted
                                     in Kibale and several other locations. Queen Elizabeth and Murchison Falls national
                                     parks offer wonderful savannah safaris with good wildlife viewing, as does the more
-                                    remote Kidepo National Park. <a href="https://www.safaribookings.com/uganda"
-                                                                    title="About Uganda">About Uganda</a></p>
-
+                                    remote Kidepo National Park. </p>
+                                <br>
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
                                             class="sbi  sbi--dollar-small  show hide-t"></i><i
@@ -885,17 +825,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/uganda"
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="1,116 Uganda Safaris"><b>1,116</b> Uganda Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/uganda"
+                                   title="1,116 Uganda Safaris">Uganda Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Uganda Operators"><b>Uganda </b>
                                     Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/uganda"
-                                   class="btn btn--next btn--white hide-t" title="1,116 Uganda Safaris"><b>1,116</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="1,116 Uganda Safaris">
                                     Uganda Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/uganda"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Uganda Operators"><b>Uganda </b>
                                     Operators</a>
                             </div>
@@ -919,37 +859,38 @@
                                 </picture>
                             </div>
                             <div class="container--home-toprated__info__content">
-                                <h3 class="serif"><a href="https://www.safaribookings.com/zimbabwe"
+                                <h3 class="serif"><a href="#"
                                                      title="About Zimbabwe">Zimbabwe</a></h3>
-                                <div class="txt--grey hide-t"><b>#8</b> of 8 Major Safari Countries</div>
-                                <div class="review-summary--oneline">
-                <span class="hide-t"><div class="stars    large    " title="4.3 / 5">
-            <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--star"></i>
-        <i class="sbi sbi--starhalf"></i>
-        </div>
-</span><span class="hide show-ti"><div class="stars    large    " title="4.3 / 5">
-            <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrast"></i>
-        <i class="sbi sbi--starcontrasthalf"></i>
-        </div>
-</span> <span class="review-score review-score--tabletwhite"><em>4.3</em>/5</span> &nbsp;–&nbsp;
-                                    <a href="https://www.safaribookings.com/zimbabwe/reviews"
-                                       title="106 reviews about Zimbabwe">106 Reviews</a>
-                                </div>
-                                <div class="hide show-t nr-of"><b>#8</b> of 8 Major Safari Countries</div>
+{{--                                <div class="txt--grey hide-t"><b>#8</b> of 8 Major Safari Countries</div>--}}
+{{--                                <div class="review-summary--oneline">--}}
+{{--                <span class="hide-t"><div class="stars    large    " title="4.3 / 5">--}}
+{{--            <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--star"></i>--}}
+{{--        <i class="sbi sbi--starhalf"></i>--}}
+{{--        </div>--}}
+{{--</span><span class="hide show-ti"><div class="stars    large    " title="4.3 / 5">--}}
+{{--            <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrast"></i>--}}
+{{--        <i class="sbi sbi--starcontrasthalf"></i>--}}
+{{--        </div>--}}
+{{--</span> <span class="review-score review-score--tabletwhite"><em>4.3</em>/5</span> &nbsp;–&nbsp;--}}
+{{--                                    <a href="https://www.safaribookings.com/zimbabwe/reviews"--}}
+{{--                                       title="106 reviews about Zimbabwe">106 Reviews</a>--}}
+{{--                                </div>--}}
+{{--                                <div class="hide show-t nr-of"><b>#8</b> of 8 Major Safari Countries</div>--}}
+                                <br>
+                                <br>
                                 <p>Due to the political situation in Zimbabwe, tourists are few and prices are
                                     competitive, but the main parks are still cared for and well worth visiting. Hwange
                                     is not to be missed and Mana Pools offers great canoeing safaris on the Zambezi
                                     River. Victoria Falls, Africa’s largest waterfall, is a must-go-to destination;
                                     standing in the spray of this powerful curtain of flowing water is both moving and
-                                    overwhelming. <a href="https://www.safaribookings.com/zimbabwe"
-                                                     title="About Zimbabwe">About Zimbabwe</a></p>
-
+                                    overwhelming. </p>
+                                <br>
                                 <ul class="row">
                                     <li class="col col-12 col-t-4 no-gutter"><i
                                             class="sbi  sbi--dollar-small  show hide-t"></i><i
@@ -968,17 +909,17 @@
                                     </li>
                                 </ul>
 
-                                <a href="https://www.safaribookings.com/tours/zimbabwe"
+                                <a href=""
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="180 Zimbabwe Safaris"><b>180</b> Zimbabwe Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/zimbabwe"
+                                   title="180 Zimbabwe Safaris">Zimbabwe Safaris</a>
+                                <a href="#"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Zimbabwe Operators"><b>Zimbabwe </b> Operators</a>
 
-                                <a href="https://www.safaribookings.com/tours/zimbabwe"
-                                   class="btn btn--next btn--white hide-t" title="180 Zimbabwe Safaris"><b>180</b>
+                                <a href="#"
+                                   class="btn btn--next btn--white hide-t" title="180 Zimbabwe Safaris">
                                     Zimbabwe Safaris</a>
-                                <a href="https://www.safaribookings.com/operators/zimbabwe"
+                                <a href="#"
                                    class="btn btn--next btn--white hide-t" title="Zimbabwe Operators"><b>Zimbabwe </b>
                                     Operators</a>
                             </div>

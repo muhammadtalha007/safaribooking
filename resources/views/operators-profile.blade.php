@@ -143,7 +143,7 @@
                         </div>
 
                         <a href="{{url('bid-on-tour')}}/{{$user->id}}" rel="nofollow"
-                           class="btn btn--orange btn--reqquote btn--withsubtext">Bid on Tour<br/><span>for a custom or selected tour</span></a>
+                           class="btn btn--orange btn--reqquote btn--withsubtext" style="background: black;border: black">Bid on Tour<br/><span>for a custom or selected tour</span></a>
 {{--                        <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"--}}
 {{--                           class="btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: 5px">Bid on this--}}
 {{--                            tour<br/><span>for a custom tour</span></a>--}}
@@ -189,7 +189,7 @@
 {{--                            <a href="#" rel="nofollow"--}}
 {{--                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">BID on tour<span>for a custom tour</span></a>--}}
                             <a href="{{url('bid-on-tour')}}/{{$user->id}}" rel="nofollow"
-                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px">Bid on tour<span>for a custom or selected tour</span></a>
+                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px;background: black;border: black">Bid on tour<span>for a custom or selected tour</span></a>
                         </div>
 
                     </div>
@@ -459,7 +459,7 @@
                                                            class="reviews-all-link" rel="nofollow">All {{$user->reviews}} Reviews</a>
                                                         <a href="{{url('review')}}/{{$user->id}}"
                                                            class="btn btn--orange btn--small btn--autowidth btn--right btn--next"
-                                                           rel="nofollow">Write a Review</a>
+                                                           rel="nofollow" style="background: black;border: black;">Write a Review</a>
                                                     </div>
                                                 </div>
 
@@ -604,7 +604,7 @@
 
                                             <div class="hide show-t">
                                                 <br>
-                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow" style="background: black;border: black">Write a Review</a>
                                             </div>
                                             <div class="hide-t">
                                                 <br>
@@ -645,7 +645,7 @@
                                             </div>
                                             <div class="hide-t">
                                                 <br>
-                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                                <a href="{{url('review')}}/{{$user->id}}" class="btn btn--white btn--autowidth btn--next" target="_blank" rel="nofollow" style="background: black;border: black;">Write a Review</a>
                                                 <br>
                                                 <br>
                                             </div>
@@ -781,7 +781,7 @@
 {{--                                                    </li>--}}
 {{--                                                </ul>--}}
                                             </div>
-                                            <a href="{{url('review')}}/{{$user->id}}" class="btn btn--orange btn--small btn--autowidth btn--next" target="_blank" rel="nofollow">Write a Review</a>
+                                            <a href="{{url('review')}}/{{$user->id}}" class="btn btn--orange btn--small btn--autowidth btn--next" target="_blank" rel="nofollow" style="background: black;border-color: black">Write a Review</a>
 
                                         </div>
 
@@ -898,7 +898,7 @@
 
             <div class="hide-t floating-request-btn " data-role="request-cta-mobile">
                 <a href="{{url('bid-on-tour')}}/{{$user->id}}" target="blank" rel="overlay nofollow"
-                   data-overlay-hash="request" class="btn btn--orange btn--reqquote">Bid on tour</a>
+                   data-overlay-hash="request" class="btn btn--orange btn--reqquote" style="background: black;border: black">Bid on tour</a>
             </div>
 
 

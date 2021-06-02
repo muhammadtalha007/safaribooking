@@ -277,7 +277,7 @@
                             @endif
                             <br>
                             <br>
-                            <a id="fixedbutton" href="#" onclick="document.getElementById('searchingform').submit()" class="btn btn--orange search btn--next">Apply Filters
+                            <a id="fixedbutton" href="#" onclick="document.getElementById('searchingform').submit()" class="btn btn--orange search btn--next" style="background: black;border: black">Apply Filters
                             </a>
                             @if($filtered == true)
                                 <a id="fixedbutton" style="background: maroon" href="{{url('operators')}}" class="btn btn-secondary search">Remove Filters
@@ -443,7 +443,7 @@
                                     </ul>
                                     <a href="{{url('operator-tours')}}/{{$user->id}}"
                                        class="btn btn--orange btn--small btn--autowidth btn--next"
-                                       title="All tours offered by Pearl Afric Tours &amp; Travel"> All {{count($user->tours)}}
+                                       title="All tours offered by Pearl Afric Tours &amp; Travel" style="background: black;border: black"> All {{count($user->tours)}}
                                         Tours </a><span
                                         class="behind-btn"> - Offered by {{$user->company_name}}</span>
 {{--                                    <img--}}

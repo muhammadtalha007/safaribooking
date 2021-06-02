@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\bid;
 use App\CertificateFiles;
 use App\Certificates;
 use App\CompanyDestinations;
@@ -16,6 +17,7 @@ use App\User;
 use App\UserCardDetails;
 use App\UserTokens;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use services\email_messages\ContactForm;
 use services\email_messages\ForgotPasswordMessage;
@@ -55,7 +57,8 @@ class AuthController extends Controller
             $user->rating = round($rating, 1);
             $user->reviews = $count;
         }
-        return view('operators')->with(['users' => $users]);
+        $offices= CompanyOffice::select('country')->distinct()->get();
+        return view('operators')->with(['users' => $users, 'offices' => $offices, 'filtered' => false]);
     }
 
     public function viewUserFile($id){
@@ -320,5 +323,148 @@ class AuthController extends Controller
 
     public function privacyPolicy(){
         return view('privacy-policy');
+    }
+
+    public function filterOperator(Request $request)
+    {
+        $users = User::where('id', '!=' ,0);
+        if (!empty($request->destination)) {
+            $users->whereHas('company_destinations', function ($query) use ($request) {
+                $query->where('company_destinations.country', $request->input('destination'));
+            });
+        }
+
+
+
+
+        if (!empty($request->operator_company_name)) {
+            $users->where('company_name','LIKE', "%{$request->input('operator_company_name')}%");
+        }
+//        if (!empty($request->cbpricerange)) {
+//            $users->whereIn('pricerange',$request->cbpricerange);
+//        }
+        if (!empty($request->officeIn)) {
+            $users->whereHas('company_offices', function ($query) use ($request) {
+                $query->whereIn('company_offices.country', $request->officeIn);
+            });
+        }
+        $users = $users->get();
+        $temp = [];
+        if (!empty($request->rating)) {
+            foreach ($users as $user){
+                $reviews =  Review::where('operator_id', $user->id)->get();
+                $rating = 0;
+                $count = 0;
+                foreach ($user->reviews as $comment){
+                    if ((int)$comment->rating > 0){
+                        $rating = $rating + (int)$comment->rating;
+                        $count++;
+                    }
+                }
+                if ($rating > 0){
+                    $rating = $rating / $count;
+                }else{
+                    $rating =  5;
+                }
+                $user->rating = round($rating, 1);
+                $user->reviews = $count;
+                if ($user->rating >= $request->rating){
+                    array_push($temp, $user);
+                }
+            }
+            $users = $temp;
+
+        }
+        foreach ($users as $user){
+            $user->offices = CompanyOffice::where('user_id',$user->id)->get();
+            $user->destinations = CompanyDestinations::where('user_id',$user->id)->get();
+            $user->tours = Tours::where('user_id', $user->id)->get();
+            $user->reviews = Review::where('operator_id', $user->id)->get();
+            $rating = 0;
+            $count = 0;
+            foreach ($user->reviews as $comment){
+                if ((int)$comment->rating > 0){
+                    $rating = $rating + (int)$comment->rating;
+                    $count++;
+                }
+            }
+            if ($rating > 0){
+                $rating = $rating / $count;
+            }else{
+                $rating =  5;
+            }
+            $user->rating = round($rating, 1);
+            $user->reviews = $count;
+        }
+        $offices= CompanyOffice::select('country')->distinct()->get();
+        return view('operators')->with(['users' => $users, 'offices' => $offices, 'filtered' => true, 'destination' => $request->destination, 'operator' => $request->operator_company_name, 'officesIn' => $request->officeIn, 'rating' =>$request->rating]);
+    }
+
+    public function bidOnTourPage($id){
+        $user = User::where('id', $id)->first();
+        $user->offices = CompanyOffice::where('user_id', $user->id)->get();
+        $user->destinations = CompanyDestinations::where('user_id', $user->id)->get();
+        $user->tours = Tours::where('user_id', $user->id)->get();
+        foreach ($user->tours as $item){
+            $item->features = TourFeatures::where('tour_id', $item->id)->get();
+            $item->routes = Routes::where('tour_id', $item->id)->get();
+        }
+        $user->reviews = Review::where('operator_id', $user->id)->get();
+        $user->reviewsDeceding = Review::where('operator_id', $user->id)->latest()->get();
+        foreach ($user->reviewsDeceding as $review){
+            $review->images = ReviewImage::where('review_id', $review->id)->get();
+        }
+        if (count($user->reviews) > 0){
+            $user->isReviewAvailable = 1;
+            $user->latestReview = Review::where('operator_id', $user->id)->latest()->first();
+        }else{
+            $user->isReviewAvailable = 0;
+        }
+
+        $rating = 0;
+        $count = 0;
+        foreach ($user->reviews as $comment){
+            if ((int)$comment->rating > 0){
+                $rating = $rating + (int)$comment->rating;
+                $count++;
+            }
+        }
+        if ($rating > 0){
+            $rating = $rating / $count;
+        }else{
+            $rating =  5;
+        }
+        $user->rating = round($rating, 1);
+        $user->reviews = $count;
+
+        return view('bid-on-tour')->with(['user' => $user]);
+    }
+
+    public function successBid($id){
+        $user = User::where('id', $id)->first();
+        return view('success-bid')->with(['user' => $user]);
+    }
+
+    public function postBidOnTour(Request $request){
+        try{
+            $bid = new bid();
+            $bid->amount = $request->biddingAmount;
+            $bid->name = $request->name;
+            $bid->email = $request->email;
+            $bid->country = $request->country;
+            $bid->phone = $request->tel;
+            $bid->tour_id = $request->selectedTour;
+            $bid->tour_days = $request->selectedDays;
+            $bid->start_date = $request->startDate;
+            $bid->end_date = $request->endDate;
+            $bid->adults = $request->adults;
+            $bid->children = $request->children;
+            $bid->message = $request->message;
+            $bid->operator_id = $request->operator_id;
+            $bid->save();
+            return redirect('success-bid/' . $request->operator_id);
+        }catch (\Exception $exception){
+            return redirect()->back()->withErrors([$exception->getMessage()]);
+        }
     }
 }

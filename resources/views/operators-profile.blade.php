@@ -142,8 +142,8 @@
                                  alt="{{$user->company_name}}" itemprop="logo"/>
                         </div>
 
-                        <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"
-                           class="btn btn--orange btn--reqquote btn--withsubtext">Get a Free Quote<br/><span>for a custom tour</span></a>
+                        <a href="{{url('bid-on-tour')}}/{{$user->id}}" rel="nofollow"
+                           class="btn btn--orange btn--reqquote btn--withsubtext">Bid on Tour<br/><span>for a custom or selected tour</span></a>
 {{--                        <a href="https://www.safaribookings.com/request-quote/p3424" rel="nofollow"--}}
 {{--                           class="btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: 5px">Bid on this--}}
 {{--                            tour<br/><span>for a custom tour</span></a>--}}
@@ -188,9 +188,8 @@
 
 {{--                            <a href="#" rel="nofollow"--}}
 {{--                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext">BID on tour<span>for a custom tour</span></a>--}}
-                            <a href="#" rel="nofollow"
-                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px">Get a Free
-                                Quote<span>for a custom tour</span></a>
+                            <a href="{{url('bid-on-tour')}}/{{$user->id}}" rel="nofollow"
+                               class="hide show-di btn btn--orange btn--reqquote btn--withsubtext" style="margin-top: -20px">Bid on tour<span>for a custom or selected tour</span></a>
                         </div>
 
                     </div>
@@ -898,9 +897,8 @@
             </div>
 
             <div class="hide-t floating-request-btn " data-role="request-cta-mobile">
-                <a href="https://www.safaribookings.com/enquiry/form/p3424" target="blank" rel="overlay nofollow"
-                   data-overlay-hash="request" class="btn btn--orange btn--reqquote">Get a Free Quote for a Custom
-                    Tour</a>
+                <a href="{{url('bid-on-tour')}}/{{$user->id}}" target="blank" rel="overlay nofollow"
+                   data-overlay-hash="request" class="btn btn--orange btn--reqquote">Bid on tour</a>
             </div>
 
 

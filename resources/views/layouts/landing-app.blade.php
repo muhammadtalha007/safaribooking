@@ -219,7 +219,7 @@
         }
 
         .sb-red {
-            color: #9dbff2
+            color: #000000
         }
 
         .strikethrough {
@@ -887,7 +887,7 @@
             color: #fff;
             height: 2.5rem;
             z-index: 100;
-            background-color: #9dbff2;
+            background-color: #000000;
             width: 100%;
             -webkit-transition: top 0.2s ease-out;
             transition: top 0.2s ease-out;
@@ -908,7 +908,7 @@
             position: relative;
             height: 100%;
             z-index: 11;
-            background-color: #9dbff2
+            background-color: #000000
         }
 
         .container__head--main .row {
@@ -1040,7 +1040,7 @@
             width: calc(200% + .125rem);
             height: 100%;
             white-space: nowrap;
-            background-color: #9dbff2
+            background-color: #000000
         }
 
         .header__icon--search-close .header__icon-img {
@@ -1327,7 +1327,7 @@
             position: relative;
             top: -3px;
             padding: .6875rem .25rem .5625rem;
-            color: #9dbff2;
+            color: #000000;
             cursor: default
         }
 
@@ -2122,12 +2122,12 @@
         }
 
         .btn--mediumgreen:active {
-            border-color: #9dbff2;
+            border-color: #000000;
             line-height: 2.125rem
         }
 
         .btn--red {
-            background-color: #9dbff2;
+            background-color: #000000;
             border-top: 1px solid #750f0e;
             border-bottom: 1px solid #750f0e
         }
@@ -2142,7 +2142,7 @@
         }
 
         .btn--red:active {
-            border-color: #9dbff2;
+            border-color: #000000;
             border-top: 1px solid #750f0e;
             line-height: 2.125rem
         }
@@ -2155,7 +2155,7 @@
         }
 
         .btn--mediumred:active {
-            border-color: #9dbff2;
+            border-color: #000000;
             line-height: 2.125rem
         }
 
@@ -2212,7 +2212,7 @@
 
         .btn--white.active {
             background-color: #f2f2f2;
-            color: #9dbff2;
+            color: #000000;
             box-shadow: 0 0 0 rgba(0, 0, 0, 0.18);
             cursor: default;
             text-decoration: none
@@ -4221,7 +4221,7 @@
             }
 
             .btn--red {
-                border-top: 2px solid #9dbff2;
+                border-top: 2px solid #000000;
                 border-bottom: 2px solid #750f0e
             }
 
@@ -4335,12 +4335,12 @@
             }
 
             .navigation__sidebar ul li a:hover, .navigation__sidebar ul li a.active {
-                color: #9dbff2;
+                color: #000000;
                 text-decoration: none
             }
 
             .navigation__sidebar ul li a:hover em, .navigation__sidebar ul li a.active em {
-                color: #9dbff2;
+                color: #000000;
                 text-decoration: none !important
             }
 
@@ -4646,8 +4646,8 @@
             document.getElementById('cookie_consent').className += ' hide';
             document.body.className = document.body.className.replace("has-cookiebar", "");
         }</script>
-    <div id="cookie_consent">
-        <div class="container">
+    <div id="cookie_consent" style="display: none!important;">
+        <div class="container" style="display: none">
             <p class="s">By continuing you agree to our <a href="cookie-settings.html">use of cookies</a>.</p>
             <p class="m">By browsing through this site you agree to <a href="cookie-settings.html">our use of
                     cookies</a>.</p>
@@ -4662,7 +4662,7 @@
             </a>
         </div>
     </div>
-    <header class="header">
+    <header class="header" style="height: 4.4rem">
 
         <div class="container header__container container__head--main ">
             <div class="row">
@@ -4674,16 +4674,16 @@
                 </button>
                 <div class="col col-6 col-t-3 col-p-12">
                     <a href="{{url('/')}}" title="SafariBookings.com">
-                            <h2 style="padding-top: 15px;color: white">Safari Bookings</h2>
-{{--                            <img src="../cfstatic.safaribookings.com/img/logos/logo-173x22.png"--}}
-{{--                                 srcset="https://cfstatic.safaribookings.com/img/logos/logo-173x22@2x.png 2x"--}}
-{{--                                 alt="SafariBookings" width="173" height="22">--}}
+
+                            <img src="{{url('logo.jpg')}}"
+                                 srcset="{{url('logo.jpg')}}"
+                                 alt="Breeze Safari" style="width: 173px;height: 70px">
                     </a></div>
                 <div class="col col-0 col-t-5-5 col-w-5 header--col-nav">
                     <nav class="header__nav nav-t  ">
                         <ul class="nav-t__list">
                             <li class="nav-t__item nav-t__item--has-sub ">
-                                <a href="{{url('all-safari-tours')}}" class="nav-t__link nav-tours" title="African Safari Tours"><span>Safaris & </span>Tours</a>
+                                <a href="{{url('all-safari-tours')}}" class="nav-t__link nav-tours" title="African Safari Tours"><span style="color: white;text-decoration: none">Safaris & Tours</span></a>
                                 <ul class="subnav  header__subnav nav-t__list nav-t__sub-list shadowed-box list list--icon list--icon-arrow list--icon-nopadding ">
 
                                     <li class="nav-t__item nav-t__sub-item">
@@ -4799,10 +4799,10 @@
                                 </ul>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="{{url('countries')}}" class="nav-t__link" title="Countries">Countries</a>
+                                <a href="{{url('countries')}}" class="nav-t__link" title="Countries"><span style="color: white;text-decoration: none">Countries</span></a>
                             </li>
                             <li class="nav-t__item ">
-                                <a href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span>Tour </span>Operators</a>
+                                <a href="{{url('operators')}}" class="nav-t__link nav-operators" title="Tour Operators"><span style="color: white;text-decoration: none">Tour Operators</span></a>
                             </li>
                         </ul>
                     </nav>
@@ -4815,15 +4815,15 @@
 {{--                    </a>--}}
 {{--                </div>--}}
                 <div class="col col-0 col-t-2-5 col-w-3 header--col-search">
-                    <form method="GET" action="https://www.safaribookings.com/search" class="header__search"
-                          role="search">
-                        <label for="search" class="header__search-inputlabel">Search</label>
-                        <input type="search" name="q" id="search" value="" required autocomplete="off" maxlength="100"
-                               class="header__search-input"/>
-                        <button type="submit" class="header__search-submit" name="submit" title="Submit search query">
-                            <i class="sbi sbi--search mirrored header__search-submit-icon"></i>
-                        </button>
-                    </form>
+{{--                    <form method="GET" action="https://www.safaribookings.com/search" class="header__search"--}}
+{{--                          role="search">--}}
+{{--                        <label for="search" class="header__search-inputlabel">Search</label>--}}
+{{--                        <input type="search" name="q" id="search" value="" required autocomplete="off" maxlength="100"--}}
+{{--                               class="header__search-input"/>--}}
+{{--                        <button type="submit" class="header__search-submit" name="submit" title="Submit search query">--}}
+{{--                            <i class="sbi sbi--search mirrored header__search-submit-icon"></i>--}}
+{{--                        </button>--}}
+{{--                    </form>--}}
                 </div>
                 <div class="col col-1-5 col-t-0 header__icon header__icon--search js-event js-toggle"
                      data-toggle="search" data-toggle-active-child="header__icon--search-close"

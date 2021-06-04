@@ -9,13 +9,13 @@
                             You are here:
                         </li>
                         <li data-type='breadcrumb'>
-                            <a href="index.html" title="SafariBookings.com">Home</a>
+                            <a href="{{url('/')}}" title="SafariBookings.com">Home</a>
                         </li>
                         <li data-type='breadcrumb'>
-                            <a href="tours.html" title="All Tours"><span>All Tours</span></a>
+                            <a href="{{url('all-safari-tours')}}" title="All Tours"><span>All Tours</span></a>
                         </li>
                         <li data-type='breadcrumb'>
-                            <a href="tours.html" title="African Safari Tours &amp; Holidays"
+                            <a href="#" title="African Safari Tours &amp; Holidays"
                                class="breadcrumbs__last"><span>African Safari Tours &amp; Holidays</span></a>
                         </li>
                     </ol>
@@ -873,7 +873,7 @@
                         itemtype="http://schema.org/AggregateOffer">
                         @foreach($tours as $item)
                             <li class="col col-12 col-t-6">
-                                <a class="list__item    " href="tours/t17948.html" target="_blank" data-id="17948"
+                                <a class="list__item    " href="{{url('tour')}}/{{$item->id}}/details" target="_blank" data-id="17948"
                                    title="5-Day Living Among Lions - Mid-Range">
                                     <div class="list__item--image__full">
 

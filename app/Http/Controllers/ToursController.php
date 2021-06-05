@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AccommodationAndMeal;
+use App\CompanyOffice;
 use App\Features;
 use App\Review;
 use App\ReviewImage;
@@ -23,9 +24,11 @@ class ToursController extends Controller
             $item->features = TourFeatures::where('tour_id', $item->id)->get();
             $item->routes = Routes::where('tour_id', $item->id)->get();
             $item->user = User::where('id', $item->user_id)->first();
-        }
+//            $item->offices = CompanyOffice::where('user_id',$item->user_id)->get();
 
-        return view('all-tours')->with(['tours' => $tours]);
+        }
+        $offices= CompanyOffice::select('country')->distinct()->get();
+        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices]);
     }
 
     public function viewTourDetailPage($tourId)
@@ -65,7 +68,7 @@ class ToursController extends Controller
         }
         $rating = round($rating, 1);
         $reviews = $count;
-        return view('tour-detail')->with(['reviewsDeceding' => $reviewsDeceding,'review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews]);
+        return view('tour-detail')->with(['reviewsDeceding' => $reviewsDeceding,'review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews, 'filtered' => false]);
     }
 
 }

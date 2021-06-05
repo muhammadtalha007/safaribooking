@@ -1,6 +1,27 @@
 @extends('layouts.landing-app')
 @section('content')
+    <?php
+    $countriesList = ["Botswana", "Congo (DRC)", "Ethiopia", "Kenya", "Madagascar", "Malawi", "Mozambique", "Namibia", "Rwanda", "South Africa", "Swaziland", "Tanzania", "Uganda", "Zambia", "Zimbabwe"];
+
+    ?>
+    <style>
+        #fixedbutton {
+            /*position: fixed;*/
+            /*bottom: 0px;*/
+            /*left: 50%;*/
+            z-index: 999999999999999;
+            width: 250px;
+            /*position: fixed;*/
+        }
+    </style>
+    <script type="text/javascript" src="{{ \Illuminate\Support\Facades\URL::asset('jquery/3.5.1/jquery.min.js')}}"></script>
     <main class="main">
+        <script>
+            var filterbyhash = true;
+            if (!window.location.hash || window.location.hash == '#filtersopen' || document.location.hash == '#searchopen') {
+                filterbyhash = false;
+            }
+        </script>
         <div class="titlebar titlebar--tour hide show-t">
             <div class="container" data-filterbtn-txt="Filters">
                 <div class="row hide show-t">

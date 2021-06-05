@@ -202,50 +202,6 @@
 
                             </ul>
                         </div>
-{{--                        <div class="filters__block" data-var="pricerange">--}}
-{{--                            <h3>Price Range (Per Day)</h3>--}}
-{{--                            <span>In <b>USD &#36;</b>  per person sharing rooms</span>--}}
-{{--                            <ul>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbpricerange0"><input--}}
-{{--                                            type="checkbox" id="cbpricerange0" data-parent="" data-var="1" name="cbpricerange[]" value="1-150"/><span>$1 to $150</span>--}}
-{{--                                       </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbpricerange1"><input--}}
-{{--                                            type="checkbox" id="cbpricerange1" data-parent="" data-var="2" name="cbpricerange[]" value="151-300"/><span>$151 to $300</span>--}}
-{{--                                        </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbpricerange2"><input--}}
-{{--                                            type="checkbox" id="cbpricerange2" data-parent="" data-var="3" name="cbpricerange[]" value="301-500"/><span>$301 to $500</span>--}}
-{{--                                       </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbpricerange3"><input--}}
-{{--                                            type="checkbox" id="cbpricerange3" data-parent="" data-var="4" name="cbpricerange[]" value="501-750"/><span>$501 to $750</span>--}}
-{{--                                        </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbpricerange4"><input--}}
-{{--                                            type="checkbox" id="cbpricerange4" data-parent="" data-var="5" name="cbpricerange[]" value="750-1000000"/><span>$751 and higher</span>--}}
-{{--                                       </label>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="filters__block" data-var="comfort_level">--}}
-{{--                            <h3>Comfort Level--}}
-{{--                            </h3>--}}
-{{--                            <ul>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbcomfort_level0"><input--}}
-{{--                                            type="checkbox" id="cbcomfort_level0" data-parent=""--}}
-{{--                                            data-var="luxury"/><span>Luxury</span> </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbcomfort_level1"><input--}}
-{{--                                            type="checkbox" id="cbcomfort_level1" data-parent=""--}}
-{{--                                            data-var="midrange"/><span>Mid-range</span> </label>--}}
-{{--                                </li>--}}
-{{--                                <li class="filters__block__check  " data-hide="0"><label for="cbcomfort_level2"><input--}}
-{{--                                            type="checkbox" id="cbcomfort_level2" data-parent=""--}}
-{{--                                            data-var="budget"/><span>Budget</span></label>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
 
                     </div>
                     </form>

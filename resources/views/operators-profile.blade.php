@@ -459,7 +459,7 @@
                                                            class="reviews-all-link" rel="nofollow">All {{$user->reviews}} Reviews</a>
                                                         <a href="{{url('review')}}/{{$user->id}}"
                                                            class="btn btn--orange btn--small btn--autowidth btn--right btn--next"
-                                                           rel="nofollow" style="background: black;border: black;">Write a Review</a>
+                                                           rel="nofollow" style="background: black;border: black;padding-top: 3px">Write a Review</a>
                                                     </div>
                                                 </div>
 

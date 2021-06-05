@@ -27,8 +27,66 @@ class ToursController extends Controller
 //            $item->offices = CompanyOffice::where('user_id',$item->user_id)->get();
 
         }
+        $reviews = Review::all();
+        $ratingall = 0;
+        $count = 0;
+        foreach ($reviews as $comment){
+            if ((int)$comment->rating > 0){
+                $ratingall = $ratingall + (int)$comment->rating;
+                $count++;
+            }
+        }
+        if ($ratingall > 0){
+            $ratingall = $ratingall / $count;
+        }else{
+            $ratingall =  5;
+        }
+        $ratingall = round($ratingall, 1);
+        $reviewsall = $count;
         $offices= CompanyOffice::select('country')->distinct()->get();
-        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices]);
+        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices, 'filtered' => false, 'ratingall' => $ratingall, 'reviewsall' => $reviewsall]);
+    }
+
+    public function filterTours(Request $request){
+
+        $tours = Tours::where('id', '!=' ,0);
+        if (!empty($request->destination)) {
+            $tours->where('country_name', $request->destination);
+        }
+        if (!empty($request->tour_title)) {
+            $tours->where('title','LIKE', "%{$request->input('tour_title')}%");
+        }
+//        if (!empty($request->min_price) && !empty($request->max_price)) {
+            $tours->where('price', '>=',(int)$request->min_price)->where('price', '<=' ,(int)$request->max_price);
+//        }
+
+        $tours = $tours->get();
+        foreach ($tours as $item) {
+            $item->features = TourFeatures::where('tour_id', $item->id)->get();
+            $item->routes = Routes::where('tour_id', $item->id)->get();
+            $item->user = User::where('id', $item->user_id)->first();
+//            $item->offices = CompanyOffice::where('user_id',$item->user_id)->get();
+
+        }
+        $reviews = Review::all();
+        $ratingall = 0;
+        $count = 0;
+        foreach ($reviews as $comment){
+            if ((int)$comment->rating > 0){
+                $ratingall = $ratingall + (int)$comment->rating;
+                $count++;
+            }
+        }
+        if ($ratingall > 0){
+            $ratingall = $ratingall / $count;
+        }else{
+            $ratingall =  5;
+        }
+        $ratingall = round($ratingall, 1);
+        $reviewsall = $count;
+        $offices= CompanyOffice::select('country')->distinct()->get();
+        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices, 'filtered' => true, 'ratingall' => $ratingall, 'reviewsall' => $reviewsall, 'destination' => $request->destination, 'tourTitle' => $request->tour_title,'minPrice' => $request->min_price, 'maxPrice' => $request->max_price]);
+
     }
 
     public function viewTourDetailPage($tourId)

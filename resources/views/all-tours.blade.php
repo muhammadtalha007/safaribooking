@@ -49,7 +49,7 @@
              itemtype="http://schema.org/Product">
             <div class="row">
                 <div class="col col-0 col-d-3 filters ">
-                    <form action="{{url('filter-operator')}}" method="post" id="searchingform">
+                    <form action="{{url('filter-tours')}}" method="post" id="searchingform">
                         @csrf
                         <div class="filters__close">Filter Options<a href="#"><i class="sbi sbi--cross"></i></a></div>
                         <div class="filters__all" data-role="filters-scroll">
@@ -70,9 +70,72 @@
                                 </select>
 
                             </div>
+                            <div class="filters__block filters__block--operator" data-var="operator">
+                                <h3>Filter by Tour Title</h3>
 
+                                <div class="col col-12 no-gutter"><input value="{{$tourTitle ?? ''}}" type="text"
+                                                                         data-types="operators"
+                                                                         data-labels="true" data-shadow="true"
+                                                                         data-title="Select operator below"
+                                                                         autocomplete="off" data-limit="6"
+                                                                         name="tour_title"
+                                                                         placeholder="type tour title"/>
+                                </div>
+                                <div class="autocomplete-holder"></div>
+                            </div>
+                            <div class="filters__block filters__block--operator" data-var="operator">
+                                <h3>Min Price (USD)</h3>
+
+                                <div class="col col-12 no-gutter"><input value="{{$minPrice ?? 0}}" type="text"
+                                                                         data-types="operators"
+                                                                         data-labels="true" data-shadow="true"
+                                                                         data-title="Select operator below"
+                                                                         autocomplete="off" data-limit="6"
+                                                                         name="min_price"
+                                                                         placeholder="min price"/>
+                                </div>
+                                <div class="autocomplete-holder"></div>
+                            </div>
+                            <div class="filters__block filters__block--operator" data-var="operator">
+                                <h3>Max Price (USD)</h3>
+
+                                <div class="col col-12 no-gutter"><input value="{{$maxPrice ?? 100000}}" type="text"
+                                                                         data-types="operators"
+                                                                         data-labels="true" data-shadow="true"
+                                                                         data-title="Select operator below"
+                                                                         autocomplete="off" data-limit="6"
+                                                                         name="max_price"
+                                                                         placeholder="max price"/>
+                                </div>
+                                <div class="autocomplete-holder"></div>
+                            </div>
+{{--                            <div class="filters__block" data-var="offices_in">--}}
+{{--                                <h3>Office In</h3>--}}
+{{--                                <ul>--}}
+{{--                                    @foreach($offices as $key=>$office)--}}
+{{--                                        <li class="filters__block__check  " data-hide="{{$key}}">--}}
+
+{{--                                            @if(!empty($officesIn))--}}
+{{--                                                <label for="cboffices_in{{$key}}">--}}
+{{--                                                    <input--}}
+{{--                                                        type="checkbox" id="cboffices_in{{$key}}" data-parent=""--}}
+{{--                                                        data-var="op_australia" name="officeIn[]"--}}
+{{--                                                        {{in_array($office->country, $officesIn) ? 'checked' : ''}} value="{{$office->country}}"/>{{$office->country}}--}}
+{{--                                                </label>--}}
+{{--                                            @else--}}
+{{--                                                <label for="cboffices_in{{$key}}">--}}
+{{--                                                    <input--}}
+{{--                                                        type="checkbox" id="cboffices_in{{$key}}" data-parent=""--}}
+{{--                                                        data-var="op_australia" name="officeIn[]"--}}
+{{--                                                        value="{{$office->country}}"/>{{$office->country}}</label>--}}
+{{--                                            @endif--}}
+{{--                                        </li>--}}
+{{--                                    @endforeach--}}
+
+{{--                                </ul>--}}
+{{--                            </div>--}}
                             <div class="filters__block" data-var='score'>
-                                <h3>Rating</h3>
+                                <h3>Operator Rating</h3>
 
                                 <ul class="uncheckable-radio">
                                     <li class="filters__block__stars"><label for="cb30" title="5 stars & up">
@@ -169,44 +232,8 @@
 </span><span class="filters__block__stars__amount" data-var="stars1"><span></span></span></label></li>
                                 </ul>
                             </div>
-                            <div class="filters__block filters__block--operator" data-var="operator">
-                                <h3>Filter by Operator</h3>
 
-                                <div class="col col-12 no-gutter"><input value="{{$operator ?? ''}}" type="text"
-                                                                         data-types="operators"
-                                                                         data-labels="true" data-shadow="true"
-                                                                         data-title="Select operator below"
-                                                                         autocomplete="off" data-limit="6"
-                                                                         name="operator_company_name"
-                                                                         placeholder="type operator name and press apply filters"/>
-                                </div>
-                                <div class="autocomplete-holder"></div>
-                            </div>
-                            <div class="filters__block" data-var="offices_in">
-                                <h3>Office In</h3>
-                                <ul>
-                                    @foreach($offices as $key=>$office)
-                                        <li class="filters__block__check  " data-hide="{{$key}}">
 
-                                            @if(!empty($officesIn))
-                                                <label for="cboffices_in{{$key}}">
-                                                    <input
-                                                        type="checkbox" id="cboffices_in{{$key}}" data-parent=""
-                                                        data-var="op_australia" name="officeIn[]"
-                                                        {{in_array($office->country, $officesIn) ? 'checked' : ''}} value="{{$office->country}}"/>{{$office->country}}
-                                                </label>
-                                            @else
-                                                <label for="cboffices_in{{$key}}">
-                                                    <input
-                                                        type="checkbox" id="cboffices_in{{$key}}" data-parent=""
-                                                        data-var="op_australia" name="officeIn[]"
-                                                        value="{{$office->country}}"/>{{$office->country}}</label>
-                                            @endif
-                                        </li>
-                                    @endforeach
-
-                                </ul>
-                            </div>
                         </div>
                     </form>
                     <div class="filters__apply hide-d">
@@ -225,7 +252,7 @@
                             <h1 class="serif list--title  " data-ops="1,036" itemprop="name">African Safari Tours &amp;
                                 Holidays</h1>
                             <div class="review-summary--oneline">
-                                <div class="stars      " title="4.8 / 5" itemprop="aggregateRating" itemscope
+                                <div class="stars      " title="{{$ratingall}}/ 5" itemprop="aggregateRating" itemscope
                                      itemtype="http://schema.org/AggregateRating">
                                     <i class="sbi sbi--star"></i>
                                     <i class="sbi sbi--star"></i>
@@ -238,11 +265,11 @@
                                     <meta itemprop="reviewCount" content="59601"/>
                                 </div>
                                 <span class="review-score">
-                                    <em>4.8</em>/5
+                                    <em>{{$ratingall}}</em>/5
                                 </span>
                                 &nbsp;&ndash;&nbsp;
-                                <a href="tours.html#pagereviews" class="jumpto">
-                                    59,601
+                                <a href="#" class="jumpto">
+                                   {{$reviewsall}}
                                     Safari
                                     Reviews
                                 </a>
@@ -250,17 +277,44 @@
                         </div>
 
                         <div class="col col-12 intro">
-                            <p class="shorten-m-t" data-shorten-m="90" data-shorten-t="400"
-                               data-shorten-label="Read more">
-                                Does an African safari feature on your bucket list? It should! Africa has so much to
-                                offer, from spectacular scenery, friendly people and cultural treasures to blissful
-                                beaches. But above all else, it is the wildlife and safari lifestyle that will draw you
-                                back, again and again. This well-known quote by Richard Mullin is so very true: ‘The
-                                only man I envy, is the man who has not yet been to Africa – for he has so much to look
-                                forward to’. Once you go on your first safari, Africa gets into your blood. You develop
-                                a deep longing to return to this magical continent, and to start planning your next
-                                African safari holiday. Be warned, Africa is very addictive!
-                            </p>
+                            <br>
+                            @if(!empty($destination))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Destination: {{$destination ?? ''}}</span>
+                            @endif
+                            @if(!empty($tourTitle))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Tour Title: {{$tourTitle ?? ''}}</span>
+                            @endif
+                            @if(!empty($minPrice))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Min Price : {{$minPrice ?? ''}}</span>
+                            @endif
+                            @if(!empty($maxPrice))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Max Price : {{$maxPrice ?? ''}}</span>
+                            @endif
+                            @if(!empty($rating))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Rating: {{$rating ?? ''}}</span>
+                            @endif
+                            @if(!empty($officesIn))
+                                <span style="padding: 8px;border-radius: 5px;background: lightgrey">Offices In : @foreach($officesIn as $officeq) {{$officeq ?? ''}} |  @endforeach</span>
+                            @endif
+                            <br>
+                            <br>
+                            <a id="fixedbutton" href="#" onclick="document.getElementById('searchingform').submit()" class="btn btn--orange search btn--next" style="background: black;border: black">Apply Filters
+                            </a>
+                            @if($filtered == true)
+                                <a id="fixedbutton" style="background: maroon" href="{{url('all-safari-tours')}}" class="btn btn-secondary search">Remove Filters
+                                </a>
+                            @endif
+{{--                            <p class="shorten-m-t" data-shorten-m="90" data-shorten-t="400"--}}
+{{--                               data-shorten-label="Read more">--}}
+{{--                                Does an African safari feature on your bucket list? It should! Africa has so much to--}}
+{{--                                offer, from spectacular scenery, friendly people and cultural treasures to blissful--}}
+{{--                                beaches. But above all else, it is the wildlife and safari lifestyle that will draw you--}}
+{{--                                back, again and again. This well-known quote by Richard Mullin is so very true: ‘The--}}
+{{--                                only man I envy, is the man who has not yet been to Africa – for he has so much to look--}}
+{{--                                forward to’. Once you go on your first safari, Africa gets into your blood. You develop--}}
+{{--                                a deep longing to return to this magical continent, and to start planning your next--}}
+{{--                                African safari holiday. Be warned, Africa is very addictive!--}}
+{{--                            </p>--}}
                         </div>
 
                         <div class="col col-12">

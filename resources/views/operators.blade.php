@@ -434,7 +434,7 @@
                                             </li>
                                         @endif
                                         @foreach($user->tours as $tour)
-                                            <li><a href="#"
+                                            <li><a href="{{url('tour')}}/{{$tour->id}}/details"
                                                    title="{{$tour->title}}">{{$tour->total_days}}-Day
                                                     {{$tour->title}}</a> <span
                                                     class="txt--grey">(from ${{$tour->price}} pp)</span>
@@ -443,7 +443,7 @@
                                     </ul>
                                     <a href="{{url('operator-tours')}}/{{$user->id}}"
                                        class="btn btn--orange btn--small btn--autowidth btn--next"
-                                       title="All tours offered by Pearl Afric Tours &amp; Travel" style="background: black;border: black"> All {{count($user->tours)}}
+                                       title="All tours offered by Pearl Afric Tours &amp; Travel" style="background: black;border: black;padding-top: 3px"> All {{count($user->tours)}}
                                         Tours </a><span
                                         class="behind-btn"> - Offered by {{$user->company_name}}</span>
 {{--                                    <img--}}

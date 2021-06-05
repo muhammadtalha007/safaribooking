@@ -247,7 +247,7 @@
 
                                                     </div>
                                                     <div id="enquirysubmit-container" style="margin-top: 10px">
-                                                        <button type="submit" class="btn btn--orange btn--autowidth-t btn--autowidth-t--wide btn--next" data-validate-msg="<b>We're sorry, but an error occurred.</b><br />A message has been sent to our tech team. Please try again later.">Send Request</button>
+                                                        <button type="submit" class="btn btn--orange btn--autowidth-t btn--autowidth-t--wide btn--next" data-validate-msg="<b>We're sorry, but an error occurred.</b><br />A message has been sent to our tech team. Please try again later." style="background: black;border-color: black">Send Request</button>
 {{--                                                        <div class="txt--grey txt--small">By clicking the 'Send' button you agree to our <a href="https://www.safaribookings.com/terms-of-use" target="_blank">Terms of Use</a> and <a href="https://www.safaribookings.com/privacy-policy" target="_blank">Privacy Policy</a></div>--}}
                                                     </div>
                                                 </div>

@@ -4677,7 +4677,7 @@
 
                             <img src="{{url('logo.jpg')}}"
                                  srcset="{{url('logo.jpg')}}"
-                                 alt="Breeze Safari" style="width: 173px;height: 70px">
+                                 alt="Breeze Safari" style="width: 135px;height: 70px">
                     </a></div>
                 <div class="col col-0 col-t-5-5 col-w-5 header--col-nav">
                     <nav class="header__nav nav-t  ">

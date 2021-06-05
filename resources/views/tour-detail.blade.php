@@ -12,7 +12,7 @@
                                 You are here:
                             </li>
                             <li data-type='breadcrumb'>
-                                <a href="../index.html" title="SafariBookings.com">Home</a>
+                                <a href="{{url('/')}}" title="SafariBookings.com">Home</a>
                             </li>
                             <li data-type='breadcrumb'>
                                 <a href="{{url('all-safari-tours')}}" title="All Tours"><span>All Tours</span></a>
@@ -22,7 +22,7 @@
                                    title="{{$tour->country_name}}"><span>{{$tour->country_name}}</span></a>
                             </li>
                             <li data-type='breadcrumb'>
-                                <a href="../operator-tours/p2750.html"
+                                <a href="{{url('operator-profile')}}/{{$userId}}"
                                    title="{{$companyName}}"><span>{{$companyName}}</span></a>
                             </li>
                             <li>

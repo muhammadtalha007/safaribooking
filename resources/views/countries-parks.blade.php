@@ -12,7 +12,7 @@
                             You are here:
                         </li>
                         <li data-type='breadcrumb'>
-                            <a href="index.html" title="SafariBookings.com">Home</a>
+                            <a href="{{url('/')}}" title="SafariBookings.com">Home</a>
                         </li>
                         <li>
                             <span class="breadcrumbs__last" title="Countries">Countries</span>

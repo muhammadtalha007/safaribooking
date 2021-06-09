@@ -45,6 +45,7 @@ Route::post('filter-operator', "AuthController@filterOperator");
 Route::get('bid-on-tour/{id}', "AuthController@bidOnTourPage");
 Route::get('success-bid/{id}', "AuthController@successBid");
 Route::post('post-bid-on-tour', "AuthController@postBidOnTour");
+Route::get('bid-on-tour/operator/{operatorId}/tour/{tourId}', "ToursController@bidOnTourDetailPage");
 
 Route::get('logout-user', function (){
     \Illuminate\Support\Facades\Session::flush();

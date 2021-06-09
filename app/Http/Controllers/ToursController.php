@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AccommodationAndMeal;
+use App\CompanyDestinations;
 use App\CompanyOffice;
 use App\Features;
 use App\Review;
@@ -71,4 +72,43 @@ class ToursController extends Controller
         return view('tour-detail')->with(['reviewsDeceding' => $reviewsDeceding,'review' => $review,'userId' => $userId, 'companySize' => $companySize, 'foundedIn' => $foundedIn, 'accommodationAndMeal' => $accommodationAndMeal, 'tourActivities' => $tourActivities, 'tourFeatures' => $tourFeatures, 'routes' => $routes, 'tour' => $tour, 'companyName' => $companyName, 'rating' => $rating, 'reviews' => $reviews, 'filtered' => false]);
     }
 
+    public function bidOnTourDetailPage($operatorId,$tourId){
+        $user = User::where('id', $operatorId)->first();
+        $user->offices = CompanyOffice::where('user_id', $user->id)->get();
+        $user->destinations = CompanyDestinations::where('user_id', $user->id)->get();
+        $user->tours = Tours::where('user_id', $user->id)->get();
+        foreach ($user->tours as $item){
+            $item->features = TourFeatures::where('tour_id', $item->id)->get();
+            $item->routes = Routes::where('tour_id', $item->id)->get();
+        }
+        $user->reviews = Review::where('operator_id', $user->id)->get();
+        $user->reviewsDeceding = Review::where('operator_id', $user->id)->latest()->get();
+        foreach ($user->reviewsDeceding as $review){
+            $review->images = ReviewImage::where('review_id', $review->id)->get();
+        }
+        if (count($user->reviews) > 0){
+            $user->isReviewAvailable = 1;
+            $user->latestReview = Review::where('operator_id', $user->id)->latest()->first();
+        }else{
+            $user->isReviewAvailable = 0;
+        }
+
+        $rating = 0;
+        $count = 0;
+        foreach ($user->reviews as $comment){
+            if ((int)$comment->rating > 0){
+                $rating = $rating + (int)$comment->rating;
+                $count++;
+            }
+        }
+        if ($rating > 0){
+            $rating = $rating / $count;
+        }else{
+            $rating =  5;
+        }
+        $user->rating = round($rating, 1);
+        $user->reviews = $count;
+
+        return view('bid-on-tour-detail-page')->with(['user' => $user, 'tourId' => $tourId]);
+    }
 }

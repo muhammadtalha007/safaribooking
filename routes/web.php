@@ -42,6 +42,7 @@ Route::post('post-review', "AuthController@saveReview");
 Route::get('review-success', "AuthController@reviewSuccess");
 Route::get('view-review-image/{id}', "AuthController@viewReviewImage");
 Route::post('filter-operator', "AuthController@filterOperator");
+Route::post('filter-tours', "ToursController@filterTours");
 Route::get('bid-on-tour/{id}', "AuthController@bidOnTourPage");
 Route::get('success-bid/{id}', "AuthController@successBid");
 Route::post('post-bid-on-tour', "AuthController@postBidOnTour");

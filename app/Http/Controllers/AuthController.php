@@ -368,6 +368,7 @@ class AuthController extends Controller
                 }
                 $user->rating = round($rating, 1);
                 $user->reviews = $count;
+
                 if ($user->rating >= $request->rating){
                     array_push($temp, $user);
                 }

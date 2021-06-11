@@ -79,7 +79,44 @@
     <meta name="msapplication-config" content="https://cfstatic.safaribookings.com/img/favicon/browserconfig.xml">
     <meta name="msapplication-TileColor" content="#ffffff">
 
+<style>
+.fa {
+    font-size: 15px!important;
+    width: 56px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    border-radius: 50%;
+    color: white!important;
+    text-decoration: none;
+    padding: 27px;
+    height: 65px;
+}
 
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+</style>
     <style>
 
         @keyframes fadeIn {
@@ -89,8 +126,6 @@
             100% {
                 visibility: visible
             }
-
-
 
         }
 
@@ -4631,6 +4666,8 @@
     <link rel="preload"
           href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i%7CGentium+Basic:400,700,700i&amp;display=swap"
           as="style" onload="this.onload=null;this.rel='stylesheet'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!--[if lt IE 11]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -5029,7 +5066,7 @@
 <!--====== HEADER PART ENDS ======-->
 @yield('content')
 
-    <footer>
+    <footer style="background:black;">
 
         <div class="container hide-p">
             <div class="row hide show-t">
@@ -5102,98 +5139,98 @@
                                 </li>
 
                                 <li>
-                                    <a  onclick="searchTours('Botswana')" title="DR Congo Safaris">
+                                    <a  onclick="searchTours('Congo (DRC)')" title="DR Congo Safaris">
                                         DR Congo
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/ethiopia.html" title="Ethiopia Safaris">
+                                    <a onclick="searchTours('Ethiopia')" title="Ethiopia Safaris">
                                         Ethiopia
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/kenya.html" title="Kenya Safaris">
+                                    <a onclick="searchTours('Kenya')" title="Kenya Safaris">
                                         Kenya
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/madagascar.html" title="Madagascar Safaris">
+                                    <a onclick="searchTours('Madagascar')" title="Madagascar Safaris">
                                         Madagascar
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/malawi.html" title="Malawi Safaris">
+                                    <a onclick="searchTours('Malawi')" title="Malawi Safaris">
                                         Malawi
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/mozambique.html" title="Mozambique Safaris">
+                                    <a onclick="searchTours('Mozambique')" title="Mozambique Safaris">
                                         Mozambique
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/namibia.html" title="Namibia Safaris">
+                                    <a onclick="searchTours('Namibia')" title="Namibia Safaris">
                                         Namibia
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/rwanda.html" title="Rwanda Safaris">
+                                    <a onclick="searchTours('Rwanda')" title="Rwanda Safaris">
                                         Rwanda
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/south-africa.html" title="South Africa Safaris">
+                                    <a onclick="searchTours('South Africa')" title="South Africa Safaris">
                                         South Africa
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/swaziland.html" title="Swaziland Safaris">
+                                    <a onclick="searchTours('Swaziland')" title="Swaziland Safaris">
                                         Swaziland
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/tanzania.html" title="Tanzania Safaris">
+                                    <a onclick="searchTours('Tanzania')" title="Tanzania Safaris">
                                         Tanzania
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/uganda.html" title="Uganda Safaris">
+                                    <a onclick="searchTours('Uganda')" title="Uganda Safaris">
                                         Uganda
                                         Tours
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/zambia.html" title="Zambia Safaris">
+                                    <a onclick="searchTours('Zambia')" title="Zambia Safaris">
                                         Zambia
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/zimbabwe.html" title="Zimbabwe Safaris">
+                                    <a onclick="searchTours('Zimbabwe')" title="Zimbabwe Safaris">
                                         Zimbabwe
                                         Safaris
                                     </a>
@@ -5203,123 +5240,41 @@
                         </div>
 
                         <div class="flex__item col-t-2-5 col-d-auto">
-                            <h3>Safaris by Type</h3>
-                            <ul class="col-d-split">
-                                <li><a href="tours/luxury-luxuryplus.html">Luxury Safaris</a></li>
-                                <li><a href="tours/budget.html">Budget Safaris</a></li>
-                                <li><a href="tours/gorilla-trekking.html">Gorilla Trekking</a></li>
-                                <li><a href="tours/chimp-trekking.html">Chimp Trekking</a></li>
-                                <li><a href="tours/family.html">Family Safaris</a></li>
-                                <li><a href="tours/private.html">Private Safaris</a></li>
-                                <li><a href="tours/group.html">Group Safaris</a></li>
-                                <li><a href="tours/honeymoon.html">Honeymoons</a></li>
-                                <li><a href="tours/photographic.html">Photo Safaris</a></li>
-                                <li><a href="tours/overland.html">Overland Tours</a></li>
-                                <li><a href="tours/camping.html">Camping Safaris</a></li>
-                                <li><a href="tours/fly-in.html">Fly-in Safaris</a></li>
-                                <li><a href="tours/walking.html">Walking Safaris</a></li>
-                                <li><a href="tours/birding.html">Birding Safaris</a></li>
-                                <li><a href="tours/self-drive.html">Self-drive Safaris</a></li>
-                                <li><a href="tours/canoe.html">Canoe Safaris</a></li>
-                            </ul>
+                          
+                            
                         </div>
 
 
                         <div class="flex__item hide show-d col-d-auto">
-                            <h3>General</h3>
-                            <ul class="nav">
-                                <li><a href="about-us.html" title="About Us">About Us</a></li>
-                                <li><a href="partner-options.html" title="Partner Options">Partner Options</a></li>
-                                <li><a href="terms-of-use.html" title="Terms of Use">Terms of Use</a></li>
-                                <li><a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
-                                <li><a href="cookie-settings.html" title="Cookie Settings">Cookie Settings</a></li>
-                                <li><a href="blog.html" title="Blog">Blog</a></li>
-
-                                <li><a href="how-much-does-an-african-safari-cost.html"
-                                       title="How Much Does an African Safari Cost?">African Safari Cost</a></li>
-                                <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
-                            </ul>
+                            <h3>SOCIAL MEDIA</h3>
 
                             <div class="socials hide-t show-di">
-                                <a href="https://twitter.com/safaribookings" target="_blank" rel="noopener nofollow"
-                                   title="SafariBookings on Twitter" class="social-icon social-icon--twitter"
-                                   aria-label="Follow SafariBookings on Twitter"><img class="svg"
-                                                                                      src="https://cfstatic.safaribookings.com/img/svg/twitter.svg"
-                                                                                      alt="SafariBookings on Twitter"/></a>
-                                <a href="https://www.instagram.com/safaribookings/" target="_blank"
-                                   rel="noopener nofollow" title="SafariBookings on Instagram"
-                                   class="social-icon social-icon--instagram"
-                                   aria-label="Follow SafariBookings on Instagram"><img class="svg"
-                                                                                        src="https://cfstatic.safaribookings.com/img/svg/instagram.svg"
-                                                                                        alt="SafariBookings on Instagram"/></a>
-                                <a href="https://www.facebook.com/SafariBookings/" target="_blank"
-                                   rel="noopener nofollow" title="SafariBookings on Facebook"
-                                   class="social-icon social-icon--facebook"
-                                   aria-label="Follow SafariBookings on Facebook"><img class="svg"
-                                                                                       src="https://cfstatic.safaribookings.com/img/svg/facebook.svg"
-                                                                                       alt="SafariBookings on Facebook"/></a>
+                                    <a href="#" class="fa fa-facebook"></a>
+                                    <a href="#" class="fa fa-twitter" style="text-decoration:none;"></a>
+                                    <a href="#" class="fa fa-youtube"></a>
+                                    <a href="#" class="fa fa-instagram"></a>
                             </div>
                         </div>
                         <div class="flex__item col col-d-auto hide show-d footer__spacer"></div>
                     </div>
 
-                    <div class="currency-selector no-gutter col hide show-d">
+                    <!-- <div class="currency-selector no-gutter col hide show-d">
                         <strong>Change Currency</strong>
                         <a href="changecurrency.html" class="currency-selector__button btn btn--next btn--autowidth"
                            rel="overlay" data-overlay-hash="currency" title="Change Currency">USD &#36;</a>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </div>
 
-{{--        <div class="container container--main container--home-featured featuredbar hide show-t">--}}
-{{--            <div class="inner">--}}
-{{--                <b>As Featured In</b>--}}
-{{--                <div class="logos">--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-footer.gif"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in The Times London"--}}
-{{--                         title="SafariBookings featured in The Times London" width="80" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-lat.png"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in Los Angeles Times"--}}
-{{--                         title="SafariBookings featured in Los Angeles Times" width="63" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-tam.png"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in Travel Africa Magazine"--}}
-{{--                         title="SafariBookings featured in Travel Africa Magazine" width="121" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-times-sa.png"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in The Times Johannesburg"--}}
-{{--                         title="SafariBookings featured in The Times Johannesburg" width="108" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-cnn-footer.gif"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in CNN Travel"--}}
-{{--                         title="SafariBookings featured in CNN Travel" width="56" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-australian.png"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in The Australian"--}}
-{{--                         title="SafariBookings featured in The Australian" width="112" height="50"/>--}}
-{{--                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAQAAABeK7cBAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="--}}
-{{--                         data-srcset="https://cfstatic.safaribookings.com/img/featured/featured-chicago.png"--}}
-{{--                         class="lazyload" alt="SafariBookings featured in Chicago Tribune"--}}
-{{--                         title="SafariBookings featured in Chicago Tribune" width="78" height="50"/>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
 
         <div class="copyright  ">
             <div class="container">
                 <div class="row">
                     <div class="col col-12">
                         <p itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-{{--                            <picture>--}}
-{{--                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif" class="mark"--}}
-{{--                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"--}}
-{{--                                     alt="SafariBookings" title="SafariBookings">--}}
-{{--                            </picture>--}}
-                            Copyright &copy; 2021 <span itemprop="name">SafariBookings</span>. All Rights Reserved.
+                            Copyright &copy; 2021 <span itemprop="name">{{env("APP_NAME")}}</span>. All Rights Reserved.
                         </p>
                     </div>
                 </div>

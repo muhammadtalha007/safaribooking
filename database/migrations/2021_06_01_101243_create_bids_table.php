@@ -28,6 +28,7 @@ class CreateBidsTable extends Migration
             $table->string('children');
             $table->string('message');
             $table->string('operator_id');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

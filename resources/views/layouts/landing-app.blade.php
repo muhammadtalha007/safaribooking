@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8">
-    <title>SafariBookings: African Safari Holidays (1,036 Tour Operators)</title>
+    <title>{{env('APP_NAME')}}: African Safari Holidays</title>
     <meta property="og:title" content="SafariBookings: African Safari Holidays (1,036 Tour Operators)">
     <meta name="twitter:title" content="SafariBookings: African Safari Holidays (1,036 Tour Operators)">
     <meta name="description"
@@ -80,7 +80,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
 
 
-    <style>﻿
+    <style>
 
         @keyframes fadeIn {
             99% {
@@ -89,6 +89,9 @@
             100% {
                 visibility: visible
             }
+
+
+
         }
 
         .clearfix:after, .content:after, .row:after, .tabs:after, .operator__header:after {
@@ -574,6 +577,7 @@
             width: 100% !important;
             min-width: 100% !important
         }
+
 
         body[data-show=sidebar] {
             overflow: hidden
@@ -4687,54 +4691,54 @@
                                 <ul class="subnav  header__subnav nav-t__list nav-t__sub-list shadowed-box list list--icon list--icon-arrow list--icon-nopadding ">
 
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/botswana.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Botswana')"
                                            title="Botswana">Botswana</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Botswana')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/dr-congo.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Congo (DRC)')"
                                            title="Congo (DRC)">Congo (DRC)</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Congo,Democratic Republic')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/ethiopia.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Ethiopia')"
                                            title="Ethiopia">Ethiopia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Ethiopia')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/kenya.html" title="Kenya">Kenya</a>
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Kenya')" title="Kenya">Kenya</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Kenya')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/madagascar.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Madagascar')"
                                            title="Madagascar">Madagascar</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Madagascar')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/malawi.html" title="Malawi">Malawi</a>
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Malawi')" title="Malawi">Malawi</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Malawi')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/mozambique.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Mozambique')"
                                            title="Mozambique">Mozambique</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Mozambique')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/namibia.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Namibia')"
                                            title="Namibia">Namibia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Namibia')->count()}})
@@ -4742,46 +4746,46 @@
                                     </li>
 
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/rwanda.html" title="Rwanda">Rwanda</a>
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Rwanda')" title="Rwanda">Rwanda</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Rwanda')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/south-africa.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('South Africa')"
                                            title="South Africa">South Africa</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'South Africa')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/swaziland.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Swaziland')"
                                            title="Swaziland">Swaziland</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Swaziland')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/tanzania.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Tanzania')"
                                            title="Tanzania">Tanzania</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Tanzania')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/uganda.html" title="Uganda">Uganda</a>
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Uganda')" title="Uganda">Uganda</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Uganda')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/zambia.html" title="Zambia">Zambia</a>
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Zambia')" title="Zambia">Zambia</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Zambia')->count()}})
                     </span>
                                     </li>
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours/zimbabwe.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Zimbabwe')"
                                            title="Zimbabwe">Zimbabwe</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                         ({{\App\Tours::where('country_name', 'Zimbabwe')->count()}})
@@ -4789,7 +4793,7 @@
                                     </li>
 
                                     <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" href="tours.html"
+                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('')"
                                            title="All Safaris & Tours">All Safaris &amp; Tours</a>
                                         <span class="nav-t__sub-count txt--xgrey txt--xsmall">
                     ({{\App\Tours::all()->count()}})
@@ -5024,287 +5028,66 @@
 
 <!--====== HEADER PART ENDS ======-->
 @yield('content')
-<!--====== FOOTER PART START ======-->
-
-{{--    <footer class="expertbar hide-p">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col col-12 col-d-10 expertbar__top">--}}
-{{--                    <h2><strong>SafariBookings Experts</strong></h2><i class="expertbar__subtext">Our <a--}}
-{{--                            href="experts.html" title="Our 24 award-winning experts">24 award-winning experts</a> contribute--}}
-{{--                        to our detailed travel guides, and have written more than 1,000 expert reviews.</i>--}}
-{{--                    <span class="expertbar__banner">--}}
-{{--                            <picture>--}}
-{{--                                <img src="../cfstatic.safaribookings.com/img/logos/mark-56x48.gif"--}}
-{{--                                     class="expertbar__banner-mark mark"--}}
-{{--                                     srcset="https://cfstatic.safaribookings.com/img/logos/mark-56x48@2x.gif 2x"--}}
-{{--                                     alt="SafariBookings" title="SafariBookings">--}}
-{{--                            </picture>--}}
-{{--                        </span>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row expertbar__experts">--}}
-{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4 " data-expertid="14">--}}
-{{--                    <div class="expert  matchheight  ">--}}
-{{--                        <div class="expert__photo">--}}
-{{--                            <div>--}}
-{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
-{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Stephen_Cunliffe.jpg"--}}
-{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Stephen_Cunliffe.jpg 2x"--}}
-{{--                                     class="expert-photo expert__photo-image placeholder lazyload"--}}
-{{--                                     alt="Stephen Cunliffe">--}}
-{{--                            </div>--}}
-{{--                            <span></span>--}}
-{{--                            <i>Expert</i>--}}
-{{--                        </div>--}}
-{{--                        <h3><a href="experts/stephen-cunliffe.html" title="Bio &amp; Reviews of Stephen Cunliffe">Stephen--}}
-{{--                                Cunliffe</a></h3>--}}
-{{--                        <div class="country-with-flag  " title="South Africa">--}}
-{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
-{{--                                <title>South Africa</title>--}}
-{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>--}}
-{{--                            </svg>--}}
-{{--                            <span class="txt--grey">--}}
-{{--                            ZA--}}
-{{--                    </span>--}}
-{{--                        </div>--}}
-{{--                        <div class="expert__reviews">--}}
-{{--                            <i class="sbi sbi--star"></i>--}}
-{{--                            <span class="txt--grey">87 Reviews</span>--}}
-{{--                        </div>--}}
-{{--                        <p>Stephen is a travel writer and avid conservationist whose work appears in prestigious--}}
-{{--                            magazines such as Africa Geographic and Travel Africa.</p>--}}
-{{--                        &rsaquo;--}}
-{{--                        <a href="experts/stephen-cunliffe.html" class="hide show-ti"--}}
-{{--                           title="Full Bio &amp; Reviews of Stephen Cunliffe">--}}
-{{--                            Full Bio &amp; Reviews--}}
-{{--                        </a>--}}
-{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
-{{--                            <b>All 24 Experts</b>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-t " data-expertid="25">--}}
-{{--                    <div class="expert  matchheight  ">--}}
-{{--                        <div class="expert__photo">--}}
-{{--                            <div>--}}
-{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
-{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Heather_Richardson.jpg"--}}
-{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Heather_Richardson.jpg 2x"--}}
-{{--                                     class="expert-photo expert__photo-image placeholder lazyload"--}}
-{{--                                     alt="Heather Richardson">--}}
-{{--                            </div>--}}
-{{--                            <span></span>--}}
-{{--                            <i>Expert</i>--}}
-{{--                        </div>--}}
-{{--                        <h3><a href="experts/heather-richardson.html" title="Bio &amp; Reviews of Heather Richardson">Heather--}}
-{{--                                Richardson</a></h3>--}}
-{{--                        <div class="country-with-flag  " title="South Africa">--}}
-{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
-{{--                                <title>South Africa</title>--}}
-{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#za"></use>--}}
-{{--                            </svg>--}}
-{{--                            <span class="txt--grey">--}}
-{{--                            ZA--}}
-{{--                    </span>--}}
-{{--                        </div>--}}
-{{--                        <div class="expert__reviews">--}}
-{{--                            <i class="sbi sbi--star"></i>--}}
-{{--                            <span class="txt--grey">11 Reviews</span>--}}
-{{--                        </div>--}}
-{{--                        <p>Heather is a British travel / conservation journalist, and has written for publications and--}}
-{{--                            broadcasters such as the BBC, Departures, the Telegraph and the Sunday Times.</p>--}}
-{{--                        &rsaquo;--}}
-{{--                        <a href="experts/heather-richardson.html" class="hide show-ti"--}}
-{{--                           title="Full Bio &amp; Reviews of Heather Richardson">--}}
-{{--                            Full Bio &amp; Reviews--}}
-{{--                        </a>--}}
-{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
-{{--                            <b>All 24 Experts</b>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="expertbar__experts__expert col col-12 col-t-6 col-d-4  hide show-d " data-expertid="9">--}}
-{{--                    <div class="expert  matchheight  ">--}}
-{{--                        <div class="expert__photo">--}}
-{{--                            <div>--}}
-{{--                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="--}}
-{{--                                     data-src="https://cloudfront.safaribookings.com/assets/experts/56x56/Melissa_Shales.jpg"--}}
-{{--                                     data-srcset="https://cloudfront.safaribookings.com/assets/experts/140x140/Melissa_Shales.jpg 2x"--}}
-{{--                                     class="expert-photo expert__photo-image placeholder lazyload" alt="Melissa Shales">--}}
-{{--                            </div>--}}
-{{--                            <span></span>--}}
-{{--                            <i>Expert</i>--}}
-{{--                        </div>--}}
-{{--                        <h3><a href="experts/melissa-shales.html" title="Bio &amp; Reviews of Melissa Shales">Melissa--}}
-{{--                                Shales</a></h3>--}}
-{{--                        <div class="country-with-flag  " title="United Kingdom">--}}
-{{--                            <svg class="country-with-flag__flag" data-role="svg-sprite">--}}
-{{--                                <title>United Kingdom</title>--}}
-{{--                                <use xlink:href="img/flags/flags-countries-reviewers.svg#gb"></use>--}}
-{{--                            </svg>--}}
-{{--                            <span class="txt--grey">--}}
-{{--                            UK--}}
-{{--                    </span>--}}
-{{--                        </div>--}}
-{{--                        <div class="expert__reviews">--}}
-{{--                            <i class="sbi sbi--star"></i>--}}
-{{--                            <span class="txt--grey">42 Reviews</span>--}}
-{{--                        </div>--}}
-{{--                        <p>Melissa is an award winning travel writer for Fodors, Frommers and Insight, including guides--}}
-{{--                            to Tanzania, Kenya, Zimbabwe and South Africa.</p>--}}
-{{--                        &rsaquo;--}}
-{{--                        <a href="experts/melissa-shales.html" class="hide show-ti"--}}
-{{--                           title="Full Bio &amp; Reviews of Melissa Shales">--}}
-{{--                            Full Bio &amp; Reviews--}}
-{{--                        </a>--}}
-{{--                        <a href="experts.html" class="hide-t" title="All 24 Experts">--}}
-{{--                            <b>All 24 Experts</b>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </footer>--}}
 
     <footer>
 
         <div class="container hide-p">
-            <div class="row onlymob">
-                <div class="col col-4-5">
-                    <ul>
-                        <li><a href="terms-of-use.html" title="Terms of Use">Terms of Use</a></li>
-                        <li><a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
-                        <li><a href="cookie-settings.html" title="Cookie Settings">Cookie Settings</a></li>
-                        <li><a href="how-much-does-an-african-safari-cost.html"
-                               title="How Much Does an African Safari Cost?">African Safari Cost</a></li>
-                    </ul>
-                </div>
-                <div class="col col-3">
-                    <ul>
-                        <li><a href="about-us.html" title="About Us">About Us</a></li>
-                        <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
-                        <li><a href="partner-options.html" title="Partner Options">Partner Options</a></li>
-
-                        <li><a href="blog.html" title="Blog">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col col-4-5 mobile-socials">
-                    <a href="https://www.facebook.com/SafariBookings/" target="_blank" rel="noopener nofollow"
-                       title="SafariBookings on Facebook" class="social-icon social-icon--facebook"
-                       aria-label="Follow SafariBookings on Facebook"><img class="svg"
-                                                                           src="https://cfstatic.safaribookings.com/img/svg/facebook.svg"
-                                                                           alt="SafariBookings on Facebook"/></a>
-                    <a href="https://www.instagram.com/safaribookings/" target="_blank" rel="noopener nofollow"
-                       title="SafariBookings on Instagram" class="social-icon social-icon--instagram"
-                       aria-label="Follow SafariBookings on Instagram"><img class="svg"
-                                                                            src="https://cfstatic.safaribookings.com/img/svg/instagram.svg"
-                                                                            alt="SafariBookings on Instagram"/></a>
-                    <a href="https://twitter.com/safaribookings" target="_blank" rel="noopener nofollow"
-                       title="SafariBookings on Twitter" class="social-icon social-icon--twitter"
-                       aria-label="Follow SafariBookings on Twitter"><img class="svg"
-                                                                          src="https://cfstatic.safaribookings.com/img/svg/twitter.svg"
-                                                                          alt="SafariBookings on Twitter"/></a>
-                </div>
-                <div class="col col-12 currency-selector currency-selector--mobile">
-                    <a href="changecurrency.html" class="currency-selector__button btn btn--next" rel="overlay nofollow"
-                       data-overlay-hash="currency" title="Change Currency">USD &#36;</a>
-                </div>
-            </div>
             <div class="row hide show-t">
                 <div class="col col-12">
-                    <h2 class="hide show-d">About SafariBookings</h2>
-                    <p class="hide show-d">SafariBookings is the largest online marketplace for African safari tours.
-                        Easily compare offers from 3,514 specialized tour operators. Make decisions like a pro by using
-                        <nobr>our 60,680 reviews</nobr>
-                        and
-                        <nobr>210 destination</nobr>
-                        guides. <a href="about-us.html" title="More About SafariBookings.com">More About
-                            Us</a><br/><br/></p>
-
-                    <div class="row hide-d">
-                        <ul class="nav nav--footertablet">
-                            <li><a href="about-us.html" title="About Us">About Us</a></li>
-                            <li><a href="partner-options.html" title="Partner Options">Partner Options</a></li>
-                            <li><a href="terms-of-use.html" title="Terms of Use">Terms of Use</a></li>
-                            <li><a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
-                            <li><a href="cookie-settings.html" title="Cookie Settings">Cookie Settings</a></li>
-                            <li><a href="blog.html" title="Blog">Blog</a></li>
-
-                            <li><a href="how-much-does-an-african-safari-cost.html"
-                                   title="How Much Does an African Safari Cost?">African Safari Cost</a></li>
-                            <li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="currency-selector no-gutter col col-12 hide-d">
-                        <strong>Change Currency</strong>
-                        <a href="changecurrency.html" class="currency-selector__button btn btn--next btn--autowidth"
-                           rel="overlay" data-overlay-hash="currency" title="Change Currency">USD &#36;</a>
-                    </div>
-
-                    <div class="row">
-                        <div class="socials col col-3 col-d-0 tablet-socials">
-                            <a href="https://twitter.com/safaribookings" target="_blank" rel="noopener nofollow"
-                               class="social-icon social-icon--twitter"
-                               aria-label="Follow SafariBookings on Twitter"><img class="svg"
-                                                                                  src="https://cfstatic.safaribookings.com/img/svg/twitter.svg"
-                                                                                  alt="SafariBookings on Twitter"/></a>
-                            <a href="https://www.instagram.com/safaribookings/" target="_blank" rel="noopener nofollow"
-                               class="social-icon social-icon--instagram"
-                               aria-label="Follow SafariBookings on Instagram"><img class="svg"
-                                                                                    src="https://cfstatic.safaribookings.com/img/svg/instagram.svg"
-                                                                                    alt="SafariBookings on Instagram"/></a>
-                            <a href="https://www.facebook.com/SafariBookings/" target="_blank" rel="noopener nofollow"
-                               class="social-icon social-icon--facebook" aria-label="Follow SafariBookings on Facebook"><img
-                                    class="svg" src="https://cfstatic.safaribookings.com/img/svg/facebook.svg"
-                                    alt="SafariBookings on Facebook"/></a>
-                        </div>
-                    </div>
+                    <h2 class="hide show-d">About {{env('APP_NAME')}}</h2>
+                    <p class="hide show-d">{{env('APP_NAME')}} is the largest online marketplace for African safari tours.
+{{--                        Easily compare offers from 3,514 specialized tour operators. Make decisions like a pro by using--}}
+{{--                        <nobr>our 60,680 reviews</nobr>--}}
+{{--                        and--}}
+{{--                        <nobr>210 destination</nobr>--}}
+{{--                        guides. <a href="about-us.html" title="More About SafariBookings.com">More About--}}
+{{--                            Us</a><br/><br/></p>--}}
+                    <br>
+                    <br>
 
                     <div class="flex flex--gutter flex--equal">
                         <div class="flex__item col-t-3 col-d-auto">
-                            <h3>Our Statistics</h3>
+                            <h3>Pages</h3>
                             <ul>
-                                <li><a href="countries-parks.html" title="14 major safari countries"><strong>14</strong>
-                                        safari countries</a></li>
-                                <li><a href="countries-parks.html"
-                                       title="196 parks, reserves and wildlife areas"><strong>196</strong> parks and
-                                        reserves</a></li>
-                                <li><a href="tours.html" title="7,986 safaris offered by different operators"><strong>7,986</strong>
-                                        tour packages</a></li>
-                                <li><a href="operators.html" title="3,514 tour operators"><strong>3,514</strong> tour
-                                        operators</a></li>
-                                <li><a href="reviews.html" title="59,601 tour operators"><strong>59,601</strong> user
-                                        reviews</a></li>
-                                <li><a href="experts.html" title="1,079 expert reviews"><strong>1,079</strong> expert
-                                        reviews</a></li>
-                                <li><a href="experts.html" title="24 experts"><strong>24</strong> Africa experts</a>
-                                </li>
+                                <li><a href="{{url('countries')}}" title="14 major safari countries">
+                                        Safari Countries</a></li>
+{{--                                <li><a href="countries-parks.html"--}}
+{{--                                       title="196 parks, reserves and wildlife areas"><strong>196</strong> parks and--}}
+{{--                                        reserves</a></li>--}}
+                                <li><a href="{{url('all-safari-tours')}}">
+                                        Tour Packages</a></li>
+                                <li><a href="{{url('operators')}}" title="3,514 tour operators"> Tour
+                                        Operators</a></li>
+{{--                                <li><a href="{{url('all-safari-tours')}}" title="59,601 tour operators"><strong>59,601</strong> user--}}
+{{--                                        reviews</a></li>--}}
+{{--                                <li><a href="experts.html" title="1,079 expert reviews"><strong>1,079</strong> expert--}}
+{{--                                        reviews</a></li>--}}
+{{--                                <li><a href="experts.html" title="24 experts"><strong>24</strong> Africa experts</a>--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
-                        <div class="flex__item col-t-3 col-d-auto">
-                            <h3>Safaris by Park</h3>
-                            <ul>
-                                <li><a href="tours/kruger.html" title="Kruger Safari Tours & Holidays">Kruger
-                                        Safaris</a></li>
-                                <li><a href="tours/masai-mara.html" title="Masai Mara Safari Tours & Holidays">Masai
-                                        Mara Safaris</a></li>
-                                <li><a href="tours/serengeti.html" title="Serengeti Safari Tours & Holidays">Serengeti
-                                        Safaris</a></li>
-                                <li><a href="tours/okavango.html" title="Okavango Delta Safari Tours & Holidays">Okavango
-                                        Safaris</a></li>
-                                <li><a href="tours/pilanesberg.html" title="Pilanesberg Safari Tours & Holidays">Pilanesberg
-                                        Safaris</a></li>
-                                <li><a href="tours/amboseli.html" title="Serengeti Safari Tours & Holidays">Amboseli
-                                        Safaris</a></li>
-                                <li><a href="tours/ngorongoro.html" title="Serengeti Safari Tours & Holidays">Ngorongoro
-                                        Safaris</a></li>
-                                <li><a href="tours/kilimanjaro.html"
-                                       title="Kilimanjaro Climbing, Trekking and Hiking Tours">Kilimanjaro Treks</a>
-                                </li>
-                            </ul>
-                        </div>
+{{--                        <div class="flex__item col-t-3 col-d-auto">--}}
+{{--                            <h3>Safaris by Park</h3>--}}
+{{--                            <ul>--}}
+{{--                                <li><a href="tours/kruger.html" title="Kruger Safari Tours & Holidays">Kruger--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/masai-mara.html" title="Masai Mara Safari Tours & Holidays">Masai--}}
+{{--                                        Mara Safaris</a></li>--}}
+{{--                                <li><a href="tours/serengeti.html" title="Serengeti Safari Tours & Holidays">Serengeti--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/okavango.html" title="Okavango Delta Safari Tours & Holidays">Okavango--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/pilanesberg.html" title="Pilanesberg Safari Tours & Holidays">Pilanesberg--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/amboseli.html" title="Serengeti Safari Tours & Holidays">Amboseli--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/ngorongoro.html" title="Serengeti Safari Tours & Holidays">Ngorongoro--}}
+{{--                                        Safaris</a></li>--}}
+{{--                                <li><a href="tours/kilimanjaro.html"--}}
+{{--                                       title="Kilimanjaro Climbing, Trekking and Hiking Tours">Kilimanjaro Treks</a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
                         <div class="flex__item col-t-3 col-d-auto">
                             <h3>Safaris by Country</h3>
@@ -5312,14 +5095,14 @@
                             <ul class="col-d-split">
 
                                 <li>
-                                    <a href="tours/botswana.html" title="Botswana Safaris">
+                                    <a  onclick="searchTours('Botswana')" title="Botswana Safaris">
                                         Botswana
                                         Safaris
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tours/dr-congo.html" title="DR Congo Safaris">
+                                    <a  onclick="searchTours('Botswana')" title="DR Congo Safaris">
                                         DR Congo
                                         Tours
                                     </a>
@@ -5546,6 +5329,24 @@
     <input type="hidden" name="_token" value="CrLrDuB6uNEzA6OoEVGoAJS0mGhHeZghdU7pstQl" data-refresh="600">
 
 </div>
+<form id="toursearchform" action="{{url('filter-tours')}}" method="post" style="display: none">
+    @csrf
+    <input name="destination" id="destinationplus">
+    <input name="tour_title" id="tour_title">
+    <input name="min_price" id="min_price">
+    <input name="max_price" id="max_price">
+    <input name="rating" id="rating">
+</form>
+<script>
+    function searchTours(countryname) {
+        document.getElementById('destinationplus').value = countryname;
+        document.getElementById('tour_title').value = '';
+        document.getElementById('min_price').value = 0;
+        document.getElementById('max_price').value = 100000;
+        document.getElementById('rating').value = '';
+        document.getElementById('toursearchform').submit();
+    }
+</script>
 <script>
     var sb_version = '0.0.1000';
     var cookie_domain = 'safaribookings.com';

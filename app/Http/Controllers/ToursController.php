@@ -26,7 +26,22 @@ class ToursController extends Controller
             $item->routes = Routes::where('tour_id', $item->id)->get();
             $item->user = User::where('id', $item->user_id)->first();
 //            $item->offices = CompanyOffice::where('user_id',$item->user_id)->get();
-
+            $rating = 0;
+            $count = 0;
+            $user = User::where('id', $item->user_id)->first();
+            foreach ($user->reviews as $comment){
+                if ((int)$comment->rating > 0){
+                    $rating = $rating + (int)$comment->rating;
+                    $count++;
+                }
+            }
+            if ($rating > 0){
+                $rating = $rating / $count;
+            }else{
+                $rating =  5;
+            }
+            $item->rating = round($rating, 1);
+            $item->reviews = $count;
         }
         $reviews = Review::all();
         $ratingall = 0;
@@ -62,11 +77,55 @@ class ToursController extends Controller
 //        }
 
         $tours = $tours->get();
+        $temp = [];
+        if (!empty($request->rating)) {
+            foreach ($tours as $tour){
+                $reviews =  Review::where('operator_id', $tour->user_id)->get();
+                $rating = 0;
+                $count = 0;
+                $user = User::where('id',  $tour->user_id)->first();
+                foreach ($user->reviews as $comment){
+                    if ((int)$comment->rating > 0){
+                        $rating = $rating + (int)$comment->rating;
+                        $count++;
+                    }
+                }
+                if ($rating > 0){
+                    $rating = $rating / $count;
+                }else{
+                    $rating =  5;
+                }
+                $user->rating = round($rating, 1);
+                $user->reviews = $count;
+
+                if ($user->rating >= $request->rating){
+                    array_push($temp, $tour);
+                }
+            }
+            $tours = $temp;
+
+        }
         foreach ($tours as $item) {
             $item->features = TourFeatures::where('tour_id', $item->id)->get();
             $item->routes = Routes::where('tour_id', $item->id)->get();
             $item->user = User::where('id', $item->user_id)->first();
 //            $item->offices = CompanyOffice::where('user_id',$item->user_id)->get();
+            $rating = 0;
+            $count = 0;
+            $user = User::where('id', $item->user_id)->first();
+            foreach ($user->reviews as $comment){
+                if ((int)$comment->rating > 0){
+                    $rating = $rating + (int)$comment->rating;
+                    $count++;
+                }
+            }
+            if ($rating > 0){
+                $rating = $rating / $count;
+            }else{
+                $rating =  5;
+            }
+            $item->rating = round($rating, 1);
+            $item->reviews = $count;
 
         }
         $reviews = Review::all();
@@ -86,7 +145,7 @@ class ToursController extends Controller
         $ratingall = round($ratingall, 1);
         $reviewsall = $count;
         $offices= CompanyOffice::select('country')->distinct()->get();
-        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices, 'filtered' => true, 'ratingall' => $ratingall, 'reviewsall' => $reviewsall, 'destination' => $request->destination, 'tourTitle' => $request->tour_title,'minPrice' => $request->min_price, 'maxPrice' => $request->max_price]);
+        return view('all-tours')->with(['tours' => $tours, 'offices' => $offices, 'filtered' => true, 'ratingall' => $ratingall, 'reviewsall' => $reviewsall,'rating' => $request->rating, 'destination' => $request->destination, 'tourTitle' => $request->tour_title,'minPrice' => $request->min_price, 'maxPrice' => $request->max_price]);
 
     }
 

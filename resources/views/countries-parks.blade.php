@@ -1,5 +1,20 @@
 @extends('layouts.landing-app')
 @section('content')
+    <form id="toursearchform2" action="{{url('filter-tours')}}" method="post" style="display: none">
+        @csrf
+        <input name="destination" id="destinationplus">
+        <input name="tour_title" id="tour_titleplus">
+        <input name="min_price" id="min_priceplus">
+        <input name="max_price" id="max_priceplus">
+        <input name="rating" id="ratingplus">
+    </form>
+    <form id="operatorsearchform2" action="{{url('filter-operator')}}" method="post" style="display: none">
+        @csrf
+        <input name="destination" id="destinationplus2">
+        <input name="tour_title" id="operator_company_nameplus">
+        {{--        <input name="officeIn[]" id="officeInplus">--}}
+        <input name="rating" id="ratingplus2">
+    </form>
     <main class="main">
         <div class="titlebar no-white">
             <div class="container">
@@ -188,17 +203,17 @@
 
                     <div class="col col-t-9">
                         <h2>Botswana</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.8 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                            </div>
-                            <span class="review-score"><em>4.8</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="botswana/reviews.html" title="301 Reviews about Botswana">301 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.8 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.8</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="botswana/reviews.html" title="301 Reviews about Botswana">301 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Botswana is the leader in low-impact, upmarket tourism. This eco-friendly approach promotes a
                             true wilderness experience in this unspoiled country. The beauty of the Okavango Delta is
                             best discovered by mokoro canoe, while abundant wildlife can be encountered in Chobe and
@@ -218,8 +233,8 @@
 
 {{--                        <a href="botswana.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Botswana">More About Botswana</a>--}}
-                        <a href="tours/botswana.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="459 Botswana Tours"><b>459</b> Botswana Tours</a>
+                        <a onclick="searchToursFunc('Botswana')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="459 Botswana Tours">Botswana Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -259,17 +274,17 @@
 
                     <div class="col col-t-9">
                         <h2>Ethiopia</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.3 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="ethiopia/reviews.html" title="24 Reviews about Ethiopia">24 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.3 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="ethiopia/reviews.html" title="24 Reviews about Ethiopia">24 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Awash in cultural attractions and dramatic scenery, Ethiopia is far from ordinary. The
                             wildlife here does not appear anywhere else on earth. Memories of being surrounded by
                             hundreds of gelada monkeys with their swirling golden manes and bold red chests will last a
@@ -290,8 +305,8 @@
 
 {{--                        <a href="ethiopia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Ethiopia">More About Ethiopia</a>--}}
-                        <a href="tours/ethiopia.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="34 Ethiopia Tours"><b>34</b> Ethiopia Tours</a>
+                        <a onclick="searchToursFunc('Ethiopia')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="34 Ethiopia Tours">Ethiopia Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -335,17 +350,7 @@
 
                     <div class="col col-t-9">
                         <h2>Kenya</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.6 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.6</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="kenya/reviews.html" title="890 Reviews about Kenya">890 Reviews</a>
-                        </div>
+
                         <p>Kenya is a top wildlife destination, recommended especially for those booking a first-time
                             safari. The Masai Mara offers excellent <a href='#' class='wildlife'
                                                                        data-val='Big_cats.html'>big cat</a> encounters
@@ -366,8 +371,8 @@
 
 {{--                        <a href="kenya.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Kenya">More About Kenya</a>--}}
-                        <a href="tours/kenya.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="2,227 Kenya Tours"><b>2,227</b> Kenya Tours</a>
+                        <a onclick="searchToursFunc('Kenya')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="2,227 Kenya Tours"> Kenya Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -409,17 +414,17 @@
 
                     <div class="col col-t-9">
                         <h2>Madagascar</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.4 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="madagascar/reviews.html" title="21 Reviews about Madagascar">21 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.4 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="madagascar/reviews.html" title="21 Reviews about Madagascar">21 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>While many visitors to Madagascar come for the beautiful beaches, the island with its 50
                             national parks and reserves is nothing short of a top ecotourism destination. If you like an
                             active holiday, Madagascar won’t disappoint as all wildlife viewing is done on foot. For a
@@ -439,8 +444,8 @@
 
 {{--                        <a href="madagascar.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Madagascar">More About Madagascar</a>--}}
-                        <a href="tours/madagascar.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="21 Madagascar Tours"><b>21</b> Madagascar Tours</a>
+                        <a onclick="searchToursFunc('Madagascar')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="21 Madagascar Tours">Madagascar Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -481,17 +486,17 @@
 
                     <div class="col col-t-9">
                         <h2>Malawi</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starempty"></i>
-                            </div>
-                            <span class="review-score"><em>4.0</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="malawi/reviews.html" title="11 Reviews about Malawi">11 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starempty"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.0</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="malawi/reviews.html" title="11 Reviews about Malawi">11 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Malawi’s main tourist attraction is enormous Lake Malawi, with its beaches and water-based
                             activities. The country also offers a range of safari options. Lovely Liwonde National Park
                             has a winding river ideal for boat trips and seeing lots of elephants. Majete Wildlife
@@ -512,8 +517,8 @@
 
 {{--                        <a href="malawi.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Malawi">More About Malawi</a>--}}
-                        <a href="tours/malawi.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="34 Malawi Tours"><b>34</b> Malawi Tours</a>
+                        <a onclick="searchToursFunc('Malawi')"  class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="34 Malawi Tours">Malawi Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -550,17 +555,17 @@
 
                     <div class="col col-t-9">
                         <h2>Mozambique</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="3.7 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                                <i class="sbi sbi--starempty"></i>
-                            </div>
-                            <span class="review-score"><em>3.7</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="mozambique/reviews.html" title="7 Reviews about Mozambique">7 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="3.7 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                                <i class="sbi sbi--starempty"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>3.7</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="mozambique/reviews.html" title="7 Reviews about Mozambique">7 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Mozambique’s main attractions are its islands and its endless, largely undeveloped coastline.
                             The Quirimbas and Bazaruto archipelagos are great to relax on the beach, and to see some
                             amazing marine life. Maputo Special Reserve is an excellent spot for ocean safaris, as well
@@ -583,8 +588,8 @@
 
 {{--                        <a href="mozambique.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Mozambique">More About Mozambique</a>--}}
-                        <a href="tours/mozambique.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="36 Mozambique Tours"><b>36</b> Mozambique Tours</a>
+                        <a onclick="searchToursFunc('Mozambique')"  class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="36 Mozambique Tours">Mozambique Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -626,17 +631,17 @@
 
                     <div class="col col-t-9">
                         <h2>Namibia</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.5 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.5</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="namibia/reviews.html" title="183 Reviews about Namibia">183 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.5 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.5</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="namibia/reviews.html" title="183 Reviews about Namibia">183 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Namibia is characterized by its desert habitat. The harsh environment forms a magnificent
                             backdrop for a different kind of safari. Animal populations are smaller, but sightings in
                             this sparse setting tend to be rewarding. Not to be missed is Etosha Pan, the largest salt
@@ -656,8 +661,8 @@
 
 {{--                        <a href="namibia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Namibia">More About Namibia</a>--}}
-                        <a href="tours/namibia.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="224 Namibia Tours"><b>224</b> Namibia Tours</a>
+                        <a onclick="searchToursFunc('Namibia')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="224 Namibia Tours">Namibia Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -697,17 +702,17 @@
 
                     <div class="col col-t-9">
                         <h2>Rwanda</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.4 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="rwanda/reviews.html" title="11 Reviews about Rwanda">11 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.4 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="rwanda/reviews.html" title="11 Reviews about Rwanda">11 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Rwanda’s gorilla trekking is a once-in-a lifetime experience (easily added on to any African
                             safari). But there is plenty more on offer. Volcanoes National Park is the place to be for
                             gorilla trekking, and volcano hikes. Chimps and many other primates can be found in Nyungwe
@@ -728,8 +733,8 @@
 
 {{--                        <a href="rwanda.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Rwanda">More About Rwanda</a>--}}
-                        <a href="tours/rwanda.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="197 Rwanda Tours"><b>197</b> Rwanda Tours</a>
+                        <a  onclick="searchToursFunc('Rwanda')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="197 Rwanda Tours">Rwanda Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -770,17 +775,17 @@
 
                     <div class="col col-t-9">
                         <h2>South Africa</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.6 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.6</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="south-africa/reviews.html" title="714 Reviews about South Africa">714 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.6 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.6</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="south-africa/reviews.html" title="714 Reviews about South Africa">714 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>South Africa is one of Africa’s great wildlife destinations. Vast Kruger National Park has an
                             abundance of animals and is one of the continent's iconic attractions. For outdoor
                             adventure, the Blyde River Canyon is the third largest on the planet, and jagged peaks of
@@ -801,8 +806,8 @@
 
 {{--                        <a href="south-africa.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About South Africa">More About South Africa</a>--}}
-                        <a href="tours/south-africa.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="678 South Africa Tours"><b>678</b> South Africa Tours</a>
+                        <a  onclick="searchToursFunc('South Africa')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="678 South Africa Tours"> South Africa Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -841,17 +846,17 @@
 
                     <div class="col col-t-9">
                         <h2>Swaziland</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.1 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starempty"></i>
-                            </div>
-                            <span class="review-score"><em>4.1</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="swaziland/reviews.html" title="10 Reviews about Swaziland">10 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.1 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starempty"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.1</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="swaziland/reviews.html" title="10 Reviews about Swaziland">10 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Swaziland (recently renamed Eswatini) is easily incorporated in a South African holiday. It
                             offers some outstanding wildlife viewing in low-key parks, stunning scenery and traditional
                             cultures. Mkhaya Game Reserve and Hlane Royal National Park are excellent places to see many
@@ -871,8 +876,8 @@
 
 {{--                        <a href="swaziland.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Swaziland">More About Swaziland</a>--}}
-                        <a href="tours/swaziland.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="12 Swaziland Tours"><b>12</b> Swaziland Tours</a>
+                        <a onclick="searchToursFunc('Swaziland')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="12 Swaziland Tours">Swaziland Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -915,17 +920,17 @@
 
                     <div class="col col-t-9">
                         <h2>Tanzania</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.8 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                            </div>
-                            <span class="review-score"><em>4.8</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="tanzania/reviews.html" title="1,040 Reviews about Tanzania">1,040 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.8 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.8</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="tanzania/reviews.html" title="1,040 Reviews about Tanzania">1,040 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Tanzania has three safari circuits and each one of them would make Tanzania a top wildlife
                             destination. The popular Northern circuit with the Serengeti and Ngorongoro crater offers
                             one of the best classical safaris in Africa, especially if timed with the annual wildebeest
@@ -945,8 +950,8 @@
 
 {{--                        <a href="tanzania.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Tanzania">More About Tanzania</a>--}}
-                        <a href="tours/tanzania.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="3,140 Tanzania Tours"><b>3,140</b> Tanzania Tours</a>
+                        <a onclick="searchToursFunc('Tanzania')"  class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="3,140 Tanzania Tours">Tanzania Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -987,17 +992,17 @@
 
                     <div class="col col-t-9">
                         <h2>Uganda</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.3 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="uganda/reviews.html" title="259 Reviews about Uganda">259 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.3 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="uganda/reviews.html" title="259 Reviews about Uganda">259 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Uganda is a great destination to view wildlife in both forest and savannah. Not to be missed
                             is gorilla trekking in Bwindi or Mgahinga, while chimps can easily be spotted in Kibale and
                             several other locations. Queen Elizabeth and Murchison Falls national parks offer wonderful
@@ -1018,8 +1023,8 @@
 
 {{--                        <a href="uganda.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Uganda">More About Uganda</a>--}}
-                        <a href="tours/uganda.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="1,113 Uganda Tours"><b>1,113</b> Uganda Tours</a>
+                        <a onclick="searchToursFunc('Uganda')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="1,113 Uganda Tours">Uganda Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -1063,17 +1068,17 @@
 
                     <div class="col col-t-9">
                         <h2>Zambia</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.7 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.7</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="zambia/reviews.html" title="95 Reviews about Zambia">95 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.7 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.7</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="zambia/reviews.html" title="95 Reviews about Zambia">95 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>In Zambia, you’ll be looked after on safari by some of the best guides in Africa. They’ll
                             happily share everything they know about the local wildlife and landscape, while safely
                             leading you on game drives, walking safaris, even canoeing safaris along the Zambezi
@@ -1093,8 +1098,8 @@
 
 {{--                        <a href="zambia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Zambia">More About Zambia</a>--}}
-                        <a href="tours/zambia.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="132 Zambia Tours"><b>132</b> Zambia Tours</a>
+                        <a onclick="searchToursFunc('Zambia')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="132 Zambia Tours">Zambia Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -1137,17 +1142,17 @@
 
                     <div class="col col-t-9">
                         <h2>Zimbabwe</h2>
-                        <div class="review-summary--oneline">
-                            <div class="stars      " title="4.3 / 5">
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--star"></i>
-                                <i class="sbi sbi--starhalf"></i>
-                            </div>
-                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;
-                            <a href="zimbabwe/reviews.html" title="106 Reviews about Zimbabwe">106 Reviews</a>
-                        </div>
+{{--                        <div class="review-summary--oneline">--}}
+{{--                            <div class="stars      " title="4.3 / 5">--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--star"></i>--}}
+{{--                                <i class="sbi sbi--starhalf"></i>--}}
+{{--                            </div>--}}
+{{--                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;--}}
+{{--                            <a href="zimbabwe/reviews.html" title="106 Reviews about Zimbabwe">106 Reviews</a>--}}
+{{--                        </div>--}}
                         <p>Due to the political situation in Zimbabwe, tourists are few and prices are competitive, but
                             the main parks are still cared for and well worth visiting. Hwange is not to be missed and
                             Mana Pools offers great canoeing safaris on the Zambezi River. Victoria Falls, Africa’s
@@ -1168,8 +1173,8 @@
 
 {{--                        <a href="zimbabwe.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Zimbabwe">More About Zimbabwe</a>--}}
-                        <a href="tours/zimbabwe.html" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="181 Zimbabwe Tours"><b>181</b> Zimbabwe Tours</a>
+                        <a onclick="searchToursFunc('Zimbabwe')" class="btn btn--next btn--roundwhite btn--autowidth"
+                           title="181 Zimbabwe Tours"> Zimbabwe Tours</a>
                     </div>
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
@@ -1200,6 +1205,21 @@
 
     </main>
     <script>
+        function searchToursFunc(country) {
+            document.getElementById('destinationplus').value = country;
+            document.getElementById('tour_titleplus').value = '';
+            document.getElementById('min_priceplus').value = 0;
+            document.getElementById('max_priceplus').value = 100000;
+            document.getElementById('ratingplus').value = '';
+            document.getElementById('toursearchform2').submit();
+        }
+        function searchOperatorsFunc(country) {
+            document.getElementById('destinationplus2').value = country;
+            document.getElementById('operator_company_nameplus').value = '';
+            // document.getElementById('officeInplus').value = '';
+            document.getElementById('rating').value = '';
+            document.getElementById('operatorsearchform2').submit();
+        }
         function openTab(name) {
             document.getElementById('overview-tab').style.display = 'none';
             document.getElementById('tours-tab').style.display = 'none';

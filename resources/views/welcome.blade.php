@@ -21,6 +21,21 @@
             box-shadow: none!important;;
         }
     </style>
+    <form id="toursearchform2" action="{{url('filter-tours')}}" method="post" style="display: none">
+        @csrf
+        <input name="destination" id="destinationplus">
+        <input name="tour_title" id="tour_titleplus">
+        <input name="min_price" id="min_priceplus">
+        <input name="max_price" id="max_priceplus">
+        <input name="rating" id="ratingplus">
+    </form>
+    <form id="operatorsearchform2" action="{{url('filter-operator')}}" method="post" style="display: none">
+        @csrf
+        <input name="destination" id="destinationplus2">
+        <input name="tour_title" id="operator_company_nameplus">
+{{--        <input name="officeIn[]" id="officeInplus">--}}
+        <input name="rating" id="ratingplus2">
+    </form>
     <main class="main">
 
         {{--        <div class="messagebox messagebox--orange messagebox--bar">--}}
@@ -33,8 +48,12 @@
             <div class="opener">
                 <h1 class="serif">Search African Safaris</h1>
                 <h2 class="serif">Offered by <B>{{\App\User::all()->count()}}</B> Tour Operators</h2>
-                <form class="row tourpreferences  skip-first-count  " autocomplete="off" method="GET"
-                      action="https://www.safaribookings.com/tours">
+                <form id="mainsearchid" class="row tourpreferences  skip-first-count  " action="{{url('filter-tours')}}" method="post">
+                   @csrf
+                    <input name="tour_title" id="tour_title" type="hidden" value="">
+                    <input name="min_price" id="min_price" type="hidden" value="0">
+                    <input name="max_price" id="max_price" type="hidden" value="100000">
+                    <input name="rating" id="rating" type="hidden" value="">
                     <div class="col col-t-3-5 tourpreferences__block tourpreferences__destination">
 {{--                        <i class="sbi sbi--map-pin row-icon"></i>--}}
                         <select id="destination" type="text" value="" name="destination" style="color: black;border: none">
@@ -68,7 +87,7 @@
                         </div>
                     </div>
                     <div class="col col-t-3  ">
-                        <a href="javascript:void(0);" class="btn btn--blue search btn--next" style="background: black;margin-top: 0px">Show Tours</a>
+                        <a  onclick="document.getElementById('mainsearchid').submit()" class="btn btn--blue search btn--next" style="background: black;margin-top: 0px">Show Tours</a>
                     </div>
                 </form>
 
@@ -321,19 +340,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Tanzania')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="3,152 Tanzania Safaris">Tanzania Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatorsFunc('Tanzania')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Tanzania Operators"><b>Tanzania </b> Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="3,152 Tanzania Safaris">
-                                    Tanzania Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Tanzania Operators"><b>Tanzania </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="3,152 Tanzania Safaris">--}}
+{{--                                    Tanzania Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Tanzania Operators"><b>Tanzania </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="botswana-id" class="container--home-toprated__info" style="display: none;">
@@ -405,19 +424,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Botswana')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="468 Botswana Safaris">Botswana Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatorsFunc('Botswana')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Botswana Operators"><b>Botswana </b> Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="468 Botswana Safaris">
-                                    Botswana Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Botswana Operators">
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="468 Botswana Safaris">--}}
+{{--                                    Botswana Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Botswana Operators">--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="zambia-id" class="container--home-toprated__info" style="display: none; opacity: 1;">
@@ -488,19 +507,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Zambia')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="134 Zambia Safaris"> Zambia Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatorsFunc('Zambia')"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Zambia Operators"><b>Zambia </b>
                                     Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="134 Zambia Safaris"> Zambia
-                                    Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Zambia Operators"><b>Zambia </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="134 Zambia Safaris"> Zambia--}}
+{{--                                    Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Zambia Operators"><b>Zambia </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="kenya-id" class="container--home-toprated__info" style="display: none; opacity: 1;">
@@ -574,19 +593,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Kenya')"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="2,207 Kenya Safaris">
                                     Kenya Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatorsFunc('Kenya')"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Kenya Operators"><b>Kenya </b>
                                     Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="2,207 Kenya Safaris">
-                                    Kenya Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Kenya Operators"><b>Kenya </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="2,207 Kenya Safaris">--}}
+{{--                                    Kenya Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Kenya Operators"><b>Kenya </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="south-africa-id" class="container--home-toprated__info"
@@ -658,19 +677,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('South Africa')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
-                                   title="674 South Africa Safaris"> South Africa Safaris</a>
-                                <a href="#"
+                                   title="674 South Africa Safaris" > South Africa Safaris</a>
+                                <a onclick="searchOperatorsFunc('South Africa')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="South Africa Operators"><b>South Africa </b> Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="674 South Africa Safaris">
-                                    South Africa Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="South Africa Operators"><b>South
-                                        Africa </b> Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="674 South Africa Safaris">--}}
+{{--                                    South Africa Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="South Africa Operators"><b>South--}}
+{{--                                        Africa </b> Operators</a>--}}
                             </div>
                         </div>
                         <div id="namibia-id" class="container--home-toprated__info" style="display: none; opacity: 1;">
@@ -741,19 +760,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Namibia')"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="222 Namibia Safaris">
                                     Namibia Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatoesFunc('Namibia')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Namibia Operators"><b>Namibia </b> Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="222 Namibia Safaris">
-                                    Namibia Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Namibia Operators"><b>Namibia </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="222 Namibia Safaris">--}}
+{{--                                    Namibia Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Namibia Operators"><b>Namibia </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="uganda-id" class="container--home-toprated__info" style="display: none; opacity: 1;">
@@ -825,19 +844,19 @@
                                     </li>
                                 </ul>
 
-                                <a href="#"
+                                <a onclick="searchToursFunc('Uganda')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="1,116 Uganda Safaris">Uganda Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatoesFunc('Uganda')"
                                    class="btn btn--autowidth btn--transparent hide show-ti" title="Uganda Operators"><b>Uganda </b>
                                     Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="1,116 Uganda Safaris">
-                                    Uganda Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Uganda Operators"><b>Uganda </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="1,116 Uganda Safaris">--}}
+{{--                                    Uganda Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Uganda Operators"><b>Uganda </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                         <div id="zimbabwe-id" class="container--home-toprated__info" style="display: none;">
@@ -909,19 +928,19 @@
                                     </li>
                                 </ul>
 
-                                <a href=""
+                                <a onclick="searchToursFunc('Zimbabwe')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="180 Zimbabwe Safaris">Zimbabwe Safaris</a>
-                                <a href="#"
+                                <a onclick="searchOperatorsFunc('Zimbabwe')"
                                    class="btn btn--autowidth btn--transparent hide show-ti"
                                    title="Zimbabwe Operators"><b>Zimbabwe </b> Operators</a>
 
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="180 Zimbabwe Safaris">
-                                    Zimbabwe Safaris</a>
-                                <a href="#"
-                                   class="btn btn--next btn--white hide-t" title="Zimbabwe Operators"><b>Zimbabwe </b>
-                                    Operators</a>
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="180 Zimbabwe Safaris">--}}
+{{--                                    Zimbabwe Safaris</a>--}}
+{{--                                <a href="#"--}}
+{{--                                   class="btn btn--next btn--white hide-t" title="Zimbabwe Operators"><b>Zimbabwe </b>--}}
+{{--                                    Operators</a>--}}
                             </div>
                         </div>
                     </div>
@@ -1303,6 +1322,21 @@
 
     </main>
     <script>
+        function searchToursFunc(country) {
+            document.getElementById('destinationplus').value = country;
+            document.getElementById('tour_titleplus').value = '';
+            document.getElementById('min_priceplus').value = 0;
+            document.getElementById('max_priceplus').value = 100000;
+            document.getElementById('ratingplus').value = '';
+            document.getElementById('toursearchform2').submit();
+        }
+        function searchOperatorsFunc(country) {
+            document.getElementById('destinationplus2').value = country;
+            document.getElementById('operator_company_nameplus').value = '';
+            // document.getElementById('officeInplus').value = '';
+            document.getElementById('rating').value = '';
+            document.getElementById('operatorsearchform2').submit();
+        }
         function topSafariCountries(countryId) {
             document.getElementById('tanzania-id').style.display = 'none';
             document.getElementById('botswana-id').style.display = 'none';

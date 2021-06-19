@@ -69,13 +69,13 @@
     <link rel="dns-prefetch" href="https://ampcid.google.com/" crossorigin>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../cfstatic.safaribookings.com/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../cfstatic.safaribookings.com/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../cfstatic.safaribookings.com/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url('logo.jpg')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('logo.jpg')}}">
     <link rel="manifest" href="https://cfstatic.safaribookings.com/img/favicon/manifest.json">
     <link rel="mask-icon" href="https://cfstatic.safaribookings.com/img/favicon/safari-pinned-tab.svg" color="#bf181a">
 
-    <link rel="shortcut icon" href="https://cfstatic.safaribookings.com/img/favicon/favicon.ico">
-    <link rel="icon" href="https://cfstatic.safaribookings.com/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{url('logo.jpg')}}">
+    <link rel="icon" href="{{url('logo.jpg')}}" type="image/x-icon">
     <meta name="msapplication-config" content="https://cfstatic.safaribookings.com/img/favicon/browserconfig.xml">
     <meta name="msapplication-TileColor" content="#ffffff">
 
@@ -126,6 +126,8 @@
             100% {
                 visibility: visible
             }
+
+
 
         }
 
@@ -5240,8 +5242,8 @@
                         </div>
 
                         <div class="flex__item col-t-2-5 col-d-auto">
-                          
-                            
+
+
                         </div>
 
 

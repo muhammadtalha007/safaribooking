@@ -2,7 +2,24 @@
 <!--====== BANNER PART START ======-->
 @section('content')
     <?php
-    $countriesList = ["Botswana", "Congo (DRC)", "Ethiopia", "Kenya", "Madagascar", "Malawi", "Mozambique", "Namibia", "Rwanda", "South Africa", "Swaziland", "Tanzania", "Uganda", "Zambia", "Zimbabwe"];
+    $countriesList = [
+//        "Botswana",
+//        "Congo (DRC)",
+//        "Ethiopia",
+        "Kenya",
+//        "Madagascar",
+//        "Malawi",
+//        "Mozambique",
+//        "Namibia",
+//        "Rwanda",
+//        "South Africa",
+//        "Swaziland",
+        "Tanzania",
+        "Uganda",
+//        "Zambia",
+//        "Zimbabwe"
+
+    ];
 
     ?>
     <style>
@@ -241,27 +258,27 @@
                             <li class="active" id="tanzania-link" onclick="topSafariCountries('tanzania')">
                                 <span class="txt--grey">#1</span> <b>Tanzania</b>
                             </li>
-                            <li id="botswana-link" onclick="topSafariCountries('botswana')">
-                                <span class="txt--grey">#2</span> <b>Botswana</b>
-                            </li>
-                            <li id="zambia-link" onclick="topSafariCountries('zambia')">
-                                <span class="txt--grey">#3</span> <b>Zambia</b>
-                            </li>
+                            {{--<li id="botswana-link" onclick="topSafariCountries('botswana')">--}}
+                                {{--<span class="txt--grey">#2</span> <b>Botswana</b>--}}
+                            {{--</li>--}}
+                            {{--<li id="zambia-link" onclick="topSafariCountries('zambia')">--}}
+                                {{--<span class="txt--grey">#3</span> <b>Zambia</b>--}}
+                            {{--</li>--}}
                             <li id="kenya-link" onclick="topSafariCountries('kenya')">
                                 <span class="txt--grey">#4</span> <b>Kenya</b>
                             </li>
-                            <li id="south-africa-link" onclick="topSafariCountries('south-africa')">
-                                <span class="txt--grey">#5</span> <b>South Africa</b>
-                            </li>
-                            <li id="namibia-link" onclick="topSafariCountries('namibia')">
-                                <span class="txt--grey">#6</span> <b>Namibia</b>
-                            </li>
+                            {{--<li id="south-africa-link" onclick="topSafariCountries('south-africa')">--}}
+                                {{--<span class="txt--grey">#5</span> <b>South Africa</b>--}}
+                            {{--</li>--}}
+                            {{--<li id="namibia-link" onclick="topSafariCountries('namibia')">--}}
+                                {{--<span class="txt--grey">#6</span> <b>Namibia</b>--}}
+                            {{--</li>--}}
                             <li id="uganda-link" onclick="topSafariCountries('uganda')">
                                 <span class="txt--grey">#7</span> <b>Uganda</b>
                             </li>
-                            <li id="zimbabwe-link" onclick="topSafariCountries('zimbabwe')">
-                                <span class="txt--grey">#8</span> <b>Zimbabwe</b>
-                            </li>
+                            {{--<li id="zimbabwe-link" onclick="topSafariCountries('zimbabwe')">--}}
+                                {{--<span class="txt--grey">#8</span> <b>Zimbabwe</b>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                     <div class="col col-12 col-t-8-5 col-d-9 container--home-toprated__content"

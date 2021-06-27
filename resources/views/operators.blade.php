@@ -1,7 +1,23 @@
 @extends('layouts.landing-app')
 @section('content')
     <?php
-    $countriesList = ["Botswana", "Congo (DRC)", "Ethiopia", "Kenya", "Madagascar", "Malawi", "Mozambique", "Namibia", "Rwanda", "South Africa", "Swaziland", "Tanzania", "Uganda", "Zambia", "Zimbabwe"];
+    $countriesList = [
+//        "Botswana",
+//        "Congo (DRC)",
+//        "Ethiopia",
+        "Kenya",
+//        "Madagascar",
+//        "Malawi",
+//        "Mozambique",
+//        "Namibia",
+//        "Rwanda",
+//        "South Africa",
+//        "Swaziland",
+        "Tanzania",
+        "Uganda",
+//        "Zambia",
+//        "Zimbabwe"
+    ];
 
     ?>
     <style>

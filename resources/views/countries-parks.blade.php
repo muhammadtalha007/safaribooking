@@ -187,22 +187,22 @@
 
         <div class="countriesparks-list hide show-t">
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5">
+                    {{--<div class="col col-t-3 col-d-2-5">--}}
 {{--                        <a href="javascript:void(0)" >--}}
-                            <img src="{{url('African-elephants-Botswana.png')}}"
-                                 title="Botswana" alt="Botswana"/>
+                            {{--<img src="{{url('African-elephants-Botswana.png')}}"--}}
+                                 {{--title="Botswana" alt="Botswana"/>--}}
 {{--                            <i class="sbi sbi--play-button-large"></i>--}}
 {{--                            <span>Botswana Video</span>--}}
 {{--                            <div class="video-time">03:17</div>--}}
 {{--                        </a>--}}
-                    </div>
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Botswana</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Botswana</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.8 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -214,28 +214,28 @@
 {{--                            <span class="review-score"><em>4.8</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="botswana/reviews.html" title="301 Reviews about Botswana">301 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Botswana is the leader in low-impact, upmarket tourism. This eco-friendly approach promotes a
-                            true wilderness experience in this unspoiled country. The beauty of the Okavango Delta is
-                            best discovered by mokoro canoe, while abundant wildlife can be encountered in Chobe and
-                            Moremi parks.</p>
+                        {{--<p>Botswana is the leader in low-impact, upmarket tourism. This eco-friendly approach promotes a--}}
+                            {{--true wilderness experience in this unspoiled country. The beauty of the Okavango Delta is--}}
+                            {{--best discovered by mokoro canoe, while abundant wildlife can be encountered in Chobe and--}}
+                            {{--Moremi parks.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $184 to $1,002 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                Mar-May (dry parks), Jun-Sep (Okavango, Chobe)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> July to October (Only Chobe gets crowded)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$184 to $1,002 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--Mar-May (dry parks), Jun-Sep (Okavango, Chobe)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> July to October (Only Chobe gets crowded)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="botswana.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Botswana">More About Botswana</a>--}}
-                        <a onclick="searchToursFunc('Botswana')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="459 Botswana Tours">Botswana Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Botswana')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="459 Botswana Tours">Botswana Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Botswana Parks &amp; Reserves</h4>--}}
@@ -256,24 +256,24 @@
 {{--                           title="All 14 Parks &amp; Reserves">All <b>14</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Simien_Mountains_National_Park_002.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/ethiopia/208x130/Simien_Mountains_National_Park_002@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Simien_Mountains_National_Park_002.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/ethiopia/208x130/Simien_Mountains_National_Park_002@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Ethiopia</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Ethiopia</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.3 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -285,29 +285,29 @@
 {{--                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="ethiopia/reviews.html" title="24 Reviews about Ethiopia">24 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Awash in cultural attractions and dramatic scenery, Ethiopia is far from ordinary. The
-                            wildlife here does not appear anywhere else on earth. Memories of being surrounded by
-                            hundreds of gelada monkeys with their swirling golden manes and bold red chests will last a
-                            lifetime. As will driving the continent’s highest road to see an Ethiopian wolf – Africa’s
-                            most endangered carnivore.</p>
+                        {{--<p>Awash in cultural attractions and dramatic scenery, Ethiopia is far from ordinary. The--}}
+                            {{--wildlife here does not appear anywhere else on earth. Memories of being surrounded by--}}
+                            {{--hundreds of gelada monkeys with their swirling golden manes and bold red chests will last a--}}
+                            {{--lifetime. As will driving the continent’s highest road to see an Ethiopian wolf – Africa’s--}}
+                            {{--most endangered carnivore.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $250 to $600 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                Oct to Dec (Beautiful scenery, little rain)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> Oct to Jan (Some parks get busy)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$250 to $600 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--Oct to Dec (Beautiful scenery, little rain)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> Oct to Jan (Some parks get busy)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="ethiopia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Ethiopia">More About Ethiopia</a>--}}
-                        <a onclick="searchToursFunc('Ethiopia')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="34 Ethiopia Tours">Ethiopia Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Ethiopia')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="34 Ethiopia Tours">Ethiopia Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Ethiopia Parks &amp; Reserves</h4>--}}
@@ -329,9 +329,9 @@
 {{--                           title="All 9 Parks &amp; Reserves">All <b>9</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
             <div class="container container--main container--main--white shadowed-box hide show-t">
 
@@ -400,20 +400,20 @@
 
             </div>
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Andasibe-Mantadibe_National_Park_018.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/madagascar/208x130/Andasibe-Mantadibe_National_Park_018@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Andasibe-Mantadibe_National_Park_018.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/madagascar/208x130/Andasibe-Mantadibe_National_Park_018@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Madagascar</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Madagascar</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.4 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -425,28 +425,28 @@
 {{--                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="madagascar/reviews.html" title="21 Reviews about Madagascar">21 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>While many visitors to Madagascar come for the beautiful beaches, the island with its 50
-                            national parks and reserves is nothing short of a top ecotourism destination. If you like an
-                            active holiday, Madagascar won’t disappoint as all wildlife viewing is done on foot. For a
-                            true adventure, you can even go out at night, looking for animals by flashlight.</p>
+                        {{--<p>While many visitors to Madagascar come for the beautiful beaches, the island with its 50--}}
+                            {{--national parks and reserves is nothing short of a top ecotourism destination. If you like an--}}
+                            {{--active holiday, Madagascar won’t disappoint as all wildlife viewing is done on foot. For a--}}
+                            {{--true adventure, you can even go out at night, looking for animals by flashlight.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $162 to $1,261 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                August to November (Less rainfall)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> July, August and December (Many parks get busy)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$162 to $1,261 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--August to November (Less rainfall)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> July, August and December (Many parks get busy)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="madagascar.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Madagascar">More About Madagascar</a>--}}
-                        <a onclick="searchToursFunc('Madagascar')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="21 Madagascar Tours">Madagascar Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Madagascar')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="21 Madagascar Tours">Madagascar Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Madagascar Parks &amp; Reserves</h4>--}}
@@ -468,24 +468,24 @@
 {{--                           title="All 21 Parks &amp; Reserves">All <b>21</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Liwonde_National_Park_015.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/malawi/208x130/Liwonde_National_Park_015@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Liwonde_National_Park_015.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/malawi/208x130/Liwonde_National_Park_015@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Malawi</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Malawi</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -497,29 +497,29 @@
 {{--                            <span class="review-score"><em>4.0</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="malawi/reviews.html" title="11 Reviews about Malawi">11 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Malawi’s main tourist attraction is enormous Lake Malawi, with its beaches and water-based
-                            activities. The country also offers a range of safari options. Lovely Liwonde National Park
-                            has a winding river ideal for boat trips and seeing lots of elephants. Majete Wildlife
-                            Reserve is Malawi’s top <a href='#' class='wildlife' data-val='Big_5.html'>Big Five</a>
-                            destination. The rolling green hills of Nyika National Park are ideal for walking.</p>
+                        {{--<p>Malawi’s main tourist attraction is enormous Lake Malawi, with its beaches and water-based--}}
+                            {{--activities. The country also offers a range of safari options. Lovely Liwonde National Park--}}
+                            {{--has a winding river ideal for boat trips and seeing lots of elephants. Majete Wildlife--}}
+                            {{--Reserve is Malawi’s top <a href='#' class='wildlife' data-val='Big_5.html'>Big Five</a>--}}
+                            {{--destination. The rolling green hills of Nyika National Park are ideal for walking.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $235 to $845 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                July to October (Dry bush and animals easier to find)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> Jul to Oct (Some parks are busy, high-season rates)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$235 to $845 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--July to October (Dry bush and animals easier to find)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> Jul to Oct (Some parks are busy, high-season rates)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="malawi.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Malawi">More About Malawi</a>--}}
-                        <a onclick="searchToursFunc('Malawi')"  class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="34 Malawi Tours">Malawi Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Malawi')"  class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="34 Malawi Tours">Malawi Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Malawi Parks &amp; Reserves</h4>--}}
@@ -537,24 +537,24 @@
 {{--                           title="All 9 Parks &amp; Reserves">All <b>9</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Ponta_do_Ouro_008.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/mozambique/208x130/Ponta_do_Ouro_008@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Ponta_do_Ouro_008.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/mozambique/208x130/Ponta_do_Ouro_008@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Mozambique</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Mozambique</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="3.7 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -566,31 +566,31 @@
 {{--                            <span class="review-score"><em>3.7</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="mozambique/reviews.html" title="7 Reviews about Mozambique">7 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Mozambique’s main attractions are its islands and its endless, largely undeveloped coastline.
-                            The Quirimbas and Bazaruto archipelagos are great to relax on the beach, and to see some
-                            amazing marine life. Maputo Special Reserve is an excellent spot for ocean safaris, as well
-                            as for seeing elephants and other terrestrial wildlife in a coastal setting. Niassa and
-                            Gorongosa both have enormous potential to become top wildlife destinations with four of the
-                            <a href='#' class='wildlife' data-val='Big_5.html'>Big Five</a> present, though tourist
-                            facilities are limited at present. </p>
+                        {{--<p>Mozambique’s main attractions are its islands and its endless, largely undeveloped coastline.--}}
+                            {{--The Quirimbas and Bazaruto archipelagos are great to relax on the beach, and to see some--}}
+                            {{--amazing marine life. Maputo Special Reserve is an excellent spot for ocean safaris, as well--}}
+                            {{--as for seeing elephants and other terrestrial wildlife in a coastal setting. Niassa and--}}
+                            {{--Gorongosa both have enormous potential to become top wildlife destinations with four of the--}}
+                            {{--<a href='#' class='wildlife' data-val='Big_5.html'>Big Five</a> present, though tourist--}}
+                            {{--facilities are limited at present. </p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $155 to $729 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                July to October (It&#039;s dry and animals are easy to find)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> Never (Most parks never get busy)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$155 to $729 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--July to October (It&#039;s dry and animals are easy to find)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> Never (Most parks never get busy)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="mozambique.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Mozambique">More About Mozambique</a>--}}
-                        <a onclick="searchToursFunc('Mozambique')"  class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="36 Mozambique Tours">Mozambique Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Mozambique')"  class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="36 Mozambique Tours">Mozambique Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Mozambique Parks &amp; Reserves</h4>--}}
@@ -610,27 +610,27 @@
 {{--                           title="All 8 Parks &amp; Reserves">All <b>8</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="Nynb81cp-iIGzhAK6">
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="Nynb81cp-iIGzhAK6">--}}
 {{--                        <a href="javascript:void(0)" data-start-video="1" data-video-overlay="Namibia Video"--}}
 {{--                           data-overlay-hash="vnamibia" class="video-thumb" title="Watch Our Namibia Video">--}}
-                            <img src="{{url('Desert-elephants-Namibia.png')}}" title="Namibia"
-                                 alt="Namibia"/>
+                            {{--<img src="{{url('Desert-elephants-Namibia.png')}}" title="Namibia"--}}
+                                 {{--alt="Namibia"/>--}}
 {{--                            <i class="sbi sbi--play-button-large"></i>--}}
 {{--                            <span>Namibia Video</span>--}}
 {{--                            <div class="video-time">03:13</div>--}}
 {{--                        </a>--}}
-                    </div>
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Namibia</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Namibia</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.5 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -642,28 +642,28 @@
 {{--                            <span class="review-score"><em>4.5</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="namibia/reviews.html" title="183 Reviews about Namibia">183 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Namibia is characterized by its desert habitat. The harsh environment forms a magnificent
-                            backdrop for a different kind of safari. Animal populations are smaller, but sightings in
-                            this sparse setting tend to be rewarding. Not to be missed is Etosha Pan, the largest salt
-                            pan in Africa and a seasonal wildlife magnet.</p>
+                        {{--<p>Namibia is characterized by its desert habitat. The harsh environment forms a magnificent--}}
+                            {{--backdrop for a different kind of safari. Animal populations are smaller, but sightings in--}}
+                            {{--this sparse setting tend to be rewarding. Not to be missed is Etosha Pan, the largest salt--}}
+                            {{--pan in Africa and a seasonal wildlife magnet.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $175 to $859 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                June to October (All parks)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> July to October (Etosha gets crowded)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$175 to $859 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--June to October (All parks)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> July to October (Etosha gets crowded)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="namibia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Namibia">More About Namibia</a>--}}
-                        <a onclick="searchToursFunc('Namibia')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="224 Namibia Tours">Namibia Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Namibia')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="224 Namibia Tours">Namibia Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Namibia Parks &amp; Reserves</h4>--}}
@@ -684,24 +684,24 @@
 {{--                           title="All 13 Parks &amp; Reserves">All <b>13</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Volcanoes_National_Park_019.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/rwanda/208x130/Volcanoes_National_Park_019@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Volcanoes_National_Park_019.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/rwanda/208x130/Volcanoes_National_Park_019@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Rwanda</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Rwanda</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.4 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -713,29 +713,29 @@
 {{--                            <span class="review-score"><em>4.4</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="rwanda/reviews.html" title="11 Reviews about Rwanda">11 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Rwanda’s gorilla trekking is a once-in-a lifetime experience (easily added on to any African
-                            safari). But there is plenty more on offer. Volcanoes National Park is the place to be for
-                            gorilla trekking, and volcano hikes. Chimps and many other primates can be found in Nyungwe
-                            Forest, while savannah safaris are offered in off-the-beaten-track Akagera National
-                            Park.</p>
+                        {{--<p>Rwanda’s gorilla trekking is a once-in-a lifetime experience (easily added on to any African--}}
+                            {{--safari). But there is plenty more on offer. Volcanoes National Park is the place to be for--}}
+                            {{--gorilla trekking, and volcano hikes. Chimps and many other primates can be found in Nyungwe--}}
+                            {{--Forest, while savannah safaris are offered in off-the-beaten-track Akagera National--}}
+                            {{--Park.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $315 to $1,192 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                Jun to Sep (Except for chimp trekking in Nyungwe)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> June to September (Gorilla permits are scarce)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$315 to $1,192 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--Jun to Sep (Except for chimp trekking in Nyungwe)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> June to September (Gorilla permits are scarce)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="rwanda.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Rwanda">More About Rwanda</a>--}}
-                        <a  onclick="searchToursFunc('Rwanda')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="197 Rwanda Tours">Rwanda Tours</a>
-                    </div>
+                        {{--<a  onclick="searchToursFunc('Rwanda')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="197 Rwanda Tours">Rwanda Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Rwanda Parks &amp; Reserves</h4>--}}
@@ -754,27 +754,27 @@
 {{--                           title="All 4 Parks &amp; Reserves">All <b>4</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="ES3BWRhL-iIGzhAK6">
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="ES3BWRhL-iIGzhAK6">--}}
 {{--                        <a href="javascript:void(0)" data-start-video="1" data-video-overlay="South Africa Video"--}}
 {{--                           data-overlay-hash="vsouth-africa" class="video-thumb" title="Watch Our South Africa Video">--}}
-                            <img src="{{url('south-africa.png')}}"
-                                 title="South Africa" alt="South Africa"/>
+                            {{--<img src="{{url('south-africa.png')}}"--}}
+                                 {{--title="South Africa" alt="South Africa"/>--}}
 {{--                            <i class="sbi sbi--play-button-large"></i>--}}
 {{--                            <span>South Africa Video</span>--}}
 {{--                            <div class="video-time">03:14</div>--}}
 {{--                        </a>--}}
-                    </div>
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>South Africa</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>South Africa</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.6 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -786,29 +786,29 @@
 {{--                            <span class="review-score"><em>4.6</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="south-africa/reviews.html" title="714 Reviews about South Africa">714 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>South Africa is one of Africa’s great wildlife destinations. Vast Kruger National Park has an
-                            abundance of animals and is one of the continent's iconic attractions. For outdoor
-                            adventure, the Blyde River Canyon is the third largest on the planet, and jagged peaks of
-                            the Drakensberg mountains punch into the sky. Cape Town hums with an urban beat, and is
-                            fringed by white-sandy beaches.</p>
+                        {{--<p>South Africa is one of Africa’s great wildlife destinations. Vast Kruger National Park has an--}}
+                            {{--abundance of animals and is one of the continent's iconic attractions. For outdoor--}}
+                            {{--adventure, the Blyde River Canyon is the third largest on the planet, and jagged peaks of--}}
+                            {{--the Drakensberg mountains punch into the sky. Cape Town hums with an urban beat, and is--}}
+                            {{--fringed by white-sandy beaches.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $170 to $730 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                May to September (All parks)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> Oct to Mar (Usually not very crowded)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$170 to $730 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--May to September (All parks)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> Oct to Mar (Usually not very crowded)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="south-africa.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About South Africa">More About South Africa</a>--}}
-                        <a  onclick="searchToursFunc('South Africa')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="678 South Africa Tours"> South Africa Tours</a>
-                    </div>
+                        {{--<a  onclick="searchToursFunc('South Africa')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="678 South Africa Tours"> South Africa Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>South Africa Parks &amp; Reserves</h4>--}}
@@ -828,24 +828,24 @@
 {{--                           title="All 43 Parks &amp; Reserves">All <b>43</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="">
-                        <img
-                            src="{{url('Mkhaya_Game_Reserve_033.jpg')}}"
-                            data-srcset="https://cloudfront.safaribookings.com/lib/swaziland/208x130/Mkhaya_Game_Reserve_033@2x.jpg 2x"
-                            class="lazyload video-thumb"/>
-                        &nbsp;
-                    </div>
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="">--}}
+                        {{--<img--}}
+                            {{--src="{{url('Mkhaya_Game_Reserve_033.jpg')}}"--}}
+                            {{--data-srcset="https://cloudfront.safaribookings.com/lib/swaziland/208x130/Mkhaya_Game_Reserve_033@2x.jpg 2x"--}}
+                            {{--class="lazyload video-thumb"/>--}}
+                        {{--&nbsp;--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Swaziland</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Swaziland</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.1 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -857,28 +857,28 @@
 {{--                            <span class="review-score"><em>4.1</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="swaziland/reviews.html" title="10 Reviews about Swaziland">10 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Swaziland (recently renamed Eswatini) is easily incorporated in a South African holiday. It
-                            offers some outstanding wildlife viewing in low-key parks, stunning scenery and traditional
-                            cultures. Mkhaya Game Reserve and Hlane Royal National Park are excellent places to see many
-                            flagship animals.</p>
+                        {{--<p>Swaziland (recently renamed Eswatini) is easily incorporated in a South African holiday. It--}}
+                            {{--offers some outstanding wildlife viewing in low-key parks, stunning scenery and traditional--}}
+                            {{--cultures. Mkhaya Game Reserve and Hlane Royal National Park are excellent places to see many--}}
+                            {{--flagship animals.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $154 to $326 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                May to September (Dry season)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> December to January and July to August (It never gets very busy)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$154 to $326 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--May to September (Dry season)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> December to January and July to August (It never gets very busy)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="swaziland.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Swaziland">More About Swaziland</a>--}}
-                        <a onclick="searchToursFunc('Swaziland')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="12 Swaziland Tours">Swaziland Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Swaziland')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="12 Swaziland Tours">Swaziland Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Swaziland Parks &amp; Reserves</h4>--}}
@@ -899,9 +899,9 @@
 {{--                           title="All 6 Parks &amp; Reserves">All <b>6</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
             <div class="container container--main container--main--white shadowed-box hide show-t">
 
@@ -1051,23 +1051,23 @@
 
             </div>
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="OXkFJ8Xy-iIGzhAK6">
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="OXkFJ8Xy-iIGzhAK6">--}}
 {{--                        <a href="javascript:void(0)" data-start-video="1" data-video-overlay="Zambia Video"--}}
 {{--                           data-overlay-hash="vzambia" class="video-thumb" title="Watch Our Zambia Video">--}}
-                            <img src="{{url('Zambia.png')}}" title="Zambia"
-                                 alt="Zambia"/>
+                            {{--<img src="{{url('Zambia.png')}}" title="Zambia"--}}
+                                 {{--alt="Zambia"/>--}}
 {{--                            <i class="sbi sbi--play-button-large"></i>--}}
 {{--                            <span>Zambia Video</span>--}}
 {{--                            <div class="video-time">02:42</div>--}}
-                        </a>
-                    </div>
+                        {{--</a>--}}
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Zambia</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Zambia</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.7 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -1079,28 +1079,28 @@
 {{--                            <span class="review-score"><em>4.7</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="zambia/reviews.html" title="95 Reviews about Zambia">95 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>In Zambia, you’ll be looked after on safari by some of the best guides in Africa. They’ll
-                            happily share everything they know about the local wildlife and landscape, while safely
-                            leading you on game drives, walking safaris, even canoeing safaris along the Zambezi
-                            River.</p>
+                        {{--<p>In Zambia, you’ll be looked after on safari by some of the best guides in Africa. They’ll--}}
+                            {{--happily share everything they know about the local wildlife and landscape, while safely--}}
+                            {{--leading you on game drives, walking safaris, even canoeing safaris along the Zambezi--}}
+                            {{--River.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $185 to $1,176 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                May to September (all parks)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> July to October (not crowded, except Victoria Falls)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$185 to $1,176 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--May to September (all parks)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> July to October (not crowded, except Victoria Falls)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="zambia.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Zambia">More About Zambia</a>--}}
-                        <a onclick="searchToursFunc('Zambia')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="132 Zambia Tours">Zambia Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Zambia')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="132 Zambia Tours">Zambia Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Zambia Parks &amp; Reserves</h4>--}}
@@ -1121,27 +1121,27 @@
 {{--                           title="All 14 Parks &amp; Reserves">All <b>14</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-            <div class="container container--main container--main--white shadowed-box hide show-t">
+            {{--<div class="container container--main container--main--white shadowed-box hide show-t">--}}
 
-                <div class="row">
+                {{--<div class="row">--}}
 
-                    <div class="col col-t-3 col-d-2-5" data-video="Jc05Ox8z-iIGzhAK6">
+                    {{--<div class="col col-t-3 col-d-2-5" data-video="Jc05Ox8z-iIGzhAK6">--}}
 {{--                        <a href="javascript:void(0)" data-start-video="1" data-video-overlay="Zimbabwe Video"--}}
 {{--                           data-overlay-hash="vzimbabwe" class="video-thumb" title="Watch Our Zimbabwe Video">--}}
-                            <img src="{{url('zimbabwe.png')}}"
-                                 title="Zimbabwe" alt="Zimbabwe"/>
+                            {{--<img src="{{url('zimbabwe.png')}}"--}}
+                                 {{--title="Zimbabwe" alt="Zimbabwe"/>--}}
 {{--                            <i class="sbi sbi--play-button-large"></i>--}}
 {{--                            <span>Zimbabwe Video</span>--}}
 {{--                            <div class="video-time">03:11</div>--}}
 {{--                        </a>--}}
-                    </div>
+                    {{--</div>--}}
 
-                    <div class="col col-t-9">
-                        <h2>Zimbabwe</h2>
+                    {{--<div class="col col-t-9">--}}
+                        {{--<h2>Zimbabwe</h2>--}}
 {{--                        <div class="review-summary--oneline">--}}
 {{--                            <div class="stars      " title="4.3 / 5">--}}
 {{--                                <i class="sbi sbi--star"></i>--}}
@@ -1153,29 +1153,29 @@
 {{--                            <span class="review-score"><em>4.3</em>/5</span> &nbsp;&ndash;&nbsp;--}}
 {{--                            <a href="zimbabwe/reviews.html" title="106 Reviews about Zimbabwe">106 Reviews</a>--}}
 {{--                        </div>--}}
-                        <p>Due to the political situation in Zimbabwe, tourists are few and prices are competitive, but
-                            the main parks are still cared for and well worth visiting. Hwange is not to be missed and
-                            Mana Pools offers great canoeing safaris on the Zambezi River. Victoria Falls, Africa’s
-                            largest waterfall, is a must-go-to destination; standing in the spray of this powerful
-                            curtain of flowing water is both moving and overwhelming.</p>
+                        {{--<p>Due to the political situation in Zimbabwe, tourists are few and prices are competitive, but--}}
+                            {{--the main parks are still cared for and well worth visiting. Hwange is not to be missed and--}}
+                            {{--Mana Pools offers great canoeing safaris on the Zambezi River. Victoria Falls, Africa’s--}}
+                            {{--largest waterfall, is a must-go-to destination; standing in the spray of this powerful--}}
+                            {{--curtain of flowing water is both moving and overwhelming.</p>--}}
 
-                        <ul class="row info">
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>
-                                $197 to $855 pp/day
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>
-                                May to September (All parks)
-                            </li>
-                            <li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High
-                                    season</b> July to October (Only Victoria Falls gets busy)
-                            </li>
-                        </ul>
+                        {{--<ul class="row info">--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi  sbi--dollar-big "></i><b>Rates</b>--}}
+                                {{--$197 to $855 pp/day--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--best-time"></i><b>Best time</b>--}}
+                                {{--May to September (All parks)--}}
+                            {{--</li>--}}
+                            {{--<li class="col col-12 col-t-4 no-gutter"><i class="sbi sbi--high-season"></i><b>High--}}
+                                    {{--season</b> July to October (Only Victoria Falls gets busy)--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
 
 {{--                        <a href="zimbabwe.html" class="btn btn--next btn--roundwhite btn--autowidth"--}}
 {{--                           title="More About Zimbabwe">More About Zimbabwe</a>--}}
-                        <a onclick="searchToursFunc('Zimbabwe')" class="btn btn--next btn--roundwhite btn--autowidth"
-                           title="181 Zimbabwe Tours"> Zimbabwe Tours</a>
-                    </div>
+                        {{--<a onclick="searchToursFunc('Zimbabwe')" class="btn btn--next btn--roundwhite btn--autowidth"--}}
+                           {{--title="181 Zimbabwe Tours"> Zimbabwe Tours</a>--}}
+                    {{--</div>--}}
 
 {{--                    <div class="col col-t-12 col-d-3-5 countriesparks-list--parks">--}}
 {{--                        <h4>Zimbabwe Parks &amp; Reserves</h4>--}}
@@ -1197,9 +1197,9 @@
 {{--                           title="All 8 Parks &amp; Reserves">All <b>8</b> Parks &amp; Reserves &nbsp; </a>--}}
 {{--                    </div>--}}
 
-                </div>
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
         </div>
 
 

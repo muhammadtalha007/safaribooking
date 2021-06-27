@@ -97,14 +97,24 @@ class AuthController extends Controller
             $item->features = TourFeatures::where('tour_id', $item->id)->get();
             $item->routes = Routes::where('tour_id', $item->id)->get();
         }
-        $user->reviews = Review::where('operator_id', $user->id)->get();
-        $user->reviewsDeceding = Review::where('operator_id', $user->id)->latest()->get();
+//        $user->reviews= Review::where('operator_id', $user->id)->get();
+        $user->reviews = Review::where([
+            ['operator_id', '=', $user->id],
+            ['status','=','approved']
+        ])->get();
+        $user->reviewsDeceding = Review::where([
+            ['operator_id', $user->id],
+            ['status','=','approved']
+        ])->latest()->get();
         foreach ($user->reviewsDeceding as $review){
             $review->images = ReviewImage::where('review_id', $review->id)->get();
         }
         if (count($user->reviews) > 0){
             $user->isReviewAvailable = 1;
-            $user->latestReview = Review::where('operator_id', $user->id)->latest()->first();
+            $user->latestReview = Review::where([
+                ['operator_id', $user->id],
+                ['status','=','approved']
+            ])->latest()->first();
         }else{
             $user->isReviewAvailable = 0;
         }

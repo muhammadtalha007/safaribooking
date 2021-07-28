@@ -258,7 +258,7 @@
                                                         @foreach($user->tours as $tour)
                                                         <li class="col   col-12 col-t-6   ">
                                                             <a class="list__item    "
-                                                               href="#"
+                                                               href="{{url('tour')}}/{{$tour->id}}/details"
                                                                target="_blank" data-id="32667"
                                                                title="{{$tour->title}}">
                                                                 <div class="list__item--image__full">
@@ -489,7 +489,7 @@
                                             @foreach($user->tours as $tour)
                                             <li class="col   col-12 col-t-6   ">
                                                 <a class="list__item    "
-                                                   href="#" target="_blank"
+                                                   href="{{url('tour')}}/{{$tour->id}}/details" target="_blank"
                                                    data-id="24399" title="{{$tour->title}}">
                                                     <div class="list__item--image__full">
 

@@ -75,12 +75,12 @@
                                 <label for="destination">Destination</label>
                                 <select id="destination" type="text" value="" name="destination" style="color: black">
                                     <option value="">Not selected</option>
-                                    @foreach($countriesList as $country)
+                                    @foreach(\App\Countries::all() as $country)
                                         @if(!empty($destination))
                                             <option
-                                                value="{{$country}}" {{$destination == $country ? 'selected' : ''}}>{{$country}}</option>
+                                                value="{{$country->name}}" {{$destination == $country->name ? 'selected' : ''}}>{{$country->name}}</option>
                                         @else
-                                            <option value="{{$country}}">{{$country}}</option>
+                                            <option value="{{$country->name}}">{{$country->name}}</option>
                                         @endif
                                     @endforeach
                                 </select>

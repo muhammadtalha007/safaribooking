@@ -89,8 +89,8 @@
     border-radius: 50%;
     color: white!important;
     text-decoration: none;
-    padding: 27px;
-    height: 65px;
+    padding: 20px;
+    height: 56px;
 }
 
 .fa:hover {
@@ -4750,86 +4750,14 @@
                         {{--({{\App\Tours::where('country_name', 'Ethiopia')->count()}})--}}
                     {{--</span>--}}
                                     {{--</li>--}}
-                                    <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Kenya')" title="Kenya">Kenya</a>
-                                        <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        ({{\App\Tours::where('country_name', 'Kenya')->count()}})
+                                    @foreach(\App\Countries::all() as $country)
+                                        <li class="nav-t__item nav-t__sub-item">
+                                            <a class="nav-t__link nav-t__sub-link" onclick="searchTours('{{$country->name}}')" title="{{$country->name}}">{{$country->name}}</a>
+                                            <span class="nav-t__sub-count txt--xgrey txt--xsmall">
+                        ({{\App\Tours::where('country_name', $country->name)->count()}})
                     </span>
-                                    </li>
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Madagascar')"--}}
-                                           {{--title="Madagascar">Madagascar</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Madagascar')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Malawi')" title="Malawi">Malawi</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Malawi')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Mozambique')"--}}
-                                           {{--title="Mozambique">Mozambique</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Mozambique')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Namibia')"--}}
-                                           {{--title="Namibia">Namibia</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Namibia')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Rwanda')" title="Rwanda">Rwanda</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Rwanda')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('South Africa')"--}}
-                                           {{--title="South Africa">South Africa</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'South Africa')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Swaziland')"--}}
-                                           {{--title="Swaziland">Swaziland</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Swaziland')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Tanzania')"
-                                           title="Tanzania">Tanzania</a>
-                                        <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        ({{\App\Tours::where('country_name', 'Tanzania')->count()}})
-                    </span>
-                                    </li>
-                                    <li class="nav-t__item nav-t__sub-item">
-                                        <a class="nav-t__link nav-t__sub-link" onclick="searchTours('Uganda')" title="Uganda">Uganda</a>
-                                        <span class="nav-t__sub-count txt--xgrey txt--xsmall">
-                        ({{\App\Tours::where('country_name', 'Uganda')->count()}})
-                    </span>
-                                    </li>
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Zambia')" title="Zambia">Zambia</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Zambia')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="nav-t__item nav-t__sub-item">--}}
-                                        {{--<a class="nav-t__link nav-t__sub-link" onclick="searchTours('Zimbabwe')"--}}
-                                           {{--title="Zimbabwe">Zimbabwe</a>--}}
-                                        {{--<span class="nav-t__sub-count txt--xgrey txt--xsmall">--}}
-                        {{--({{\App\Tours::where('country_name', 'Zimbabwe')->count()}})--}}
-                    {{--</span>--}}
-                                    {{--</li>--}}
+                                        </li>
+                                    @endforeach
 
                                     <li class="nav-t__item nav-t__sub-item">
                                         <a class="nav-t__link nav-t__sub-link" onclick="searchTours('')"
@@ -4898,183 +4826,20 @@
             </div>
         </div>
     </header>
-    <div class="container container--onlymob container__mobilemenu nav nav-m toggle-menu" data-role="nav-mobile">
-        <nav>
-            <ul class="nav-m__list">
-                <li class="nav-m__item">
-                    <a class="nav-m__link" href="index.html" title="Home">Home</a>
-                </li>
-                <li class="nav-m__item with-subs">
-                    <a class="nav-m__link" href="tours.html" title="African Safari Tours">
-                        Safaris &amp; Tours<i class="nav-m__icon">&rsaquo;</i>
-                    </a>
-                    <ul class="subnav  nav-m__list nav-m__list--level2 ">
 
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours.html" title="All Safaris">
-                                <em>All Safaris</em>
-                                <span class="txt--xgrey txt--xsmall">
-                        (7,986)
-                    </span>
-                            </a>
-                        </li>
-
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/botswana.html" title="Botswana">
-                                <em>Botswana</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (459)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/dr-congo.html" title="Congo (DRC)">
-                                <em>Congo (DRC)</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (21)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/ethiopia.html" title="Ethiopia">
-                                <em>Ethiopia</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (34)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/kenya.html" title="Kenya">
-                                <em>Kenya</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (2,227)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/madagascar.html" title="Madagascar">
-                                <em>Madagascar</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (21)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/malawi.html" title="Malawi">
-                                <em>Malawi</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (34)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/mozambique.html" title="Mozambique">
-                                <em>Mozambique</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (36)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/namibia.html" title="Namibia">
-                                <em>Namibia</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (224)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/rwanda.html" title="Rwanda">
-                                <em>Rwanda</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (197)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/south-africa.html"
-                               title="South Africa">
-                                <em>South Africa</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (678)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/swaziland.html" title="Swaziland">
-                                <em>Swaziland</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (12)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/tanzania.html" title="Tanzania">
-                                <em>Tanzania</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (3,140)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/uganda.html" title="Uganda">
-                                <em>Uganda</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (1,113)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/zambia.html" title="Zambia">
-                                <em>Zambia</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (132)
-                        </span>
-                            </a>
-                        </li>
-                        <li class="nav-m__item nav-m__item--level2">
-                            <a class="nav-m__link nav-m__link--level2" href="tours/zimbabwe.html" title="Zimbabwe">
-                                <em>Zimbabwe</em>
-                                <span class="txt--xgrey txt--xsmall">
-                            (181)
-                        </span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-m__item ">
-                    <a class="nav-m__link" href="{{url('countries')}}" title="Countries">
-                        Countries
-                    </a>
-
-                </li>
-                <li class="nav-m__item">
-                    <a class="nav-m__link" href="operators.html" title="Tour Operators">Tour Operators</a>
-                </li>
-                <li class="nav-m__item">
-                    <a class="nav-m__link" href="about-us.html" title="About Us">About Us</a>
-                </li>
-                <li class="nav-m__item">
-                    <a class="nav-m__link" href="blog.html" title="Blog">Blog</a>
-                </li>
-                <li class="nav-m__item">
-                    <a class="nav-m__link" href="contact-us.html" title="Contact">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
 <!--====== HEADER PART ENDS ======-->
 @yield('content')
-
+<?php
+    $dataFooter = \App\Footer::all()[0];
+?>
     <footer style="background:black;">
 
         <div class="container hide-p">
             <div class="row hide show-t">
                 <div class="col col-12">
                     <h2 class="hide show-d">About {{env('APP_NAME')}}</h2>
-                    <p class="hide show-d">{{env('APP_NAME')}} is the largest online marketplace for African safari tours.
+                    <p class="hide show-d">{{$dataFooter['text']}}
 {{--                        Easily compare offers from 3,514 specialized tour operators. Make decisions like a pro by using--}}
 {{--                        <nobr>our 60,680 reviews</nobr>--}}
 {{--                        and--}}
@@ -5133,111 +4898,14 @@
 
                             <ul class="col-d-split">
 
-                                {{--<li>--}}
-                                    {{--<a  onclick="searchTours('Botswana')" title="Botswana Safaris">--}}
-                                        {{--Botswana--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a  onclick="searchTours('Congo (DRC)')" title="DR Congo Safaris">--}}
-                                        {{--DR Congo--}}
-                                        {{--Tours--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Ethiopia')" title="Ethiopia Safaris">--}}
-                                        {{--Ethiopia--}}
-                                        {{--Tours--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Madagascar')" title="Madagascar Safaris">--}}
-                                        {{--Madagascar--}}
-                                        {{--Tours--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Malawi')" title="Malawi Safaris">--}}
-                                        {{--Malawi--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Mozambique')" title="Mozambique Safaris">--}}
-                                        {{--Mozambique--}}
-                                        {{--Tours--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Namibia')" title="Namibia Safaris">--}}
-                                        {{--Namibia--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Rwanda')" title="Rwanda Safaris">--}}
-                                        {{--Rwanda--}}
-                                        {{--Tours--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('South Africa')" title="South Africa Safaris">--}}
-                                        {{--South Africa--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                <li>
-                                    {{--<a onclick="searchTours('Swaziland')" title="Swaziland Safaris">--}}
-                                        {{--Swaziland--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                </li>
-
-                                <li>
-                                    <a onclick="searchTours('Tanzania')" title="Tanzania Safaris">
-                                        Tanzania
-                                        Safaris
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a onclick="searchTours('Uganda')" title="Uganda Safaris">
-                                        Uganda
-                                        Tours
-                                    </a>
-                                </li>
-                                <li>
-                                    <a onclick="searchTours('Kenya')" title="Kenya Safaris">
-                                        Kenya
-                                        Safaris
-                                    </a>
-                                </li>
-
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Zambia')" title="Zambia Safaris">--}}
-                                        {{--Zambia--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a onclick="searchTours('Zimbabwe')" title="Zimbabwe Safaris">--}}
-                                        {{--Zimbabwe--}}
-                                        {{--Safaris--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
+                                @foreach(\App\Countries::all() as $country)
+                                    <li>
+                                        <a onclick="searchTours('{{$country->name}}')" title="{{$country->name}} Safaris">
+                                            {{$country->name}}
+                                            Safaris
+                                        </a>
+                                    </li>
+                                @endforeach
 
                             </ul>
                         </div>
@@ -5252,10 +4920,9 @@
                             <h3>SOCIAL MEDIA</h3>
 
                             <div class="socials hide-t show-di">
-                                    <a href="#" class="fa fa-facebook"></a>
-                                    <a href="#" class="fa fa-twitter" style="text-decoration:none;"></a>
-                                    <a href="#" class="fa fa-youtube"></a>
-                                    <a href="#" class="fa fa-instagram"></a>
+                                    <a href="{{$dataFooter['fb_link']}}" target="_blank" class="fa fa-facebook"></a>
+                                    <a href="{{$dataFooter['twitter_link']}}" target="_blank" class="fa fa-twitter" style="text-decoration:none;"></a>
+                                    <a href="{{$dataFooter['instagram_link']}}" target="_blank" class="fa fa-instagram"></a>
                             </div>
                         </div>
                         <div class="flex__item col col-d-auto hide show-d footer__spacer"></div>
@@ -5289,7 +4956,7 @@
 </div>
 <form id="toursearchform" action="{{url('filter-tours')}}" method="post" style="display: none">
     @csrf
-    <input name="destination" id="destinationplus">
+    <input name="destination" id="destinationplus1">
     <input name="tour_title" id="tour_title">
     <input name="min_price" id="min_price">
     <input name="max_price" id="max_price">
@@ -5297,7 +4964,7 @@
 </form>
 <script>
     function searchTours(countryname) {
-        document.getElementById('destinationplus').value = countryname;
+        document.getElementById('destinationplus1').value = countryname;
         document.getElementById('tour_title').value = '';
         document.getElementById('min_price').value = 0;
         document.getElementById('max_price').value = 100000;
